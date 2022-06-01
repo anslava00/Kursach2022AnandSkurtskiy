@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\MainPageController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    if(Auth::user())
+//    return redirect(\route('registration'));
+//});
+
+Route::get('/', [AuthController::class, 'redirectMaster'])->name('redirectMaster');
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth');
 
@@ -35,5 +39,7 @@ Route::post('/toLog', [MainPageController::class, 'redirectToLoginForm'])->name(
 Route::redirect('/toLog', '/login');
 Route::post('/toReg', [MainPageController::class, 'redirectToRegistrationForm'])->name('toRegistrationForm');
 Route::redirect('/toReg', '/registration');
+
+//Route::get('/check', [ProfileController::class, 'checkRole'])->name('check');
 
 

@@ -8,7 +8,7 @@ class MainPageController extends Controller
 {
     public function show()
     {
-        return view('mainpage');
+        return view('main_page');
     }
 
     public function redirectToLoginForm()

@@ -51,8 +51,8 @@ class User extends Authenticatable
         $user->email = $requestData['email'];
         $user->password = Hash::make($requestData['password']);
         $user->assignRole('writer');
-        //or 
-        //$user->assignRole('admin');
+        //or
+//        $user->assignRole('admin');
         $user->save();
 
         return $user;
