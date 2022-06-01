@@ -2,22 +2,25 @@ body {
     background: #1a202c;
 }
 
+footer {
+    margin-top: 42%;
+}
+
 tbody {}
 
 ul[name="UpperHeader"]{
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем отступы*/
     padding-left: 0; /*убираем отступы*/
-    margin-top:25px; /*делаем отступ сверху*/
+    /*margin-top:25px; !*делаем отступ сверху*!*/
     background: #2c5485; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
     height: 50px; /*задаем высоту*/
 }
-ul[name="LowerHeader"]{
+ul[name="LowerFooter"]{
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем отступы*/
     padding-left: 0; /*убираем отступы*/
-    background: #2c5485; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
-    height: 15px;
+    height: 50px; /*задаем высоту*/
 }
 a[name="refUpperHeader"] {
     text-decoration: none; /*убираем подчеркивание текста ссылок*/
@@ -34,6 +37,74 @@ a[name="refUpperHeader"] {
 }
 a:hover {
     background: #247316;/*добавляем эффект при наведении*/
+}
+
+/*a[name="CreateFooterBTN"] {*/
+/*    text-decoration: none; !*убираем подчеркивание текста ссылок*!*/
+/*    background: #0d4e11; !*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*!*/
+/*    color:#fff; !*меняем цвет ссылок*!*/
+/*    padding:0px 15px; !*добавляем отступ*!*/
+/*    font-family: arial; !*меняем шрифт*!*/
+/*    line-height:50px; !*ровняем меню по вертикали*!*/
+/*    display: block;*/
+/*    border-right: 1px solid #4f9cee; !*добавляем бордюр справа*!*/
+/*    -moz-transition: all 0.3s 0.01s ease; !*делаем плавный переход*!*/
+/*    -o-transition: all 0.3s 0.01s ease;*/
+/*    -webkit-transition: all 0.3s 0.01s ease;*/
+/*}*/
+/*a[name="CreateFooterBTN"]:hover {*/
+/*    background: #449435;!*добавляем эффект при наведении*!*/
+/*}*/
+
+/*a[name="EditFooterBTN"] {*/
+/*    text-decoration: none; !*убираем подчеркивание текста ссылок*!*/
+/*    background: #d78324; !*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*!*/
+/*    color:#fff; !*меняем цвет ссылок*!*/
+/*    padding:0px 15px; !*добавляем отступ*!*/
+/*    font-family: arial; !*меняем шрифт*!*/
+/*    line-height:50px; !*ровняем меню по вертикали*!*/
+/*    display: block;*/
+/*    border-right: 1px solid #4f9cee; !*добавляем бордюр справа*!*/
+/*    -moz-transition: all 0.3s 0.01s ease; !*делаем плавный переход*!*/
+/*    -o-transition: all 0.3s 0.01s ease;*/
+/*    -webkit-transition: all 0.3s 0.01s ease;*/
+/*}*/
+/*a[name="EditFooterBTN"]:hover {*/
+/*    background: #6d380a;!*добавляем эффект при наведении*!*/
+/*}*/
+
+button[name="EditFooterBTN"] {
+    background: #0d4e11; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="EditFooterBTN"]:hover {
+    background-color: #b85831;
+    color: white;
+}
+
+button[name="CreateFooterBTN"] {
+    background: #d78324; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="CreateFooterBTN"]:hover {
+    background-color: #943543;
+    color: white;
 }
 
 button[name="logoutBTN"] {

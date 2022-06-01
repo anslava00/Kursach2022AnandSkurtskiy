@@ -1,0 +1,43 @@
+ul[name="SecondUpperHeader"]{
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    /*margin-top:25px; !*делаем отступ сверху*!*/
+    background: #2c5485; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    height: 50px; /*задаем высоту*/
+}
+
+.input2 {
+    display: block;
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+li[name="SecondLeftPartLi"] {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+
+}
+
+button[name="createBTN"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="createBTN"]:hover {
+    background-color: #7ed426;
+    color: white;
+}

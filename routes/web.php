@@ -3,6 +3,9 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\MainPageController;
+use App\Http\Controllers\WebPages\CheckPageController;
+use App\Http\Controllers\WebPages\CreatePageController;
+use App\Http\Controllers\WebPages\EditPageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -33,6 +36,15 @@ Route::get('/registration', [AuthController::class, 'registrationForm'])->name('
 Route::post('/registration', [AuthController::class, 'registration'])->name('registration.post');
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::get('/create_page', [CreatePageController::class, 'create_page_Form'])->name('create_page');
+Route::post('/create_page', [CreatePageController::class, 'create_page'])->name('create_page.post');
+
+Route::get('/check_page', [CheckPageController::class, 'check_page_Form'])->name('check_page');
+Route::post('/check_page', [CheckPageController::class, 'check_page'])->name('check_page.post');
+
+Route::get('/edit_page', [EditPageController::class, 'edit_page_Form'])->name('edit_page');
+Route::post('/edit_page', [EditPageController::class, 'edit_page'])->name('edit_page.post');
 
 Route::get('main_page', [MainPageController::class, 'show'])->name('main_page');
 Route::post('/toLog', [MainPageController::class, 'redirectToLoginForm'])->name('toLoginForm');

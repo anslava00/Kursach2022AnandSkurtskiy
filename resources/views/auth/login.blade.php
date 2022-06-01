@@ -28,30 +28,5 @@
     <button class="btn" type="submit">Вход</button>
     <a href="/registration/">Ещё нет аккаунта?</a>
 </form>
-
-{{--<h1>Вход</h1>--}}
-{{--<form method="POST" action="{{route('login.post')}}">--}}
-{{--    @csrf--}}
-{{--    <div>--}}
-{{--        <label>E-mail</label>--}}
-{{--        <input type="text" name="email" value="{{old('email')}}" maxlength="255"/>--}}
-{{--        @error('email')--}}
-{{--        <div class="alert alert-danger">{{$message}}</div>--}}
-{{--        @enderror--}}
-{{--    </div>--}}
-{{--    <div>--}}
-{{--        <label>Password</label>--}}
-{{--        <input name="password" value="{{old('password')}}" maxlength="2000"></textarea>--}}
-{{--        @error('password')--}}
-{{--        <div class="alert alert-danger">{{$message}}</div>--}}
-{{--        @enderror--}}
-{{--    </div>--}}
-{{--    <div>--}}
-{{--        <a href="/registration">registration</a>--}}
-{{--    </div>--}}
-{{--    <div>--}}
-{{--        <input type="submit"/>--}}
-{{--    </div>--}}
-{{--</form>--}}
 </body>
 </html>

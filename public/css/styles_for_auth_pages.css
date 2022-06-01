@@ -22,7 +22,7 @@ body {
     width: 100%;
     padding: 8px 10px;
     margin-bottom: 10px;
-
+    border-radius: 10px;
     border: 1px solid #ccc;
 
     font-family: inherit;
@@ -34,6 +34,7 @@ body {
     width: 100%;
     padding: 8px 10px;
 
+    border-radius: 10px;
     border: 0;
     background-color: #2b49d2;
     cursor: pointer;
