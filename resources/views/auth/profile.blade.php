@@ -10,6 +10,12 @@
 <form method="POST" action="{{ route('logout') }}">
     @csrf
     <button type="submit">Logout</button>
+
+    @role('admin')
+    I am a writer!
+    @else
+    I am not a writer...
+    @endrole
 </form>
 </body>
 </html>

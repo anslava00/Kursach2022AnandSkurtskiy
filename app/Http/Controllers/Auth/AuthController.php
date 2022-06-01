@@ -60,7 +60,7 @@ class AuthController extends Controller
         Auth::login($user);
         $request->session()->regenerate();
 
-        return redirect(route('auth.profile'));
+        return redirect(route('profile'));
     }
 
     public function logout(Request $request)
