@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\MainPageController;
 use Illuminate\Support\Facades\Route;
+use App\Models\RPDS;
+use App\Models\Competencies\Competencies;
 
 /*
 |----------------------------------------show----------------------------------
