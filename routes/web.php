@@ -27,6 +27,21 @@ use App\Models\Competencies\Competencies;
 //    return redirect(\route('registration'));
 //});
 
+Route::get('/test', function(){
+//    $rpds = RPDS::all();
+//    foreach($rpds as $rpd){
+//        echo $rpd.'<br>';
+//        echo "all time:<br>";
+//        foreach($rpd->rpdAndCompetencies as $time){
+//            echo $time.'<br>';
+//        }
+//    }
+//    echo $rpds->pluck('abbreviathion', 'id');
+//    $rpd = $rpds->firstWhere('id', '=',2)->abbreviathion;
+//    echo $rpd;
+    return view('test_page');
+});
+
 Route::get('/', [AuthController::class, 'redirectMaster'])->name('redirectMaster');
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth');
@@ -44,6 +59,7 @@ Route::post('/create_page', [CreatePageController::class, 'create_page'])->name(
 
 Route::get('/check_page', [CheckPageController::class, 'check_page_Form'])->name('check_page');
 Route::post('/check_page', [CheckPageController::class, 'check_page'])->name('check_page.post');
+Route::post('/check_page_get_info', [CheckPageController::class, 'getRPD_info'])->name('check_page_getInfo.post');
 
 Route::get('/edit_page', [EditPageController::class, 'edit_page_Form'])->name('edit_page');
 Route::post('/edit_page', [EditPageController::class, 'edit_page'])->name('edit_page.post');

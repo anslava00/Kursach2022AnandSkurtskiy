@@ -37,18 +37,21 @@
 #navbar ul li:hover { background-color: #666; }
 
 
-#RPDList ul {
+
+
+#navbarForList ul {
     display: none;
     background-color: #f90;
+    position: absolute;
     top: 100%;
 }
-#RPDList li:hover ul { display: block; }
-#RPDList, #navbar ul {
+#navbarForList li:hover ul { display: block; }
+#navbarForList, #navbar ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
-#RPDList {
+#navbarForList {
     height: 30px;
     background-color: #61d2ff;
     padding-left: 25px;
@@ -56,10 +59,52 @@
     min-width: 100px;
 }
 
-#RPDList li {
+#navbarForList li {
     float: left;
     position: relative;
     height: 100%;
+}
+
+#navbarForList li a {
+    display: block;
+    padding: 6px;
+    width: 100px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+#navbarForList ul li { float: none; }
+#navbarForList li:hover { background-color: #f90; }
+#navbarForList ul li:hover { background-color: #666; }
+
+
+
+#RPDList ul { /*отвечается за выпадающее меню, а именно таблицу*/
+    display: none;
+    background-color: unset; /**/
+    position: static;
+    margin-left: 5px;
+    top: 100%;
+}
+#RPDList li:hover ul { display: block;}
+#RPDList, #navbar ul {
+    margin: 0 50px 0 0;
+    padding: 0;
+    list-style-type: none;
+}
+#RPDList {
+    height: 50px;
+    background-color: #2f287c;
+    /*padding-left: 25px;*/
+    margin-top: 5px;
+    min-width: 100px;
+    border-radius: 20px;
+}
+
+#RPDList li {
+    float: right;
+    position: relative;
+    height: 50px;
 }
 
 #RPDList li a {
@@ -70,14 +115,35 @@
     text-decoration: none;
     text-align: center;
 }
-#RPDList ul li { float: none; }
-#RPDList li:hover { background-color: #f90; }
-#RPDList ul li:hover { background-color: #666; }
+
+
+#RPDList ul li { float: none;  }
+#RPDList li:hover { background-color: #ef4545; border-radius: 20px}
+/*#RPDList ul li:hover { background-color: #666; }*/
 
 .layer {
-    overflow: scroll; /* Добавляем полосы прокрутки */
-    width: 300px; /* Ширина блока */
+    overflow: auto; /* Добавляем полосы прокрутки */
+    width: 400px; /* Ширина блока */
     height: 150px; /* Высота блока */
     padding: 5px; /* Поля вокруг текста */
-    border: solid 1px black; /* Параметры рамки */
+    /*border: solid 1px black; !* Параметры рамки *!*/ /**/
+}
+
+/*.layer::-webkit-scrollbar {*/
+/*    width: 0;*/
+/*}*/
+
+.layer::-webkit-scrollbar {
+    width: 10px;
+}
+
+.layer::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+    border-radius: 10px;
+}
+
+.layer::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(180deg, #00c6fb, #005bea);
 }

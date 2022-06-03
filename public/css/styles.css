@@ -130,6 +130,7 @@ li[name="rightPartLi"] {
 
 li[name="leftPartLi"] {
     float:left; /*Размещаем список горизонтально для реализации меню*/
+
 }
 
 div[name = "forLi"] {

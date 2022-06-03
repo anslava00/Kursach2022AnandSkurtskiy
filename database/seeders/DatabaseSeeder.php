@@ -31,25 +31,25 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-            // rpdsSeeder::class,
-            // CompetencieSeeder::class,
-            // SubCompetencieSeeder::class,
+//             rpdsSeeder::class,
+//             CompetencieSeeder::class,
+//             SubCompetencieSeeder::class,
+//
+//             RpdAndCompetenciesSeeder::class,
 
-            // RpdAndCompetenciesSeeder::class,
+//             BasicInformationSeeder::class,
+//             EducationalAndMethodologicalSupportsSeeder::class,
+//             ListOfLiteraturesSeeder::class,
+//             MaterialTexProductionSeeder::class,
+//             MethodologicalInstructionsSeeder::class,
+//             PracticalAndIndependentPartSeeder::class,
+//             TheoreticalPartSeeder::class,
+//             ValuationFundsSeeder::class,
 
-            // BasicInformationSeeder::class,
-            // EducationalAndMethodologicalSupportsSeeder::class,
-            // ListOfLiteraturesSeeder::class,
-            // MaterialTexProductionSeeder::class,
-            // MethodologicalInstructionsSeeder::class,
-            // PracticalAndIndependentPartSeeder::class,
-            // TheoreticalPartSeeder::class,
-            // ValuationFundsSeeder::class,
-
-            // CreditUnitsSeeder::class,
-            // FormControlsSeeder::class,
-            // TimeForRPDSSeeder::class,
-            // TotalAkademHourSeeder::class,
+//             CreditUnitsSeeder::class,
+//             FormControlsSeeder::class,
+//             TimeForRPDSSeeder::class,
+//             TotalAkademHourSeeder::class,
         ]);
     }
 }

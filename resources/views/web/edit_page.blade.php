@@ -20,14 +20,8 @@
     </ul>
     <ul name="SecondUpperHeader">
         <tr>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="RPD-Name"></li>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="SomeData"></li>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="SomeData"></li>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="SomeData"></li>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="SomeData"></li>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="SomeData"></li>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="SomeData"></li>
-            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="SomeData"></li>
+            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="Discipline"></li>
+            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="Department"></li>
         </tr>
     </ul>
     <ul id="navbar">
