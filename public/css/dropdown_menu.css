@@ -15,13 +15,15 @@
     background-color: #61d2ff;
     padding-left: 25px;
     margin-top: 15px;
-    min-width: 470px;
+    min-width: 100px;
 }
+
 #navbar li {
     float: left;
     position: relative;
     height: 100%;
 }
+
 #navbar li a {
     display: block;
     padding: 6px;
@@ -33,3 +35,49 @@
 #navbar ul li { float: none; }
 #navbar li:hover { background-color: #f90; }
 #navbar ul li:hover { background-color: #666; }
+
+
+#RPDList ul {
+    display: none;
+    background-color: #f90;
+    top: 100%;
+}
+#RPDList li:hover ul { display: block; }
+#RPDList, #navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+#RPDList {
+    height: 30px;
+    background-color: #61d2ff;
+    padding-left: 25px;
+    margin-top: 15px;
+    min-width: 100px;
+}
+
+#RPDList li {
+    float: left;
+    position: relative;
+    height: 100%;
+}
+
+#RPDList li a {
+    display: block;
+    padding: 6px;
+    width: 100px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+}
+#RPDList ul li { float: none; }
+#RPDList li:hover { background-color: #f90; }
+#RPDList ul li:hover { background-color: #666; }
+
+.layer {
+    overflow: scroll; /* Добавляем полосы прокрутки */
+    width: 300px; /* Ширина блока */
+    height: 150px; /* Высота блока */
+    padding: 5px; /* Поля вокруг текста */
+    border: solid 1px black; /* Параметры рамки */
+}
