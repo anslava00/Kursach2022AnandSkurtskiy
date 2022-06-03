@@ -8,6 +8,8 @@ use App\Http\Controllers\WebPages\CreatePageController;
 use App\Http\Controllers\WebPages\EditPageController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Models\RPDS;
+use App\Models\Competencies\Competencies;
 
 /*
 |----------------------------------------show----------------------------------
