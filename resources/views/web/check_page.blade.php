@@ -19,6 +19,9 @@
     <ul name="UpperHeader">
         <tr>
             <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
+            @role('admin')
+            <li name="leftPartLi"><a name="refUpperHeader" href="#">Edit</a></li>
+            @endrole
             <li name="rightPartLi">
 {{--                <ul id="RPDList" >--}}
 {{--                    <li><div name="splash">Список РПУД</div>--}}
@@ -74,64 +77,196 @@
 
         <div id="time_for_RPD" class="tabcontent">
             <h1>time_for_RPD</h1>
-            <div>
-                <h2>Курс</h2>
-                <h2>Семестр</h2>
-                <h2>Зачётные единицы</h2>
-                <h2>Лекции</h2>
-                <h2>Лабораторные</h2>
-                <h2>Лабораторные интер.</h2>
-                <h2>Практика</h2>
-                <h2>Практика интер.</h2>
-                <h2>КСП</h2>
-                <h2>ОК</h2>
-                <h2>СП</h2>
-                <h2>Контроль</h2>
+            <div >
+                <div>
+                    <h2 name="sp_Div" align="left">
+                        Курс: <input class="input3" type="text" placeholder="Курс">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Семестр: <input class="input3" type="text" placeholder="Семестр">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Зачётные единицы: <input class="input3" type="text" placeholder="Зачётные единицы">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Лекции: <input class="input3" type="text" placeholder="Лекции">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Лабораторные: <input class="input3" type="text" placeholder="Лабораторнын">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Лабораторные интер.: <input class="input3" type="text" placeholder="Лабараторные интер">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Практика: <input class="input3" type="text" placeholder="Практика">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Практика интер.: <input class="input3" type="text" placeholder="Практика интер">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        КСП: <input class="input3" type="text" placeholder="КСП">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        ОК: <input class="input3" type="text" placeholder="ОК">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        СП: <input class="input3" type="text" placeholder="СП">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Контроль: <input class="input3" type="text" placeholder="Контроль">
+                    </h2>
+                </div>
             </div>
         </div>
 
         <div id="total_akadem_hours" class="tabcontent">
             <h1>total_akadem_hours</h1>
             <div>
-                <h2>Эксперты</h2>
-                <h2>В плане</h2>
-                <h2>Контрольные работы</h2>
-                <h2>Самостоятельные работы</h2>
-                <h2>Контрольные</h2>
-                <h2>Часы интер.</h2>
-                <h2>Пр. подготовки</h2>
+                <div >
+                    <h2>
+                        Лабораторные интер.: <input class="input3" type="text" placeholder="Эксперты">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Практика: <input class="input3" type="text" placeholder="В плане">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Практика интер.: <input class="input3" type="text" placeholder="Контрольные работы">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Самостоятельные работы: <input class="input3" type="text" placeholder="Самостоятельные работы">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Контрольные: <input class="input3" type="text" placeholder="Контрольные">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Часы интер.: <input class="input3" type="text" placeholder="Часы интер.">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Пр. подготовки: <input class="input3" type="text" placeholder="Пр. подготовки">
+                    </h2>
+                </div>
             </div>
         </div>
 
         <div id="form_control" class="tabcontent">
             <h1>total_akadem_hours</h1>
             <div>
-                <h2>Экзаминация</h2>
-                <h2>Зачёт</h2>
-                <h2>Зачёт с оценкой</h2>
-                <h2>КП</h2>
-                <h2>КР</h2>
-                <h2>Контроль</h2>
-                <h2>РГР</h2>
-                <h2>Контроль</h2>
+                <div >
+                    <h2>
+                        Экзаминация: <input class="input3" type="text" placeholder="Экзаминация">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Зачёт: <input class="input3" type="text" placeholder="Зачёт">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Зачёт с оценкой: <input class="input3" type="text" placeholder="Зачёт с оценкой">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        КП: <input class="input3" type="text" placeholder="КП">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        КР: <input class="input3" type="text" placeholder="КР">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Контроль: <input class="input3" type="text" placeholder="Контроль">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        РГР: <input class="input3" type="text" placeholder="РГР">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Контроль: <input class="input3" type="text" placeholder="Контроль">
+                    </h2>
+                </div>
             </div>
         </div>
 
         <div id="credit_units" class="tabcontent">
             <h1>total_akadem_hours</h1>
             <div>
-                <h2>Эксперты</h2>
-                <h2>Факты</h2>
-                <h2>Часов в зачётной единице</h2>
+                <div >
+                    <h2>
+                        Эксперты: <input class="input3" type="text" placeholder="Эксперты">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Факты: <input class="input3" type="text" placeholder="Факты">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Часов в зачётной единице: <input class="input3" type="text" placeholder="Часов в зачётной единице">
+                    </h2>
+                </div>
             </div>
         </div>
 
         <div id="Departament" class="tabcontent">
             <h1>total_akadem_hours</h1>
             <div>
-                <h2>Эксперты</h2>
-                <h2>Аббревиатура</h2>
-                <h2>Титул</h2>
+                <div >
+                    <h2>
+                        Эксперты: <input class="input3" type="text" placeholder="Эксперты">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Аббревиатура: <input class="input3" type="text" placeholder="Аббревиатура">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Титул: <input class="input3" type="text" placeholder="Титул">
+                    </h2>
+                </div>
             </div>
         </div>
 
