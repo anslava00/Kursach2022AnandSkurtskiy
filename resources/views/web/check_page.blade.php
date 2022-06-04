@@ -57,7 +57,7 @@
             <h1>time_for_RPD</h1>
             <div >
                 <div>
-                    <h2 name="sp_Div" align="left">
+                    <h2>
                         Курс: <input class="input3" type="text" placeholder="Курс">
                     </h2>
                 </div>

@@ -31,10 +31,5 @@ class CheckPageController extends Controller
         return redirect(route('check_page', ['user' => $user, 'role' => $role, 'rpds' => $rpds]));
     }
 
-//    public function getRPD_info(Request $request)
-//    {
-//        $rpds = RPDS::all();
-////        $id =
-//    }
 
 }
