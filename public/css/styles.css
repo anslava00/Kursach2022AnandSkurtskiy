@@ -39,40 +39,6 @@ a:hover {
     background: #247316;/*добавляем эффект при наведении*/
 }
 
-/*a[name="CreateFooterBTN"] {*/
-/*    text-decoration: none; !*убираем подчеркивание текста ссылок*!*/
-/*    background: #0d4e11; !*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*!*/
-/*    color:#fff; !*меняем цвет ссылок*!*/
-/*    padding:0px 15px; !*добавляем отступ*!*/
-/*    font-family: arial; !*меняем шрифт*!*/
-/*    line-height:50px; !*ровняем меню по вертикали*!*/
-/*    display: block;*/
-/*    border-right: 1px solid #4f9cee; !*добавляем бордюр справа*!*/
-/*    -moz-transition: all 0.3s 0.01s ease; !*делаем плавный переход*!*/
-/*    -o-transition: all 0.3s 0.01s ease;*/
-/*    -webkit-transition: all 0.3s 0.01s ease;*/
-/*}*/
-/*a[name="CreateFooterBTN"]:hover {*/
-/*    background: #449435;!*добавляем эффект при наведении*!*/
-/*}*/
-
-/*a[name="EditFooterBTN"] {*/
-/*    text-decoration: none; !*убираем подчеркивание текста ссылок*!*/
-/*    background: #d78324; !*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*!*/
-/*    color:#fff; !*меняем цвет ссылок*!*/
-/*    padding:0px 15px; !*добавляем отступ*!*/
-/*    font-family: arial; !*меняем шрифт*!*/
-/*    line-height:50px; !*ровняем меню по вертикали*!*/
-/*    display: block;*/
-/*    border-right: 1px solid #4f9cee; !*добавляем бордюр справа*!*/
-/*    -moz-transition: all 0.3s 0.01s ease; !*делаем плавный переход*!*/
-/*    -o-transition: all 0.3s 0.01s ease;*/
-/*    -webkit-transition: all 0.3s 0.01s ease;*/
-/*}*/
-/*a[name="EditFooterBTN"]:hover {*/
-/*    background: #6d380a;!*добавляем эффект при наведении*!*/
-/*}*/
-
 button[name="EditFooterBTN"] {
     background: #0d4e11; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
     color:#fff; /*меняем цвет ссылок*/

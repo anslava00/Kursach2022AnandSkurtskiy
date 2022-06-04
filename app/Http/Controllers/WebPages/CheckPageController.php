@@ -16,7 +16,9 @@ class CheckPageController extends Controller
         $role = User::with('roles')->find($user['id'])->roles->pluck('name')->first();
         $rpds = RPDS::all();
 
-        return view('web.check_page', ['user' => $user, 'role' => $role, 'rpds' => $rpds]);
+        return view('web.check_page', ['user' => $user,
+                                            'role' => $role,
+                                            'rpds' => $rpds,]);
     }
 
     public function check_page(Request $request)

@@ -6,15 +6,13 @@
     <title>ViewsRPD</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/styles_for_web_pages.css">
-    <link rel="stylesheet" href="/css/dropdown_menu.css">
-    <link rel="stylesheet" href="/css/inputDropDownMenu.css">
     <link rel="stylesheet" href="/css/select_css.css">
     <link rel="stylesheet" href="/css/test_ui.css">
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
 <header></header>
-<form name="gg" method="POST" action="{{route('check_page')}}">
+<form name="gg" method="POST" action="{{route('check_page.post')}}">
     @csrf
     <ul name="UpperHeader">
         <tr>
@@ -23,26 +21,6 @@
             <li name="leftPartLi"><a name="refUpperHeader" href="#">Edit</a></li>
             @endrole
             <li name="rightPartLi">
-{{--                <ul id="RPDList" >--}}
-{{--                    <li><div name="splash">Список РПУД</div>--}}
-{{--                    <li><div name="splash">{{$rpds->firstWhere('id', '=', 1)->abbreviathion}}</div>--}}
-{{--                        <ul class="layer">--}}
-{{--                            @for ($i = 1; $i < 10; $i++)--}}
-{{--                                <li>--}}
-{{--                                    <form name="ddGET" method="POST" action="{{route('create_page')}}">--}}
-{{--                                        @csrf--}}
-{{--                                        <div name = "specialForDropDown">--}}
-{{--                                            <button name="DropDownBTN" type="submit" formaction="{{route('check_page')}}">--}}
-{{--                                                {{$rpds->firstWhere('id', '=', $i)->id}}--}}
-{{--                                            </button>--}}
-{{--                                        </div>--}}
-{{--                                    </form>--}}
-{{--                                </li>--}}
-{{--                            @endfor--}}
-{{--                        </ul>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-
                 <div class="select" name="splash">
                     <select>
                         @for ($i = 1; $i < 10; $i++)
@@ -69,8 +47,8 @@
             <button class="tablinks" onclick="openCity(event, 'form_control')">form_control</button>
             <button class="tablinks" onclick="openCity(event, 'credit_units')">credit_units</button>
             <button class="tablinks" onclick="openCity(event, 'Departament')">Departament</button>
-            <button class="tablinks" onclick="openCity(event, 'rpd_and_competencies')">rpd_and_competencies</button>
-            <button class="tablinks" onclick="openCity(event, 'sub_competencies')">rpd_and_competencies</button>
+            <button class="tablinks" onclick="openCity(event, 'competencies')">competencies</button>
+            <button class="tablinks" onclick="openCity(event, 'sub_competencies')">sub_competencies</button>
             <button class="tablinks" onclick="openCity(event, 'basic_information')">basic_information</button>
             <button class="tablinks" onclick="openCity(event, 'valuation_funds')">valuation_funds</button>
         </div>
@@ -183,7 +161,7 @@
         </div>
 
         <div id="form_control" class="tabcontent">
-            <h1>total_akadem_hours</h1>
+            <h1>form_control</h1>
             <div>
                 <div >
                     <h2>
@@ -229,64 +207,106 @@
         </div>
 
         <div id="credit_units" class="tabcontent">
-            <h1>total_akadem_hours</h1>
+            <h1>credit_units</h1>
             <div>
                 <div >
-                    <h2>
-                        Эксперты: <input class="input3" type="text" placeholder="Эксперты">
-                    </h2>
+                    <h3>Эксперты</h3>
+
+                    <textarea cols="80" rows="2" id="bigWind" placeholder="Эксперты"></textarea>
                 </div>
                 <div >
-                    <h2>
-                        Факты: <input class="input3" type="text" placeholder="Факты">
-                    </h2>
+                    <h3>Факты</h3>
+
+                    <textarea cols="80" rows="2" id="bigWind" placeholder="Факты"></textarea>
                 </div>
                 <div >
-                    <h2>
-                        Часов в зачётной единице: <input class="input3" type="text" placeholder="Часов в зачётной единице">
-                    </h2>
+                    <h3>Часов в зачётной единице</h3>
+
+                    <textarea cols="80" rows="2" id="bigWind" placeholder="Часов в зачётной единице"></textarea>
                 </div>
+{{--                <div >--}}
+{{--                    <h2>--}}
+{{--                        Эксперты: <input class="input3" type="text" placeholder="Эксперты">--}}
+{{--                    </h2>--}}
+{{--                </div>--}}
+{{--                <div >--}}
+{{--                    <h2>--}}
+{{--                        Факты: <input class="input3" type="text" placeholder="Факты">--}}
+{{--                    </h2>--}}
+{{--                </div>--}}
+{{--                <div >--}}
+{{--                    <h2>--}}
+{{--                        Часов в зачётной единице: <input class="input3" type="text" placeholder="Часов в зачётной единице">--}}
+{{--                    </h2>--}}
+{{--                </div>--}}
             </div>
         </div>
 
         <div id="Departament" class="tabcontent">
-            <h1>total_akadem_hours</h1>
+            <h1>Departament</h1>
             <div>
                 <div >
-                    <h2>
-                        Эксперты: <input class="input3" type="text" placeholder="Эксперты">
-                    </h2>
+                    <h3>Аббревиатура</h3>
+
+                    <textarea cols="80" rows="1" id="bigWind" placeholder="Аббревиатура"></textarea>
                 </div>
                 <div >
-                    <h2>
-                        Аббревиатура: <input class="input3" type="text" placeholder="Аббревиатура">
-                    </h2>
-                </div>
-                <div >
-                    <h2>
-                        Титул: <input class="input3" type="text" placeholder="Титул">
-                    </h2>
+                    <h3>Титул</h3>
+
+                    <textarea cols="80" rows="1" id="bigWind" placeholder="Титул"></textarea>
                 </div>
             </div>
         </div>
 
-        <div id="rpd_and_competencies" class="tabcontent">
-            <h1>total_akadem_hours</h1>
+        <div id="competencies" class="tabcontent">
+            <h1>competencies</h1>
             <div>
-                <h2>Титул</h2>
-                <h2>Тип компетенции</h2>
-                <h2>Задача</h2>
-                <h2>Источник</h2>
-                <h2>Объект</h2>
-                <h2>Тип</h2>
+                <div >
+                    <h3>Титул</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Титул"></textarea>
+                </div>
+                <div >
+                    <h3>Тип компетенции</h3>
+
+                    <textarea cols="40" rows="3" id="bigWind" placeholder="Тип компетенции"></textarea>
+                </div>
+                <div >
+                    <h3>Задача</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Задача"></textarea>
+                </div>
+                <div >
+                    <h3>Источник</h3>
+
+                    <textarea cols="40" rows="3" id="bigWind" placeholder="Источник"></textarea>
+                </div>
+                <div >
+                    <h3>Объект</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Объект"></textarea>
+                </div>
+                <div >
+                    <h3>Тип</h3>
+
+                    <textarea cols="40" rows="3" id="bigWind" placeholder="Тип"></textarea>
+                </div>
             </div>
         </div>
 
         <div id="sub_competencies" class="tabcontent">
-            <h1>total_akadem_hours</h1>
+            <h1>sub_competencies</h1>
             <div>
-                <h2>Титул</h2>
-                <h2>Описание</h2>
+                <div >
+                    <h3>Титул</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Титул"></textarea>
+                </div>
+                <div >
+                    <h3>Описание</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Описание"></textarea>
+                </div>
             </div>
         </div>
 
@@ -294,118 +314,191 @@
             <h1>Базовая информация</h1>
             <div>
                 <h2>СТРУКТУРА И СОДЕРЖАНИЕ ТЕОРЕТИЧЕСКОЙ ЧАСТИ КУРСА</h2>
-                <h4>Лекционные занятия</h4>
+                <div >
+                    <h3>Лекционные занятия: </h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Лекционные занятия"></textarea>
+                </div>
             </div>
             <div>
                 <h2>СТРУКТУРА И СОДЕРЖАНИЕ ПРАКТИЧЕСКОЙ ЧАСТИ КУРСА И САМОСТОЯТЕЛЬНОЙ РАБОТЫ </h2>
-                <h4>Лабораторные работы </h4>
-                <h4>Материалы для выполнения лабораторных работ</h4>
+                <div >
+                    <h3>Лабораторные работы </h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Лабораторные работы "></textarea>
+                </div>
+                <div >
+                    <h3>Материалы для выполнения лабораторных работ</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Материалы для выполнения лабораторных работ"></textarea>
+                </div>
             </div>
             <div>
                 <h2>УЧЕБНО-МЕТОДИЧЕСКОЕ ОБЕСПЕЧЕНИЕ САМОСТОЯТЕЛЬНОЙ РАБОТЫ ОБУЧАЮЩИХСЯ</h2>
-                <h4>План-график выполнения самостоятельной работы по дисциплине</h4>
-                <h4>Рекомендации по самостоятельной работе студентов</h4>
-                <h4>Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки.</h4>
-                <h4>Критерии оценки.</h4>
-                <h4>Методические рекомендации по написанию эссе</h4>
+                <div >
+                    <h3>План-график выполнения самостоятельной работы по дисциплине</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="План-график выполнения самостоятельной работы по дисциплине"></textarea>
+                </div>
+                <div >
+                    <h3>Рекомендации по самостоятельной работе студентов</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Рекомендации по самостоятельной работе студентов"></textarea>
+                </div>
+                <div >
+                    <h3>Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки.</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки. "></textarea>
+                </div>
+                <div >
+                    <h3>Методические рекомендации по написанию эссе</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по написанию эссе"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии оценки.</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии оценки."></textarea>
+                </div>
             </div>
             <div>
                 <h2>КОНТРОЛЬ ДОСТИЖЕНИЯ ЦЕЛЕЙ КУРСА</h2>
-                <h4></h4>
+                <h3></h3>
             </div>
             <div>
                 <h2>СПИСОК УЧЕБНОЙ ЛИТЕРАТУРЫ И ИНФОРМАЦИОННО-МЕТОДИЧЕСКОЕ ОБЕСПЕЧЕНИЕ ДИСЦИПЛИНЫ</h2>
-                <h4>Основная литература</h4>
-                <h4>Дополнительная литература</h4>
-                <h4>Перечень ресурсов информационно-телекоммуникационной сети
-                    «Интернет»
-                </h4>
+                <div >
+                    <h3>Основная литература</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Основная литература"></textarea>
+                </div>
+                <div >
+                    <h3>Дополнительная литература</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Дополнительная литература"></textarea>
+                </div>
+                <div >
+                    <h3>Перечень ресурсов информационно-телекоммуникационной сети
+                        «Интернет»
+                    </h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Перечень ресурсов информационно-телекоммуникационной сети «Интернет»"></textarea>
+                </div>
+
             </div>
             <div>
                 <h2>МЕТОДИЧЕСКИЕ УКАЗАНИЯ ПО ОСВОЕНИЮ ДИСЦИПЛИНЫ</h2>
-                <h4>Методические инструкции</h4>
+                <div >
+                    <h3>Методические инструкции</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Методические инструкции"></textarea>
+                </div>
             </div>
             <div>
                 <h2>МАТЕРИАЛЬНО-ТЕХНИЧЕСКОЕ ОБЕСПЕЧЕНИЕ ДИСЦИПЛИНЫ</h2>
-                <h4>Наименование специальных помещений и помещений для самостоятельной работы
-                    Оснащенность специальных помещений и помещений для самостоятельной работы	Перечень лицензионного программного обеспечения.
-                    Реквизиты подтверждающего документа
-                </h4>
-                <h4>Оснащенность специальных помещений и помещений для самостоятельной работы</h4>
-                <h4>Перечень лицензионного программного обеспечения.
-                    Реквизиты подтверждающего документа
-                </h4>
+                <div >
+                    <h3>Наименование специальных помещений и помещений для самостоятельной работы</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Наименование специальных помещений и помещений для самостоятельной работы"></textarea>
+                </div>
+                <div >
+                    <h3>Оснащенность специальных помещений и помещений для самостоятельной работы </h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Оснащенность специальных помещений и помещений для самостоятельной работы"></textarea>
+                </div>
+                <div >
+                    <h3>Перечень лицензионного программного обеспечения.</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Перечень лицензионного программного обеспечения."></textarea>
+                </div>
+                <div >
+                    <h3>Реквизиты подтверждающего документа</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Перечень лицензионного программного обеспечения."></textarea>
+                </div>
             </div>
         </div>
+
         <div id="valuation_funds" class="tabcontent">
             <div>
                 <h2>ФОНДЫ ОЦЕНОЧНЫХ СРЕДСТВ</h2>
-                {{--                <h4>Устный опрос </h4>--}}
-                {{--                <h4>Письменные работы</h4>--}}
-                <h4>Оценочные средства для промежуточной аттестации</h4>
-                <h4>Методические указания по сдаче зачета</h4>
-                <h4>Вопросы к зачету</h4>
-                <h4>Критерии выставления оценки студенту на зачете</h4>
-                <h4>Оценочные средства для текущей аттестации</h4>
-                <h4>Вопросы для собеседования / устного опроса</h4>
-                <h4>Критерии оценивания</h4>
-                <h4>Тематика презентаций</h4>
-                <h4>Критерии оценки презентации</h4>
-                <h4>Тематика эссе</h4>
-                <h4>Критерии оценки эссе</h4>
-                <h4>Тематика лабораторных работ</h4>
-                <h4>Критерии оценки лабораторных работ</h4>
-                <h4>Тематика контрольно-расчетных работ</h4>
-                <h4>Критерии оценки контрольно-расчетных работ</h4>
-                <h4>Творческие задания</h4>
-                <h4>Критерии оценки творческого задания
-                    по построению геоморфологической карты
-                </h4>
+                <div >
+                    <h3>Оценочные средства для промежуточной аттестации</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Оценочные средства для промежуточной аттестации"></textarea>
+                </div>
+                <div >
+                    <h3>Методические указания по сдаче зачета</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Методические указания по сдаче зачета"></textarea>
+                </div>
+                <div >
+                    <h3>Перечень лицензионного программного обеспечения.</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Перечень лицензионного программного обеспечения."></textarea>
+                </div>
+                <div >
+                    <h3>Реквизиты подтверждающего документа</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Реквизиты подтверждающего документа"></textarea>
+                </div>
+                <div >
+                    <h3>Вопросы к зачету</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Вопросы к зачету"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии выставления оценки студенту на зачете</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии выставления оценки студенту на зачете"></textarea>
+                </div>
+                <div >
+                    <h3>Оценочные средства для текущей аттестации</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Оценочные средства для текущей аттестации"></textarea>
+                </div>
+                <div >
+                    <h3>Вопросы для собеседования / устного опроса</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Вопросы для собеседования / устного опроса"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии оценивания</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии оценивания"></textarea>
+                </div>
+                <div >
+                    <h3>Тематика презентаций</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Тематика презентаций"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии оценки презентации</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии оценки презентации"></textarea>
+                </div>
+                <div >
+                    <h3>Тематика эссе</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Тематика эссе"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии оценки эссе</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии оценки эссе"></textarea>
+                </div>
+                <div >
+                    <h3>Тематика лабораторных работ</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Тематика лабораторных работ"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии оценки лабораторных работ</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии оценки лабораторных работ"></textarea>
+                </div>
+                <div >
+                    <h3>Тематика контрольно-расчетных работ</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Тематика контрольно-расчетных работ"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии оценки контрольно-расчетных работ</h3>
+
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии оценки контрольно-расчетных работ"></textarea>
+                </div>
+                <div >
+                    <h3>Творческие задания</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Творческие задания"></textarea>
+                </div>
+                <div >
+                    <h3>Критерии оценки творческого задания по построению геоморфологической карты</h3>
+                    <textarea cols="140" rows="10" id="bigWind" placeholder="Критерии оценки творческого задания по построению геоморфологической карты"></textarea>
+                </div>
+                {{--                <h3>Устный опрос </h3>--}}
+                {{--                <h3>Письменные работы</h3>--}}
             </div>
         </div>
 
     </body>
-
-{{--    <ul id="navbar2">--}}
-{{--        <li><a href="#">SomeData</a>--}}
-{{--            <ul id="input_navbar" class = "layer" name = "InputField">--}}
-{{--                       @for($i = 0; $i < 100; $i++)--}}
-{{--                           <input class="input2" type="text" placeholder="{{$i}}">--}}
-{{--                       @endfor--}}
-{{--                <li name="ss">--}}
-{{--                    content here--}}
-{{--                </li>--}}
-{{--                <li name="ss">--}}
-{{--                    content here--}}
-{{--                </li>--}}
-{{--                <li name="ss">--}}
-{{--                    content here--}}
-{{--                </li>--}}
-{{--            </ul>--}}
-{{--        </li>--}}
-{{--        <li><a href="#">SomeData</a>--}}
-{{--            <ul id="input_navbar" class = "layer" name = "InputField">--}}
-{{--                @for($i = 0; $i < 100; $i++)--}}
-{{--                    <input class="input2" type="text" placeholder="{{$i}}">--}}
-{{--                @endfor--}}
-{{--            </ul>--}}
-{{--        </li>--}}
-{{--        <li><a href="#">SomeData</a>--}}
-{{--            <ul id="input_navbar" class="layer" name = "InputField">--}}
-{{--                @for($i = 0; $i < 100; $i++)--}}
-{{--                    <input class="input2" type="text" placeholder="{{$i}}">--}}
-{{--                @endfor--}}
-{{--            </ul>--}}
-{{--        </li>--}}
-{{--        <li><a href="#">SomeData</a>--}}
-{{--            <ul id="input_navbar" class = "layer" name = "InputField">--}}
-{{--                @for($i = 0; $i < 100; $i++)--}}
-{{--                    <input class="input2" type="text" placeholder="{{$i}}">--}}
-{{--                @endfor--}}
-{{--            </ul>--}}
-{{--        </li>--}}
-{{--    </ul>--}}
-    <main>
-    </main>
 </body>
 </html>

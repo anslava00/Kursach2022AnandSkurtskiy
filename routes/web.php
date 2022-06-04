@@ -64,12 +64,4 @@ Route::post('/check_page_get_info', [CheckPageController::class, 'getRPD_info'])
 Route::get('/edit_page', [EditPageController::class, 'edit_page_Form'])->name('edit_page');
 Route::post('/edit_page', [EditPageController::class, 'edit_page'])->name('edit_page.post');
 
-Route::get('main_page', [MainPageController::class, 'show'])->name('main_page');
-Route::post('/toLog', [MainPageController::class, 'redirectToLoginForm'])->name('toLoginForm');
-Route::redirect('/toLog', '/login');
-Route::post('/toReg', [MainPageController::class, 'redirectToRegistrationForm'])->name('toRegistrationForm');
-Route::redirect('/toReg', '/registration');
-
-//Route::get('/check', [ProfileController::class, 'checkRole'])->name('check');
-
 

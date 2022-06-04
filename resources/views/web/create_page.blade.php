@@ -6,7 +6,6 @@
     <title>CreatingRPD</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/styles_for_web_pages.css">
-    <link rel="stylesheet" href="/css/dropdown_menu.css">
 </head>
 <body>
 <header></header>
