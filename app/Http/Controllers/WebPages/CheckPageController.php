@@ -15,10 +15,13 @@ class CheckPageController extends Controller
         $user = Auth::user();
         $role = User::with('roles')->find($user['id'])->roles->pluck('name')->first();
         $rpds = RPDS::all();
-
+        $allowance = 2;
+        $userRpd = $user->userRpd;
+        $time_for_RPD = $userRpd->timeForRPD;
         return view('web.check_page', ['user' => $user,
                                             'role' => $role,
-                                            'rpds' => $rpds,]);
+                                            'rpds' => $rpds,
+                                            'time_for_RPD' => $time_for_RPD]);
     }
 
     public function check_page(Request $request)
@@ -26,9 +29,11 @@ class CheckPageController extends Controller
         $user = Auth::user();
         $role = User::with('roles')->find($user['id'])->roles->pluck('name')->first();
         $rpds = RPDS::all();
+        $allowance = 2;
+        $userRpd = $user->userRpd;
+        $time_for_RPD = $userRpd->timeForRPD;
 
-
-        return redirect(route('check_page', ['user' => $user, 'role' => $role, 'rpds' => $rpds]));
+        return redirect(route('check_page', ['user' => $user, 'role' => $role, 'rpds' => $rpds,  'time_for_RPD' => $time_for_RPD]));
     }
 
 
