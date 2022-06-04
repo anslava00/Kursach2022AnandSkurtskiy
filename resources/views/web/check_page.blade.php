@@ -323,7 +323,7 @@
                 {{--            theoretical_parts --}}
                 <div >
                     <h3>Лекционные занятия: </h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="theoretical_parts_lectures" @isset($theoretical_parts) value="{{$theoretical_parts->lectures}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Лекционные занятия"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="theoretical_parts_lectures"  cols="140" rows="10" id="bigWind" placeholder="Лекционные занятия">@isset($theoretical_parts){{$theoretical_parts->lectures}} @endisset</textarea>
                 </div>
             </div>
             <div>
@@ -343,23 +343,23 @@
 {{--                educational_and_methodological_supports--}}
                 <div >
                     <h3>План-график выполнения самостоятельной работы по дисциплине</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_graph_for_independent_work" value="{{$educational_and_methodological_supports->graph_for_independent_work}}" cols="140" rows="10" id="bigWind" placeholder="План-график выполнения самостоятельной работы по дисциплине"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_graph_for_independent_work" @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->graph_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="План-график выполнения самостоятельной работы по дисциплине"></textarea>
                 </div>
                 <div >
                     <h3>Рекомендации по самостоятельной работе студентов</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_recomendation_for_independent_work" value="{{$educational_and_methodological_supports->recomendation_for_independent_work}}" cols="140" rows="10" id="bigWind" placeholder="Рекомендации по самостоятельной работе студентов"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_recomendation_for_independent_work"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->recomendation_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Рекомендации по самостоятельной работе студентов"></textarea>
                 </div>
                 <div >
                     <h3>Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки.</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_independent_work" value="{{$educational_and_methodological_supports->metodic_recomendation_for_independent_work}}" cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки. "></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_independent_work"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->metodic_recomendation_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки. "></textarea>
                 </div>
                 <div >
                     <h3>Методические рекомендации по написанию эссе</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_grade_for_independent_work" value="{{$educational_and_methodological_supports->grade_for_independent_work}}" cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по написанию эссе"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_grade_for_independent_work"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->grade_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по написанию эссе"></textarea>
                 </div>
                 <div >
                     <h3>Критерии оценки.</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_ecce" value="{{$educational_and_methodological_supports->metodic_recomendation_for_ecce}}" cols="140" rows="10" id="bigWind" placeholder="Критерии оценки."></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_ecce"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->metodic_recomendation_for_ecce}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии оценки."></textarea>
                 </div>
             </div>
             <div>
