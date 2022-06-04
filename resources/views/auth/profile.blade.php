@@ -34,7 +34,7 @@
                     @csrf
                 <li name="rightPartLi"><button name="EditFooterBTN">Edit RPD</button></li>
                 </form>
-                <form method="POST" action="{{route('check_page')}}">
+                <form method="GET" action="{{route('check_page')}}">
                     @csrf
                     <li name="rightPartLi"><button name="EditFooterBTN">Check All RPD</button></li>
                 </form>

@@ -59,6 +59,6 @@ class User extends Authenticatable
     }
 
     public function userRpd(){
-        return $this->hasOne(RPDS::class);
+        return $this->hasMany(RPDS::class);
     }
 }

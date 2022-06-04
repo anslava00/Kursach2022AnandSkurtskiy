@@ -12,7 +12,7 @@
 </head>
 <body>
 <header></header>
-<form name="gg" method="POST" action="{{route('check_page.post')}}">
+<form name="gg" method="GET" action="{{route('check_page')}}">
     @csrf
     <ul name="UpperHeader">
         <tr>
@@ -22,7 +22,7 @@
             @endrole
             <li name="rightPartLi">
                 <div class="select" name="splash">
-                    <select>
+                    <select name = "chooseRpd">
                         @for ($i = 1; $i < 10; $i++)
                             <option value="{{$rpds->firstWhere('id', '=', $i)->id}}">{{$rpds->firstWhere('id', '=', $i)->abbreviathion}}</option>
                         @endfor
