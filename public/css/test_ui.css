@@ -1,0 +1,89 @@
+.tab {
+    overflow: hidden;
+    margin-top: 15px;
+    border: 1px solid #1a1440;
+    background-color: #3157c8;
+}
+
+
+.tab button {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: white;
+    background-color: #3157c8;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+
+.tab button:hover {
+    background-color: #12720e;
+}
+
+
+.tab button.active {
+    background-color: #10555d;
+    color: #fff;
+}
+
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #4CAF50;
+    background: #3395c8;
+    border-top: none;
+}
+
+.input3 {
+    display: block;
+    margin-top: -35px;
+    margin-left: 300px;
+    padding: 8px 10px;
+    /*margin-bottom: 10px;*/
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+    font-family: inherit;
+    font-size: 16px;
+}
+
+div[name = "splash"]
+{
+    width: 400px;
+}
+
+/*Ниже очень важная штука*/
+
+textarea {
+    border-radius: 20px;
+    padding: 20px;
+    overflow: auto;
+}
+
+textarea::-webkit-scrollbar {
+    width: 10px;
+    border: 0;
+    cursor: pointer;
+
+}
+
+textarea::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(180deg, #00c6fb, #005bea);
+    cursor: pointer;
+
+}

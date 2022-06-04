@@ -4,18 +4,42 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Profile</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<h1>Profile</h1>
-<form method="POST" action="{{ route('logout') }}">
-    @csrf
-    <button type="submit">Logout</button>
+    <header>
+        <ul name="UpperHeader">
+            <tr>
+                <li name="leftPartLi"><div name = "forLi">РПУД</div></li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <li name="rightPartLi"><button type="submit" name="logoutBTN">logout</button></li>
+                </form>
+                <li name="rightPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li>
+                <li name="rightPartLi"><div name="forHeader">Role: {{$role}}</div></li>
+            </tr>
+        </ul>
+    </header>
+    <main>
 
-    @role('admin')
-    I am a writer!
-    @else
-    I am not a writer...
-    @endrole
-</form>
+    </main>
+    <footer>
+        <ul name="LowerFooter">
+            <tr>
+                <form method="POST" action="{{route('create_page')}}">
+                    @csrf
+                    <li name="rightPartLi"><button name="CreateFooterBTN" type="submit">Create New RPD</button></li>
+                </form>
+                <form method="POST" action="{{route('edit_page')}}">
+                    @csrf
+                <li name="rightPartLi"><button name="EditFooterBTN">Edit RPD</button></li>
+                </form>
+                <form method="POST" action="{{route('check_page')}}">
+                    @csrf
+                    <li name="rightPartLi"><button name="EditFooterBTN">Check All RPD</button></li>
+                </form>
+            </tr>
+        </ul>
+    </footer>
 </body>
 </html>

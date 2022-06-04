@@ -1,0 +1,147 @@
+body {
+    background: #1a202c;
+}
+
+footer {
+    margin-top: 42%;
+}
+
+tbody {}
+
+ul[name="UpperHeader"]{
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    /*margin-top:25px; !*делаем отступ сверху*!*/
+    background: #2c5485; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    height: 50px; /*задаем высоту*/
+}
+ul[name="LowerFooter"]{
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0; /*убираем отступы*/
+    padding-left: 0; /*убираем отступы*/
+    height: 50px; /*задаем высоту*/
+}
+a[name="refUpperHeader"] {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    border-right: 1px solid #4f9cee; /*добавляем бордюр справа*/
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+a:hover {
+    background: #247316;/*добавляем эффект при наведении*/
+}
+
+button[name="EditFooterBTN"] {
+    background: #0d4e11; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="EditFooterBTN"]:hover {
+    background-color: #b85831;
+    color: white;
+}
+
+button[name="CreateFooterBTN"] {
+    background: #d78324; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="CreateFooterBTN"]:hover {
+    background-color: #943543;
+    color: white;
+}
+
+button[name="logoutBTN"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="logoutBTN"]:hover {
+    background-color: #982323;
+    color: white;
+}
+
+li[name="rightPartLi"] {
+    float:right; /*Размещаем список горизонтально для реализации меню*/
+}
+
+li[name="leftPartLi"] {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+
+}
+
+div[name = "forLi"] {
+    padding: 10% 0 25% 20px;
+    font-size: 25px;
+    font-family: arial, serif; /*меняем шрифт*/
+    color: white;
+}
+
+div[name = "forHeader"] {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial, serif; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    border-right: 1px solid #4f9cee; /*добавляем бордюр справа*
+    /*-moz-transition: all 0.3s 0.01s ease; !*делаем плавный переход*!*/
+    /*-o-transition: all 0.3s 0.01s ease;*/
+    /*-webkit-transition: all 0.3s 0.01s ease;*/
+}
+
+button[name="run_script"] {
+    border: none;
+    border-radius: 7px;
+    padding: 10px 25px;
+    background: #ff9900;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+button[name="run_script"]:hover {
+    background: #ff6600;
+}
+
+table[name="header_table"] {
+    border: none;
+    padding: 0;
+    background: #ff9900;
+    margin: 0;
+}
+
+header {
+    border: none;
+    background: #225583;
+}

@@ -70,4 +70,16 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
         return redirect(route('login'));
     }
+
+    public function redirectMaster(Request $request)
+    {
+        if(Auth::user())
+        {
+            return redirect(route('profile'));
+        }
+        else
+        {
+            return redirect(route('login'));
+        }
+    }
 }
