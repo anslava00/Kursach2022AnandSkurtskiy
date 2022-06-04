@@ -31,7 +31,7 @@ class CheckPageController extends Controller
             $list_of_literatures = $basic_information->listOfLiterature;
             $methodological_instructions = $basic_information->methodInstructions;
             $material_tex_productions = $basic_information->materialProduction;
-            $valuation_funds = $basic_information->valuation_funds;
+            $valuation_funds = $basic_information->valuationFunds;
             // $competencies
             // $sub_competencies
             return view('web.check_page', ['user' => $user,
@@ -41,6 +41,7 @@ class CheckPageController extends Controller
                                            'form_control' => $form_control,
                                            'credit_units' => $credit_units,
                                            'departament' => $departament,
+                                            'basic_information' => $basic_information,
                                            'theoretical_parts' => $theoretical_parts,
                                            'practical_and_independent_parts' => $practical_and_independent_parts,
                                            'educational_and_methodological_supports' => $educational_and_methodological_supports,

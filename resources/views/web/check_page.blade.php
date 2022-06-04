@@ -207,17 +207,17 @@
                 <div >
                     <h3>Эксперты</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_experts" @isset($credit_units) value="{{$credit_units->experts}}" @endisset  cols="80" rows="2" id="bigWind" placeholder="Эксперты"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_experts"  cols="80" rows="2" id="bigWind" placeholder="Эксперты">@isset($credit_units) {{$credit_units->experts}} @endisset </textarea>
                 </div>
                 <div >
                     <h3>Факты</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_fackts" @isset($credit_units) value="{{$credit_units->fackts}}" @endisset cols="80" rows="2" id="bigWind" placeholder="Факты"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_fackts"  cols="80" rows="2" id="bigWind" placeholder="Факты">@isset($credit_units) {{$credit_units->fackts}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Часов в зачётной единице</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_hour_in_c_u" @isset($credit_units) value="{{$credit_units->hour_in_c_u}}" @endisset cols="80" rows="2" id="bigWind" placeholder="Часов в зачётной единице"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_hour_in_c_u"  cols="80" rows="2" id="bigWind" placeholder="Часов в зачётной единице">@isset($credit_units){{$credit_units->hour_in_c_u}} @endisset</textarea>
                 </div>
 {{--                <div >--}}
 {{--                    <h2>--}}
@@ -243,12 +243,12 @@
                 <div >
                     <h3>Аббревиатура</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="departament_abbreviathion" @isset($departament) value="{{$departament->abbreviathion}}" @endisset cols="80" rows="1" id="bigWind" placeholder="Аббревиатура"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="departament_abbreviathion"  cols="80" rows="1" id="bigWind" placeholder="Аббревиатура">@isset($departament){{$departament->abbreviathion}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Титул</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="departament_title" @isset($departament) value="{{$departament->title}}" @endisset cols="80" rows="1" id="bigWind" placeholder="Титул"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="departament_title"  cols="80" rows="1" id="bigWind" placeholder="Титул">@isset($departament){{$departament->title}}@endisset</textarea>
                 </div>
             </div>
         </div>
@@ -259,32 +259,32 @@
                 <div >
                     <h3>Титул</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_title" @isset($competencies) value="{{$competencies->title}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Титул"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_title"  cols="140" rows="10" id="bigWind" placeholder="Титул">@isset($competencies) {{$competencies->title}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Тип компетенции</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_type_competencies" @isset($competencies) value="{{$competencies->type_competencies}}" @endisset cols="40" rows="3" id="bigWind" placeholder="Тип компетенции"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_type_competencies"  cols="40" rows="3" id="bigWind" placeholder="Тип компетенции">@isset($competencies) {{$competencies->type_competencies}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Задача</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_task" @isset($competencies) value="{{$competencies->task}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Задача"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_task"  cols="140" rows="10" id="bigWind" placeholder="Задача">@isset($competencies) {{$competencies->task}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Источник</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies->source" @isset($competencies) value="{{$competencies->source}}" @endisset cols="40" rows="3" id="bigWind" placeholder="Источник"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies->source"  cols="40" rows="3" id="bigWind" placeholder="Источник">@isset($competencies) {{$competencies->source}}@endisset</textarea>
                 </div>
                 <div >
                     <h3>Объект</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_object" @isset($competencies) value="{{$competencies->object}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Объект"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_object"  cols="140" rows="10" id="bigWind" placeholder="Объект">@isset($competencies) {{$competencies->object}}@endisset</textarea>
                 </div>
                 <div >
                     <h3>Тип</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_type_group" @isset($competencies) value="{{$competencies->type_group}}" @endisset cols="40" rows="3" id="bigWind" placeholder="Тип"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_type_group"  cols="40" rows="3" id="bigWind" placeholder="Тип">@isset($competencies) {{$competencies->type_group}}@endisset</textarea>
                 </div>
             </div>
         </div>
@@ -295,12 +295,12 @@
                 <div >
                     <h3>Титул</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title" @isset($sub_competencies) value="{{$sub_competencies->title}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Титул"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title" cols="140" rows="10" id="bigWind" placeholder="Титул">@isset($sub_competencies) {{$sub_competencies->title}} @endisset </textarea>
                 </div>
                 <div >
                     <h3>Описание</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description" @isset($sub_competencies) value="{{$sub_competencies->description}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Описание"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description"  cols="140" rows="10" id="bigWind" placeholder="Описание">@isset($sub_competencies) {{$sub_competencies->description}} @endisset</textarea>
                 </div>
             </div>
         </div>
@@ -311,11 +311,11 @@
 {{--                basic_information--}}
                 <div >
                     <h3>Цели: </h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="basic_information_purpose" @isset($basic_information) value="{{$basic_information->purpose}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Цели"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="basic_information_purpose" cols="140" rows="10" id="bigWind" placeholder="Цели"> @isset($basic_information) {{$basic_information->purpose}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Задачи: </h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="basic_information_task" @isset($basic_information) value="{{$basic_information->task}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Задачи"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="basic_information_task" cols="140" rows="10" id="bigWind" placeholder="Задачи">@isset($basic_information) {{$basic_information->task}} @endisset </textarea>
                 </div>
             </div>
             <div>
@@ -331,11 +331,11 @@
 {{--                practical_and_independent_parts--}}
                 <div >
                     <h3>Лабораторные работы </h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="practical_and_independent_parts_laboratory" @isset($practical_and_independent_parts) value="{{$practical_and_independent_parts->laboratory}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Лабораторные работы "></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="practical_and_independent_parts_laboratory"  cols="140" rows="10" id="bigWind" placeholder="Лабораторные работы ">@isset($practical_and_independent_parts) {{$practical_and_independent_parts->laboratory}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Материалы для выполнения лабораторных работ</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="practical_and_independent_parts_tasks_for_independent_work" @isset($practical_and_independent_parts) value="{{$practical_and_independent_parts->tasks_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Материалы для выполнения лабораторных работ"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="practical_and_independent_parts_tasks_for_independent_work"  cols="140" rows="10" id="bigWind" placeholder="Материалы для выполнения лабораторных работ">@isset($practical_and_independent_parts) {{$practical_and_independent_parts->tasks_for_independent_work}} @endisset</textarea>
                 </div>
             </div>
             <div>
@@ -343,23 +343,23 @@
 {{--                educational_and_methodological_supports--}}
                 <div >
                     <h3>План-график выполнения самостоятельной работы по дисциплине</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_graph_for_independent_work" @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->graph_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="План-график выполнения самостоятельной работы по дисциплине"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_graph_for_independent_work"  cols="140" rows="10" id="bigWind" placeholder="План-график выполнения самостоятельной работы по дисциплине">@isset($educational_and_methodological_supports) {{$educational_and_methodological_supports->graph_for_independent_work}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Рекомендации по самостоятельной работе студентов</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_recomendation_for_independent_work"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->recomendation_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Рекомендации по самостоятельной работе студентов"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_recomendation_for_independent_work"   cols="140" rows="10" id="bigWind" placeholder="Рекомендации по самостоятельной работе студентов">@isset($educational_and_methodological_supports) {{$educational_and_methodological_supports->recomendation_for_independent_work}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки.</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_independent_work"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->metodic_recomendation_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки. "></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_independent_work"   cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по выполнению заданий для самостоятельной работы и критерии оценки. ">@isset($educational_and_methodological_supports) {{$educational_and_methodological_supports->metodic_recomendation_for_independent_work}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Методические рекомендации по написанию эссе</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_grade_for_independent_work"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->grade_for_independent_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по написанию эссе"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_grade_for_independent_work"   cols="140" rows="10" id="bigWind" placeholder="Методические рекомендации по написанию эссе">@isset($educational_and_methodological_supports) {{$educational_and_methodological_supports->grade_for_independent_work}}@endisset</textarea>
                 </div>
                 <div >
                     <h3>Критерии оценки.</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_ecce"  @isset($educational_and_methodological_supports) value="{{$educational_and_methodological_supports->metodic_recomendation_for_ecce}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии оценки."></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="educational_and_methodological_supports_metodic_recomendation_for_ecce" cols="140" rows="10" id="bigWind" placeholder="Критерии оценки."> @isset($educational_and_methodological_supports) {{$educational_and_methodological_supports->metodic_recomendation_for_ecce}} @endisset </textarea>
                 </div>
             </div>
             <div>
@@ -372,17 +372,17 @@
                 <div >
                     <h3>Основная литература</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="list_of_literatures_list_literature" @isset($list_of_literatures) value="{{$list_of_literatures->list_literature}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Основная литература"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="list_of_literatures_list_literature" cols="140" rows="10" id="bigWind" placeholder="Основная литература">@isset($list_of_literatures) {{$list_of_literatures->list_literature}} @endisset </textarea>
                 </div>
                 <div >
                     <h3>Дополнительная литература</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="list_of_literatures_more_literature" @isset($list_of_literatures) value="{{$list_of_literatures->more_literature}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Дополнительная литература"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="list_of_literatures_more_literature" cols="140" rows="10" id="bigWind" placeholder="Дополнительная литература"> @isset($list_of_literatures) {{$list_of_literatures->more_literature}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Перечень ресурсов информационно-телекоммуникационной сети
                         «Интернет»
                     </h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="list_of_literatures_list_internet" @isset($list_of_literatures) value="{{$list_of_literatures->list_internet}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Перечень ресурсов информационно-телекоммуникационной сети «Интернет»"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="list_of_literatures_list_internet" cols="140" rows="10" id="bigWind" placeholder="Перечень ресурсов информационно-телекоммуникационной сети «Интернет»">@isset($list_of_literatures) {{$list_of_literatures->list_internet}} @endisset </textarea>
                 </div>
 
             </div>
@@ -392,7 +392,7 @@
                 <div >
                     <h3>Методические инструкции</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="methodological_instructions_metodic_instruction" @isset($methodological_instructions) value="{{$methodological_instructions->metodic_instruction}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Методические инструкции"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="methodological_instructions_metodic_instruction" cols="140" rows="10" id="bigWind" placeholder="Методические инструкции">@isset($methodological_instructions) {{$methodological_instructions->metodic_instruction}} @endisset </textarea>
                 </div>
             </div>
             <div>
@@ -400,15 +400,15 @@
 {{--                material_tex_productions--}}
                 <div >
                     <h3>Наименование специальных помещений и помещений для самостоятельной работы</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="material_tex_productions_place" @isset($material_tex_productions) value="{{$material_tex_productions->place}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Наименование специальных помещений и помещений для самостоятельной работы"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="material_tex_productions_place" cols="140" rows="10" id="bigWind" placeholder="Наименование специальных помещений и помещений для самостоятельной работы"> @isset($material_tex_productions) {{$material_tex_productions->place}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Оснащенность специальных помещений и помещений для самостоятельной работы </h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="material_tex_productions_equipment" @isset($material_tex_productions) value="{{$material_tex_productions->equipment}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Оснащенность специальных помещений и помещений для самостоятельной работы"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="material_tex_productions_equipment"cols="140" rows="10" id="bigWind" placeholder="Оснащенность специальных помещений и помещений для самостоятельной работы"> @isset($material_tex_productions) {{$material_tex_productions->equipment}} @endisset </textarea>
                 </div>
                 <div >
                     <h3>Перечень лицензионного программного обеспечения.</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="material_tex_productions_licensed_software" @isset($material_tex_productions) value="{{$material_tex_productions->licensed_software}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Перечень лицензионного программного обеспечения."></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="material_tex_productions_licensed_software" cols="140" rows="10" id="bigWind" placeholder="Перечень лицензионного программного обеспечения."> @isset($material_tex_productions) {{$material_tex_productions->licensed_software}} @endisset</textarea>
                 </div>
 {{--                <div >--}}
 {{--                    <h3>Реквизиты подтверждающего документа</h3>--}}
@@ -424,84 +424,84 @@
                 <div >
                     <h3>Оценочные средства для промежуточной аттестации</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_evaluation_tools" @isset($valuation_funds) value="{{$valuation_funds->evaluation_tools}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Оценочные средства для промежуточной аттестации"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_evaluation_tools" cols="140" rows="10" id="bigWind" placeholder="Оценочные средства для промежуточной аттестации">@isset($valuation_funds){{$valuation_funds->evaluation_tools}}@endisset </textarea>
                 </div>
                 <div >
                     <h3>Методические указания по сдаче зачета</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_general_information" @isset($valuation_funds) value="{{$valuation_funds->general_information}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Методические указания по сдаче зачета"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_general_information" cols="140" rows="10" id="bigWind" placeholder="Методические указания по сдаче зачета"> @isset($valuation_funds) {{$valuation_funds->general_information}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Перечень лицензионного программного обеспечения.</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_general_evaluation_tools" @isset($valuation_funds) value="{{$valuation_funds->general_evaluation_tools}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Перечень лицензионного программного обеспечения."></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_general_evaluation_tools" cols="140" rows="10" id="bigWind" placeholder="Перечень лицензионного программного обеспечения."> @isset($valuation_funds) {{$valuation_funds->general_evaluation_tools}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Реквизиты подтверждающего документа</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_methodological_instructions" @isset($valuation_funds) value="{{$valuation_funds->methodological_instructions}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Реквизиты подтверждающего документа"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_methodological_instructions" cols="140" rows="10" id="bigWind" placeholder="Реквизиты подтверждающего документа"> @isset($valuation_funds){{$valuation_funds->methodological_instructions}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Вопросы к зачету</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_questions_offset" @isset($valuation_funds) value="{{$valuation_funds->questions_offset}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Вопросы к зачету"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_questions_offset" cols="140" rows="10" id="bigWind" placeholder="Вопросы к зачету"> @isset($valuation_funds) {{$valuation_funds->questions_offset}}@endisset</textarea>
                 </div>
                 <div >
                     <h3>Критерии выставления оценки студенту на зачете</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_questions_offset" @isset($valuation_funds) value="{{$valuation_funds->grade_questions_offset}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии выставления оценки студенту на зачете"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_questions_offset" cols="140" rows="10" id="bigWind" placeholder="Критерии выставления оценки студенту на зачете"> @isset($valuation_funds){{$valuation_funds->grade_questions_offset}} @endisset </textarea>
                 </div>
                 <div >
                     <h3>Оценочные средства для текущей аттестации</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_oral_question" @isset($valuation_funds) value="{{$valuation_funds->oral_question}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Оценочные средства для текущей аттестации"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_oral_question" cols="140" rows="10" id="bigWind" placeholder="Оценочные средства для текущей аттестации"> @isset($valuation_funds) {{$valuation_funds->oral_question}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Вопросы для собеседования / устного опроса</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_oral_question" @isset($valuation_funds) value="{{$valuation_funds->grade_oral_question}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Вопросы для собеседования / устного опроса"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_oral_question" cols="140" rows="10" id="bigWind" placeholder="Вопросы для собеседования / устного опроса"> @isset($valuation_funds) {{$valuation_funds->grade_oral_question}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Критерии оценивания</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_presentation" @isset($valuation_funds) value="{{$valuation_funds->presentation}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии оценивания"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_presentation" cols="140" rows="10" id="bigWind" placeholder="Критерии оценивания"> @isset($valuation_funds){{$valuation_funds->presentation}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Тематика презентаций</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_presentation" @isset($valuation_funds) value="{{$valuation_funds->grade_presentation}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Тематика презентаций"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_presentation" cols="140" rows="10" id="bigWind" placeholder="Тематика презентаций"> @isset($valuation_funds) {{$valuation_funds->grade_presentation}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Критерии оценки презентации</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_ecce" @isset($valuation_funds) value="{{$valuation_funds->ecce}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии оценки презентации"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_ecce" cols="140" rows="10" id="bigWind" placeholder="Критерии оценки презентации"> @isset($valuation_funds){{$valuation_funds->ecce}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Тематика эссе</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_ecce" @isset($valuation_funds) value="{{$valuation_funds->grade_ecce}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Тематика эссе"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_ecce" cols="140" rows="10" id="bigWind" placeholder="Тематика эссе"> @isset($valuation_funds){{$valuation_funds->grade_ecce}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Критерии оценки эссе</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_laboratory" @isset($valuation_funds) value="{{$valuation_funds->laboratory}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии оценки эссе"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_laboratory" cols="140" rows="10" id="bigWind" placeholder="Критерии оценки эссе"> @isset($valuation_funds) {{$valuation_funds->laboratory}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Тематика лабораторных работ</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_laboratory" @isset($valuation_funds) value="{{$valuation_funds->grade_laboratory}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Тематика лабораторных работ"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_laboratory" cols="140" rows="10" id="bigWind" placeholder="Тематика лабораторных работ"> @isset($valuation_funds){{$valuation_funds->grade_laboratory}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Критерии оценки лабораторных работ</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_coontrol_word" @isset($valuation_funds) value="{{$valuation_funds->coontrol_word}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии оценки лабораторных работ"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_coontrol_word" cols="140" rows="10" id="bigWind" placeholder="Критерии оценки лабораторных работ"> @isset($valuation_funds){{$valuation_funds->coontrol_word}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Тематика контрольно-расчетных работ</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_control_work" @isset($valuation_funds) value="{{$valuation_funds->grade_control_work}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Тематика контрольно-расчетных работ"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_control_work"  cols="140" rows="10" id="bigWind" placeholder="Тематика контрольно-расчетных работ">@isset($valuation_funds){{$valuation_funds->grade_control_work}} @endisset</textarea>
                 </div>
                 <div >
                     <h3>Критерии оценки контрольно-расчетных работ</h3>
 
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_creative_task" @isset($valuation_funds) value="{{$valuation_funds->creative_task}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Критерии оценки контрольно-расчетных работ"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_creative_task" cols="140" rows="10" id="bigWind" placeholder="Критерии оценки контрольно-расчетных работ"> @isset($valuation_funds){{$valuation_funds->creative_task}}@endisset</textarea>
                 </div>
                 <div >
                     <h3>Творческие задания</h3>
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_creative_task" @isset($valuation_funds) value="{{$valuation_funds->grade_creative_task}}" @endisset cols="140" rows="10" id="bigWind" placeholder="Творческие задания"></textarea>
+                    <textarea @unlessrole('admin') readonly @endunlessrole name="valuation_funds_grade_creative_task" cols="140" rows="10" id="bigWind" placeholder="Творческие задания"> @isset($valuation_funds) {{$valuation_funds->grade_creative_task}} @endisset</textarea>
                 </div>
 {{--                <div >--}}
 {{--                    <h3>Устный опрос</h3>--}}
