@@ -18,7 +18,9 @@
         <tr>
             <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
             @role('admin')
-            <li name="leftPartLi"><a name="refUpperHeader" href="#">Edit</a></li>
+            <form method="POST" action="{{route('check_page.post')}}">
+                <li name="leftPartLi"><button type="submit" name="EditFooterBTN" >Edit</button></li>
+            </form>
             @endrole
             <li name="rightPartLi">
                 <div class="select" name="splash">
