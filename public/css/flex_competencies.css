@@ -5,6 +5,20 @@
     height: 100%;
     resize: none;
   }
+
+.competencies_titles {
+
+    display: flex;
+    align-content: center;
+    padding-right: -50px;
+}
+
+.comp_item {
+    max-width: 50px;
+    /*flex: 20px;*/
+    margin-right: 230px;
+}
+
 .text_area_noresize {
   resize: none;
 }

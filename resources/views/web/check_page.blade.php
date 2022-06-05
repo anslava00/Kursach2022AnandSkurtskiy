@@ -255,52 +255,80 @@
 
         <div id="competencies" class="tabcontent">
             <h1>competencies</h1>
-            <div class="competencies">
-                <div>
+            @isset($sub_competencies)
+                @role('admin')
+                   <button name="AddBTN" onclick="return addField('comp', {{$competencies->count()}})">Добавить поле</button>
+                @endrole
+            @endisset
+            <div class="competencies_titles">
+                <div class="comp_item">
                     <h3>Титул</h3>
-                    @isset($competencies)
-                        @foreach($competencies as $competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_title{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Титул">{{$competencie->title}}</textarea>
-                        @endforeach
-                    @endisset
                 </div>
-                <div >
+                <div class="comp_item">
                     <h3>Тип компетенции</h3>
-                    @isset($competencies)
-                        @foreach($competencies as $competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_type_competencies{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Тип компетенции">{{$competencie->type_competencies}}</textarea>
-                        @endforeach
-                    @endisset
                 </div>
-                <div >
+                <div class="comp_item">
                     <h3>Задача</h3>
-                    @isset($competencies)
-                        @foreach($competencies as $competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_task{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Задача">{{$competencie->task}}</textarea>
-                        @endforeach
-                    @endisset    
                 </div>
-                <div >
+                <div class="comp_item">
                     <h3>Источник</h3>
-                    @isset($competencies)
-                        @foreach($competencies as $competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_source{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Источник">{{$competencie->source}}</textarea>
-                        @endforeach
-                    @endisset
                 </div>
-                <div >
+                <div class="comp_item">
                     <h3>Объект</h3>
-                    @isset($competencies)
-                        @foreach($competencies as $competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_object{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Объект">{{$competencie->object}}</textarea>
-                        @endforeach
-                    @endisset
                 </div>
-                <div >
+                <div class="comp_item">
                     <h3>Тип</h3>
+                </div>
+            </div>
+            <div id="parentId2">
+                <div class="competencies">
+                    <div>
+                        @isset($competencies)
+                            @foreach($competencies as $competencie)
+                                <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_title{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Титул">{{$competencie->title}}</textarea>
+                            @endforeach
+                        @endisset
+                    </div>
+                    <div >
+                        @isset($competencies)
+                            @foreach($competencies as $competencie)
+                                <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_type_competencies{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Тип компетенции">{{$competencie->type_competencies}}</textarea>
+                            @endforeach
+                        @endisset
+                    </div>
+                    <div >
+                        @isset($competencies)
+                            @foreach($competencies as $competencie)
+                                <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_task{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Задача">{{$competencie->task}}</textarea>
+                            @endforeach
+                        @endisset
+                    </div>
+                    <div >
+                        @isset($competencies)
+                            @foreach($competencies as $competencie)
+                                <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_source{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Источник">{{$competencie->source}}</textarea>
+                            @endforeach
+                        @endisset
+                    </div>
+                    <div >
+                        @isset($competencies)
+                            @foreach($competencies as $competencie)
+                                <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_object{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Объект">{{$competencie->object}}</textarea>
+                            @endforeach
+                        @endisset
+                    </div>
+                    <div >
+                        @isset($competencies)
+                            @foreach($competencies as $competencie)
+                                <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_type_group{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Тип">{{$competencie->type_group}}</textarea>
+                            @endforeach
+                        @endisset
+                    </div>
                     @isset($competencies)
                         @foreach($competencies as $competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_type_group{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Тип">{{$competencie->type_group}}</textarea>
+                            @role('admin')
+                                <button name="DeleteBTN" onclick="return deleteField(this)">X</button>
+                            @endrole
                         @endforeach
                     @endisset
                 </div>
@@ -309,22 +337,55 @@
 
         <div id="sub_competencies" class="tabcontent">
             <h1>sub_competencies</h1>
-            <div class="competencies">
-                <div>
+            @isset($sub_competencies)
+                @role('admin')
+                    <button name="AddBTN" onclick="return addField('sub_comp', {{$sub_competencies->count()}})">Добавить поле</button>
+                @endrole
+            @endisset
+
+            <div class="competencies_titles">
+                <div class="comp_item">
                     <h3>Титул</h3>
-                    @isset($sub_competencies)
-                        @foreach($sub_competencies as $sub_competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title" cols="100" rows="10" id="bigWind" placeholder="Титул">{{$sub_competencie->title}}</textarea>
-                        @endforeach
-                    @endisset
                 </div>
-                <div >
+                <div class="comp_item">
                     <h3>Описание</h3>
-                    @isset($sub_competencies)
-                        @foreach($sub_competencies as $sub_competencie)
-                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description"  cols="100" rows="10" id="bigWind" placeholder="Описание">{{$sub_competencie->description}}</textarea>
-                        @endforeach
-                    @endisset
+                </div>
+            </div>
+            <div id="parentId">
+                <div class="competencies">
+                    <div>
+                        @isset($sub_competencies)
+                            @foreach($sub_competencies as $sub_competencie)
+                                <div>
+                                    <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title{{$loop->index}}" cols="100" rows="10" id="bigWind" placeholder="Титул">{{$sub_competencie->title}}</textarea>
+                                    <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description{{$loop->index}}"  cols="100" rows="10" id="bigWind" placeholder="Описание">{{$sub_competencie->description}}</textarea>
+                                    <button name="DeleteBTN2" onclick="return deleteField(this)">X</button>
+                                </div>
+                            @endforeach
+                        @endisset
+                    </div>
+{{--                        <div>--}}
+{{--                            @isset($sub_competencies)--}}
+{{--                                @foreach($sub_competencies as $sub_competencie)--}}
+{{--                                    <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title" cols="100" rows="10" id="bigWind" placeholder="Титул">{{$sub_competencie->title}}</textarea>--}}
+{{--                                @endforeach--}}
+{{--                            @endisset--}}
+{{--                        </div>--}}
+{{--                        <div >--}}
+{{--                            @isset($sub_competencies)--}}
+{{--                                @foreach($sub_competencies as $sub_competencie)--}}
+{{--                                    <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description"  cols="100" rows="10" id="bigWind" placeholder="Описание">{{$sub_competencie->description}}</textarea>--}}
+{{--                                @endforeach--}}
+{{--                            @endisset--}}
+{{--                        </div>--}}
+{{--                        @isset($competencies)--}}
+{{--                            @foreach($sub_competencies as $sub_competencie)--}}
+{{--                                @role('admin')--}}
+{{--                                <button name="DeleteBTN" onclick="return deleteField(this)">X</button>--}}
+{{--                                @endrole--}}
+{{--                            @endforeach--}}
+{{--                        @endisset--}}
+
                 </div>
             </div>
         </div>
