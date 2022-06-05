@@ -252,12 +252,14 @@
                 </div>
             </div>
         </div>
-
         <div id="competencies" class="tabcontent">
+
             <h1>competencies</h1>
-            @isset($sub_competencies)
+            @isset($competencies)
                 @role('admin')
-                   <button name="AddBTN" onclick="return addField('comp', {{$competencies->count()}})">Добавить поле</button>
+                    <input hidden name="countCompetenciese" id = "countC" value = "{{$competencies->count()}}">
+                    <input hidden name="countSubCompetenciese" id = "countSubC" value = "{{$sub_competencies->count()}}">
+                   <button type="button" name="AddBTN" onclick="return addField('comp', {{$competencies->count()}})">Добавить поле</button>
                 @endrole
             @endisset
             <div class="competencies_titles">
@@ -327,7 +329,7 @@
                     @isset($competencies)
                         @foreach($competencies as $competencie)
                             @role('admin')
-                                <button name="DeleteBTN" onclick="return deleteField(this)">X</button>
+                                <button type="button" name="DeleteBTN" onclick="return deleteField(this, 'comp')">X</button>
                             @endrole
                         @endforeach
                     @endisset
@@ -339,7 +341,7 @@
             <h1>sub_competencies</h1>
             @isset($sub_competencies)
                 @role('admin')
-                    <button name="AddBTN" onclick="return addField('sub_comp', {{$sub_competencies->count()}})">Добавить поле</button>
+                    <button type="button" name="AddBTN" onclick="return addField('sub_comp', {{$sub_competencies->count()}})">Добавить поле</button>
                 @endrole
             @endisset
 
@@ -352,6 +354,7 @@
                 </div>
             </div>
             <div id="parentId">
+                
                 <div class="competencies">
                     <div>
                         @isset($sub_competencies)
@@ -359,7 +362,7 @@
                                 <div>
                                     <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title{{$loop->index}}" cols="100" rows="10" id="bigWind" placeholder="Титул">{{$sub_competencie->title}}</textarea>
                                     <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description{{$loop->index}}"  cols="100" rows="10" id="bigWind" placeholder="Описание">{{$sub_competencie->description}}</textarea>
-                                    <button name="DeleteBTN2" onclick="return deleteField(this)">X</button>
+                                    <button type="button" name="DeleteBTN2" onclick="return deleteField(this, 'sub_comp')">X</button>
                                 </div>
                             @endforeach
                         @endisset
@@ -381,7 +384,7 @@
 {{--                        @isset($competencies)--}}
 {{--                            @foreach($sub_competencies as $sub_competencie)--}}
 {{--                                @role('admin')--}}
-{{--                                <button name="DeleteBTN" onclick="return deleteField(this)">X</button>--}}
+{{--                                <button type="button" name="DeleteBTN" onclick="return deleteField(this)">X</button>--}}
 {{--                                @endrole--}}
 {{--                            @endforeach--}}
 {{--                        @endisset--}}

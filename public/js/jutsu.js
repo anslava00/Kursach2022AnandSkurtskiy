@@ -17,15 +17,24 @@ function openCity(evt, cityName) {
 
 
 var countOfFields = 1; // Текущее число полей
+var countOfSubFields = 1; // Текущее число полей
 var curFieldNameId = 1; // Уникальное значение для атрибута name
+var curFieldSubNameId = 1; // Уникальное значение для атрибута name
 var maxFieldLimit = 100; // Максимальное число возможных полей
-function deleteField(a) {
+function deleteField(a, menuNamme) {
     // Получаем доступ к ДИВу, содержащему поле
     var contDiv = a.parentNode;
     // Удаляем этот ДИВ из DOM-дерева
     contDiv.parentNode.removeChild(contDiv);
     // Уменьшаем значение текущего числа полей
-    countOfFields--;
+    if (menuName == 'sub_comp')
+    {
+        countOfSubFields--;
+    }
+    else if (menuName == 'comp')
+    {
+        countOfFields--;
+    }
     // Возвращаем false, чтобы не было перехода по сслыке
     return false;
 }
@@ -35,23 +44,24 @@ function addField(menuName, FieldID = null) {
         alert("Число полей достигло своего максимума = " + maxFieldLimit);
         return false;
     }
-    // Увеличиваем текущее значение числа полей
-    countOfFields++;
-    // Увеличиваем ID
-    curFieldNameId++;
-    // Создаем элемент ДИВ
     var div = document.createElement("div");
     if (menuName == 'sub_comp')
     {
+        countOfSubFields++;
+        curFieldSubNameId++;
+        document.getElementById("countSubC").value = FieldID + countOfSubFields - 1;
         if (FieldID != null) {
-            div.innerHTML = '<div class="competencies"><div><textarea class="text_area_noresize" name="sub_competencies_title' + (FieldID + curFieldNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
-                '<div><textarea class="text_area_noresize" name="sub_competencies_description' + (FieldID + curFieldNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
+            div.innerHTML = '<div class="competencies"><div><textarea class="text_area_noresize" name="sub_competencies_title' + (FieldID + curFieldSubNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
+                '<div><textarea class="text_area_noresize" name="sub_competencies_description' + (FieldID + curFieldSubNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
                 '<button name="DeleteBTN" onclick="return deleteField(this)">X</button></div>';
             document.getElementById("parentId").appendChild(div);
         }
     }
     else if (menuName == 'comp')
     {
+        curFieldNameId++;
+        countOfFields++;
+        document.getElementById("countC").value = FieldID + countOfFields - 1;
         if (FieldID != null) {
         div.innerHTML = '<div class="competencies"><textarea class="text_area_noresize" name="competencies_title' + (FieldID + curFieldNameId - 1)+ '"  cols="30" rows="10" id="bigWind" placeholder="Титул"></textarea>' +
             '<textarea class="text_area_noresize" name="competencies_type_competencies' + (FieldID + curFieldNameId - 1)+ '"  cols="30" rows="10" id="bigWind" placeholder="Тип компетенции"></textarea>' +
