@@ -24,8 +24,9 @@
     </ul>
     <ul name="SecondUpperHeader">
                <tr>
-                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина"></li>
-                </tr>
+                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина">
+                </li>                
+            </tr>
     </ul>
 
 
