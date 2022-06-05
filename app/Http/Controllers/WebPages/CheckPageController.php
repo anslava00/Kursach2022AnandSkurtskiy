@@ -145,7 +145,30 @@ class CheckPageController extends Controller
                     foreach($foundCompetencies->subCompetencies as $SubCompetencie){
                         $sub_competencies->push($SubCompetencie);
                     }
-                }
+                }   
+
+                // for ($i = $request->countCompetenciese; $i >= 0; $i--) {
+                //     if (!empty($request['competencies_title'.$i])){
+                //         foreach($competencies as $competencie){
+                //             if ($competencie->title == $request['competencies_title'.$i]);
+                //             $competencie->save();
+                //         }
+                //     }
+                        
+                // }
+
+                // competencies_title
+                // competencies_type_competencies
+                // competencies_task
+                // competencies_source
+                // competencies_object
+                // competencies_type_group
+
+                // sub_competencies_title
+                // sub_competencies_description
+
+                // countSubCompetenciese
+                // countCompetenciese
 
                 // echo $request->competencies_title."<br>";
                 // echo $request->competencies_type_competencies."<br>";
