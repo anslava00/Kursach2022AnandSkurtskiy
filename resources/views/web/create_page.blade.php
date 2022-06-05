@@ -12,7 +12,7 @@
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
-<form name="gg" method="POST" action="{{route('check_page.post')}}">
+<form name="gg" method="POST" action="{{route('create_page.post')}}">
     @csrf
     <ul name="UpperHeader">
         <tr>
