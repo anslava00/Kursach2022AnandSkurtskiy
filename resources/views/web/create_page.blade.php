@@ -8,41 +8,17 @@
     <link rel="stylesheet" href="/css/styles_for_web_pages.css">
     <link rel="stylesheet" href="/css/select_css.css">
     <link rel="stylesheet" href="/css/test_ui.css">
+    <link rel="stylesheet" href="/css/flex_competencies.css">
     <script src="/js/jutsu.js"></script>
 </head>
-<header>
-    <form method="POST", action="">
-        @csrf
-    <ul name="UpperHeader">
-        <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li>
-            <li name="leftPartLi"><button name="createBTN" type="submit">Create</button></li>
-        </tr>
-    </ul>
-    <ul name="SecondUpperHeader">
-        <tr>
-{{--            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="Discipline"></li>--}}
-{{--            <li name="SecondLeftPartLi"><input class="input2" type="text" placeholder="Department"></li>--}}
-        </tr>
-    </ul>
-    </form>
-</header>
 <body>
 <form name="gg" method="POST" action="{{route('check_page.post')}}">
     @csrf
     <ul name="UpperHeader">
         <tr>
             <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
-            <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Edit</button></li>
+            <li name="leftPartLi"><button value='create' type="submit" name="EditFooterBTN" >Create</button></li>
             <li name="rightPartLi">
-                <div class="select" name="splash">
-                    <select name = "chooseRpd">
-                        @foreach($rpds as $rpd)
-                            <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>
-                        @endforeach
-                        <input type="submit" name="EditFooterBTN" value="get">
-                    </select>
-                </div>
             </li>
         </tr>
     </ul>
