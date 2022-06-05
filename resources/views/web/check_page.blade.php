@@ -12,7 +12,6 @@
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
-<header></header>
 <form name="gg" method="POST" action="{{route('check_page.post')}}">
     @csrf
     <ul name="UpperHeader">
@@ -42,19 +41,19 @@
 
 <body>
         <div class="tab">
-            <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">time_for_RPD</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'total_akadem_hours')">total_akadem_hours</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'form_control')">form_control</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'credit_units')">credit_units</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'Departament')">Departament</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'competencies')">competencies</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'sub_competencies')">sub_competencies</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'basic_information')">basic_information</button>
-            <button type="button" class="tablinks" onclick="openCity(event, 'valuation_funds')">valuation_funds</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">Время для РПД</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'total_akadem_hours')">Общее время академических часов</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'form_control')">Форма контроля</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'credit_units')">Зачётные единицы</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'Departament')">Департамент</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'competencies')">Компетенции</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'sub_competencies')">Подкомпетенции</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'basic_information')">Базовая информация</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'valuation_funds')">Фонды оценочных средств</button>
         </div>
 
         <div id="time_for_RPD" class="tabcontent">
-            <h1>time_for_RPD</h1>
+            <h1>Время для РПД</h1>
             <div >
                 <div>
                     <h2>
@@ -120,7 +119,7 @@
         </div>
 
         <div id="total_akadem_hours" class="tabcontent">
-            <h1>total_akadem_hours</h1>
+            <h1>Общее время академических часов</h1>
             <div>
                 <div >
                     <h2>
@@ -161,7 +160,7 @@
         </div>
 
         <div id="form_control" class="tabcontent">
-            <h1>form_control</h1>
+            <h1>Форма контроля</h1>
             <div>
                 <div >
                     <h2>
@@ -202,7 +201,7 @@
         </div>
 
         <div id="credit_units" class="tabcontent">
-            <h1>credit_units</h1>
+            <h1>Зачётные единицы</h1>
             <div>
                 <div >
                     <h3>Эксперты</h3>
@@ -238,7 +237,7 @@
         </div>
 
         <div id="Departament" class="tabcontent">
-            <h1>Departament</h1>
+            <h1>Департамент</h1>
             <div>
                 <div >
                     <h3>Аббревиатура</h3>
@@ -254,7 +253,7 @@
         </div>
         <div id="competencies" class="tabcontent">
 
-            <h1>competencies</h1>
+            <h1>Компетенции</h1>
             @isset($competencies)
                 @role('admin')
                     <input hidden name="countCompetenciese" id = "countC" value = "{{$competencies->count()}}">
@@ -338,7 +337,7 @@
         </div>
 
         <div id="sub_competencies" class="tabcontent">
-            <h1>sub_competencies</h1>
+            <h1>Подкомпетенции</h1>
             @isset($sub_competencies)
                 @role('admin')
                     <button type="button" name="AddBTN" onclick="return addField('sub_comp', {{$sub_competencies->count()}})">Добавить поле</button>
@@ -354,7 +353,7 @@
                 </div>
             </div>
             <div id="parentId">
-                
+
                 <div class="competencies">
                     <div>
                         @isset($sub_competencies)
