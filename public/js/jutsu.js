@@ -49,7 +49,7 @@ function addField(menuName, FieldID = null) {
     {
         countOfSubFields++;
         curFieldSubNameId++;
-        document.getElementById("countSubC").value = FieldID + countOfSubFields - 1;
+        // document.getElementById("countSubC").value = FieldID + countOfSubFields - 1;
         if (FieldID != null) {
             div.innerHTML = '<div class="competencies"><div><textarea class="text_area_noresize" name="sub_competencies_title' + (FieldID + curFieldSubNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
                 '<div><textarea class="text_area_noresize" name="sub_competencies_description' + (FieldID + curFieldSubNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
@@ -61,7 +61,7 @@ function addField(menuName, FieldID = null) {
     {
         curFieldNameId++;
         countOfFields++;
-        document.getElementById("countC").value = FieldID + countOfFields - 1;
+        // document.getElementById("countC").value = FieldID + countOfFields - 1;
         if (FieldID != null) {
         div.innerHTML = '<div class="competencies"><textarea class="text_area_noresize" name="competencies_title' + (FieldID + curFieldNameId - 1)+ '"  cols="30" rows="10" id="bigWind" placeholder="Титул"></textarea>' +
             '<textarea class="text_area_noresize" name="competencies_type_competencies' + (FieldID + curFieldNameId - 1)+ '"  cols="30" rows="10" id="bigWind" placeholder="Тип компетенции"></textarea>' +
