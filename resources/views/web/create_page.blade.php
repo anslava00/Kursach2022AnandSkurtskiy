@@ -12,7 +12,7 @@
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
-<form name="gg" method="POST" action="{{route('check_page.post')}}">
+<form name="gg" method="POST" action="{{route('create_page.post')}}">
     @csrf
     <ul name="UpperHeader">
         <tr>
@@ -23,9 +23,9 @@
         </tr>
     </ul>
     <ul name="SecondUpperHeader">
-        {{--       <tr>--}}
-        {{--            <li name="SecondLeftPartLi"><input @unlessrole('admin') readonly @endunlessrole value="" class="input2" type="text" placeholder="{{$rpds->firstWhere('id', '=', $i)->id}}"></li>--}}
-        {{--        </tr>--}}
+               <tr>
+                    <li name="SecondLeftPartLi" ><input name = 'discipline' @unlessrole('admin') readonly @endunlessrole value="" class="input2" type="text" placeholder="Название дисциплины"></li>
+                </tr>
     </ul>
 
 
