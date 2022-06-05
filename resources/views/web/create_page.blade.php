@@ -12,7 +12,7 @@
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
-<form name="gg" method="POST" action="{{route('check_page.post')}}">
+<form name="gg" method="POST" action="{{route('create_page.post')}}">
     @csrf
     <ul name="UpperHeader">
         <tr>
@@ -24,8 +24,9 @@
     </ul>
     <ul name="SecondUpperHeader">
                <tr>
-                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина"></li>
-                </tr>
+                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина">
+                </li>                
+            </tr>
     </ul>
 
 
