@@ -8,51 +8,49 @@
     <link rel="stylesheet" href="/css/styles_for_web_pages.css">
     <link rel="stylesheet" href="/css/select_css.css">
     <link rel="stylesheet" href="/css/test_ui.css">
+    <link rel="stylesheet" href="/css/flex_competencies.css">
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
 <header></header>
-<form name="gg" method="GET" action="{{route('check_page')}}">
+<form name="gg" method="POST" action="{{route('check_page.post')}}">
     @csrf
     <ul name="UpperHeader">
         <tr>
             <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
             @role('admin')
-            <form method="POST" action="{{route('check_page.post')}}">
-                <li name="leftPartLi"><button type="submit" name="EditFooterBTN" >Edit</button></li>
-            </form>
+                <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Edit</button></li>
             @endrole
             <li name="rightPartLi">
                 <div class="select" name="splash">
                     <select name = "chooseRpd">
-                        @for ($i = 1; $i < 10; $i++)
-                            <option value="{{$rpds->firstWhere('id', '=', $i)->id}}">{{$rpds->firstWhere('id', '=', $i)->abbreviathion}}</option>
-                        @endfor
-                        <input type="submit" value="send">
+                        @foreach($rpds as $rpd)
+                            <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>
+                        @endforeach
+                        <input type="submit" name="EditFooterBTN" value="get">
                     </select>
                 </div>
             </li>
         </tr>
     </ul>
     <ul name="SecondUpperHeader">
-        <tr>
-            <li name="SecondLeftPartLi"><input @unlessrole('admin') readonly @endunlessrole value="" class="input2" type="text" placeholder="{{$rpds->firstWhere('id', '=', $i)->id}}"></li>
-            <li name="SecondLeftPartLi"><input @unlessrole('admin') readonly @endunlessrole value="" class="input2" type="text" placeholder="{{$rpds->firstWhere('id', '=', $i)->abbreviathion}}"></li>
-        </tr>
+{{--       <tr>--}}
+{{--            <li name="SecondLeftPartLi"><input @unlessrole('admin') readonly @endunlessrole value="" class="input2" type="text" placeholder="{{$rpds->firstWhere('id', '=', $i)->id}}"></li>--}}
+{{--        </tr>--}}
     </ul>
-</form>
+
 
 <body>
         <div class="tab">
-            <button class="tablinks" onclick="openCity(event, 'time_for_RPD')">time_for_RPD</button>
-            <button class="tablinks" onclick="openCity(event, 'total_akadem_hours')">total_akadem_hours</button>
-            <button class="tablinks" onclick="openCity(event, 'form_control')">form_control</button>
-            <button class="tablinks" onclick="openCity(event, 'credit_units')">credit_units</button>
-            <button class="tablinks" onclick="openCity(event, 'Departament')">Departament</button>
-            <button class="tablinks" onclick="openCity(event, 'competencies')">competencies</button>
-            <button class="tablinks" onclick="openCity(event, 'sub_competencies')">sub_competencies</button>
-            <button class="tablinks" onclick="openCity(event, 'basic_information')">basic_information</button>
-            <button class="tablinks" onclick="openCity(event, 'valuation_funds')">valuation_funds</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">time_for_RPD</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'total_akadem_hours')">total_akadem_hours</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'form_control')">form_control</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'credit_units')">credit_units</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'Departament')">Departament</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'competencies')">competencies</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'sub_competencies')">sub_competencies</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'basic_information')">basic_information</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'valuation_funds')">valuation_funds</button>
         </div>
 
         <div id="time_for_RPD" class="tabcontent">
@@ -146,7 +144,7 @@
                 </div>
                 <div >
                     <h2>
-                        Контрольные: <input @unlessrole('admin') readonly @endunlessrole name="$total_akadem_hours_kontrol" @isset($total_akadem_hours) value="{{$total_akadem_hours->kontrol}}" @endisset class="input3" type="text" placeholder="Контрольные">
+                        Контрольные: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_kontrol" @isset($total_akadem_hours) value="{{$total_akadem_hours->kontrol}}" @endisset class="input3" type="text" placeholder="Контрольные">
                     </h2>
                 </div>
                 <div >
@@ -154,9 +152,9 @@
                         Часы интер.: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_inter_hour" @isset($total_akadem_hours) value="{{$total_akadem_hours->inter_hour}}" @endisset class="input3" type="text" placeholder="Часы интер.">
                     </h2>
                 </div>
-                <div >
+                <div>
                     <h2>
-                        Пр. подготовки: <input @unlessrole('admin') readonly @endunlessrole name="$total_akadem_hours_pr_podgot" @isset($total_akadem_hours) value="{{$total_akadem_hours->pr_podgot}}" @endisset class="input3" type="text" placeholder="Пр. подготовки">
+                        Пр. подготовки: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_pr_podgot" @isset($total_akadem_hours) value="{{$total_akadem_hours->pr_podgot}}" @endisset class="input3" type="text" placeholder="Пр. подготовки">
                     </h2>
                 </div>
             </div>
@@ -172,7 +170,7 @@
                 </div>
                 <div >
                     <h2>
-                        Зачёт: <input @unlessrole('admin') readonly @endunlessrole name="form_control_zachet" @isset($form_control) value="{{$form_control->zachet}}" class="input3" @endisset type="text" placeholder="Зачёт">
+                        Зачёт: <input @unlessrole('admin') readonly @endunlessrole name="form_control_zachet" @isset($form_control) value="{{$form_control->zachet}}" @endisset class="input3"  type="text" placeholder="Зачёт">
                     </h2>
                 </div>
                 <div >
@@ -182,7 +180,7 @@
                 </div>
                 <div >
                     <h2>
-                        КП: <input @unlessrole('admin') readonly @endunlessrole name"$form_control_KP" @isset($form_control) value="{{$form_control->KP}}" @endisset class="input3" type="text" placeholder="КП">
+                        КП: <input @unlessrole('admin') readonly @endunlessrole name="form_control_KP" @isset($form_control) value="{{$form_control->KP}}" @endisset class="input3" type="text" placeholder="КП">
                     </h2>
                 </div>
                 <div >
@@ -257,52 +255,76 @@
 
         <div id="competencies" class="tabcontent">
             <h1>competencies</h1>
-            <div>
-                <div >
+            <div class="competencies">
+                <div>
                     <h3>Титул</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_title"  cols="140" rows="10" id="bigWind" placeholder="Титул">@isset($competencies) {{$competencies->title}} @endisset</textarea>
+                    @isset($competencies)
+                        @foreach($competencies as $competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_title{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Титул">{{$competencie->title}}</textarea>
+                        @endforeach
+                    @endisset
                 </div>
                 <div >
                     <h3>Тип компетенции</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_type_competencies"  cols="40" rows="3" id="bigWind" placeholder="Тип компетенции">@isset($competencies) {{$competencies->type_competencies}} @endisset</textarea>
+                    @isset($competencies)
+                        @foreach($competencies as $competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_type_competencies{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Тип компетенции">{{$competencie->type_competencies}}</textarea>
+                        @endforeach
+                    @endisset
                 </div>
                 <div >
                     <h3>Задача</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_task"  cols="140" rows="10" id="bigWind" placeholder="Задача">@isset($competencies) {{$competencies->task}} @endisset</textarea>
+                    @isset($competencies)
+                        @foreach($competencies as $competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_task{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Задача">{{$competencie->task}}</textarea>
+                        @endforeach
+                    @endisset    
                 </div>
                 <div >
                     <h3>Источник</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies->source"  cols="40" rows="3" id="bigWind" placeholder="Источник">@isset($competencies) {{$competencies->source}}@endisset</textarea>
+                    @isset($competencies)
+                        @foreach($competencies as $competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_source{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Источник">{{$competencie->source}}</textarea>
+                        @endforeach
+                    @endisset
                 </div>
                 <div >
                     <h3>Объект</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_object"  cols="140" rows="10" id="bigWind" placeholder="Объект">@isset($competencies) {{$competencies->object}}@endisset</textarea>
+                    @isset($competencies)
+                        @foreach($competencies as $competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_object{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Объект">{{$competencie->object}}</textarea>
+                        @endforeach
+                    @endisset
                 </div>
                 <div >
                     <h3>Тип</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="competencies_type_group"  cols="40" rows="3" id="bigWind" placeholder="Тип">@isset($competencies) {{$competencies->type_group}}@endisset</textarea>
+                    @isset($competencies)
+                        @foreach($competencies as $competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="competencies_type_group{{$loop->index}}"  cols="30" rows="10" id="bigWind" placeholder="Тип">{{$competencie->type_group}}</textarea>
+                        @endforeach
+                    @endisset
                 </div>
             </div>
         </div>
 
         <div id="sub_competencies" class="tabcontent">
             <h1>sub_competencies</h1>
-            <div>
-                <div >
+            <div class="competencies">
+                <div>
                     <h3>Титул</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title" cols="140" rows="10" id="bigWind" placeholder="Титул">@isset($sub_competencies) {{$sub_competencies->title}} @endisset </textarea>
+                    @isset($sub_competencies)
+                        @foreach($sub_competencies as $sub_competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_title" cols="100" rows="10" id="bigWind" placeholder="Титул">{{$sub_competencie->title}}</textarea>
+                        @endforeach
+                    @endisset
                 </div>
                 <div >
                     <h3>Описание</h3>
-
-                    <textarea @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description"  cols="140" rows="10" id="bigWind" placeholder="Описание">@isset($sub_competencies) {{$sub_competencies->description}} @endisset</textarea>
+                    @isset($sub_competencies)
+                        @foreach($sub_competencies as $sub_competencie)
+                            <textarea class="text_area_noresize" @unlessrole('admin') readonly @endunlessrole name="sub_competencies_description"  cols="100" rows="10" id="bigWind" placeholder="Описание">{{$sub_competencie->description}}</textarea>
+                        @endforeach
+                    @endisset
                 </div>
             </div>
         </div>
@@ -515,5 +537,6 @@
         </div>
 
     </body>
+    </form>
 </body>
 </html>

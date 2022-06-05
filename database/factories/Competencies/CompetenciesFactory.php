@@ -18,6 +18,10 @@ class CompetenciesFactory extends Factory
     {
         return [
             'title' => $this->faker->word,
+            'type_competencies' => $this->faker->word,
+            'task' => $this->faker->word,
+            'object' => $this->faker->word,
+            'type_group' => $this->faker->word,
         ];
     }
 }
