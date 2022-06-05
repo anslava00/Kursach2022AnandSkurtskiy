@@ -57,6 +57,77 @@ div[name = "splash"]
     width: 400px;
 }
 
+button[name="EditBTN"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="AddBTN"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="AddBTN"]:hover {
+    background-color: #00ae04;
+    color: white;
+}
+
+button[name="DeleteBTN"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    /*padding:0px 15px; !*добавляем отступ*!*/
+    /*height: 150px;*/
+    height: 190px;
+    font-family: arial; /*меняем шрифт*/
+    font-size: 40px;
+    /*margin-top: 50px;*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+}
+
+button[name="DeleteBTN"]:hover {
+    background-color: #d70000;
+    color: white;
+}
+
+button[name="DeleteBTN2"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    /*padding:0px 15px; !*добавляем отступ*!*/
+    /*height: 150px;*/
+    height: auto;
+    font-family: arial; /*меняем шрифт*/
+    font-size: 40px;
+    /*margin-top: 50px;*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+    border-radius: 5px;
+}
+
+button[name="DeleteBTN2"]:hover {
+    background-color: #d70000;
+    color: white;
+}
+
 /*Ниже очень важная штука*/
 
 textarea {
@@ -87,3 +158,4 @@ textarea::-webkit-scrollbar-thumb {
     cursor: pointer;
 
 }
+

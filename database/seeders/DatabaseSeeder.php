@@ -6,7 +6,7 @@ use App\Models\SubCompetencies;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Database\Seeders\basicInformation\BasicInformationSeeder;
-use Database\Seeders\basicInformation\EducationalAndMethodologicalSupportsSeeder;
+use Database\Seeders\basicInformation\educationalAndMethodologicalSupportsSeeder;
 use Database\Seeders\basicInformation\ListOfLiteraturesSeeder;
 use Database\Seeders\basicInformation\MaterialTexProductionSeeder;
 use Database\Seeders\basicInformation\MethodologicalInstructionsSeeder;
@@ -31,25 +31,26 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
         $this->call([
-//             rpdsSeeder::class,
-//             CompetencieSeeder::class,
-//             SubCompetencieSeeder::class,
-//
-//             RpdAndCompetenciesSeeder::class,
+            // rpdsSeeder::class,
+            // CompetencieSeeder::class,
+            // SubCompetencieSeeder::class,
 
-//             BasicInformationSeeder::class,
-//             EducationalAndMethodologicalSupportsSeeder::class,
-//             ListOfLiteraturesSeeder::class,
-//             MaterialTexProductionSeeder::class,
-//             MethodologicalInstructionsSeeder::class,
-//             PracticalAndIndependentPartSeeder::class,
-//             TheoreticalPartSeeder::class,
-//             ValuationFundsSeeder::class,
+            // RpdAndCompetenciesSeeder::class,
 
-//             CreditUnitsSeeder::class,
-//             FormControlsSeeder::class,
-//             TimeForRPDSSeeder::class,
-//             TotalAkademHourSeeder::class,
+            // BasicInformationSeeder::class,
+            // educationalAndMethodologicalSupportsSeeder::class,
+            // ListOfLiteraturesSeeder::class,
+            // MaterialTexProductionSeeder::class,
+            // MethodologicalInstructionsSeeder::class,
+            // PracticalAndIndependentPartSeeder::class,
+            // TheoreticalPartSeeder::class,
+            // ValuationFundsSeeder::class,
+
+            // CreditUnitsSeeder::class,
+            // FormControlsSeeder::class,
+            // TimeForRPDSSeeder::class,
+            // TotalAkademHourSeeder::class,
+            departamentsSeeder::class,
         ]);
     }
 }

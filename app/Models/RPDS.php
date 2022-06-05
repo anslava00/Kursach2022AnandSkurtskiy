@@ -26,7 +26,7 @@ class RPDS extends Model
         return $this->hasOne(FormControl::class);
     }
     public function departaments(){
-        return $this->hasOne(Departaments::class);
+        return $this->hasOne(departaments::class);
     }
     public function BasicInformation(){
         return $this->hasOne(BasicInformation::class);

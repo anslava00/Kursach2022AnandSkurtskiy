@@ -15,13 +15,13 @@ class BasicInformation extends Model
         return $this->hasOne(practicalAndIndependentPart::class);
     }
     public function educAndMethodSupport(){
-        return $this->hasOne(EducationalAndMethodologicalSupport::class);
+        return $this->hasOne(educationalAndMethodologicalSupports::class);
     }
     // public function controlAchievement(){
     //     return $this->hasOne(CreditUnits::class);
     // }
     public function listOfLiterature(){
-        return $this->hasOne(listOfLiterature::class);
+        return $this->hasOne(listOfLiteratures::class);
     }
     public function methodInstructions(){
         return $this->hasOne(methodologicalInstructions::class);
