@@ -26,11 +26,11 @@
     <footer>
         <ul name="LowerFooter">
             <tr>
-                <form method="POST" action="{{route('create_page')}}">
+                <form method="GET" action="{{route('create_page')}}">
                     @csrf
                     <li name="rightPartLi"><button name="CreateFooterBTN" type="submit">Create New RPD</button></li>
                 </form>
-                <form method="POST" action="{{route('edit_page')}}">
+                <form method="GET" action="{{route('edit_page')}}">
                     @csrf
                 <li name="rightPartLi"><button name="EditFooterBTN">Edit RPD</button></li>
                 </form>

@@ -12,8 +12,7 @@ class CreatePageController extends Controller
     public function create_page_Form()
     {
         $user = Auth::user();
-        $role = User::with('roles')->find($user['id'])->roles->pluck('name')->first();
-        return view('web.create_page', ['user' => $user, 'role' => $role]);
+        return view('web.create_page', ['user' => $user]);
     }
 
     public function create_page()
