@@ -39,8 +39,65 @@ Route::get('/test', function(){
 //    echo $rpds->pluck('abbreviathion', 'id');
 //    $rpd = $rpds->firstWhere('id', '=',2)->abbreviathion;
 //    echo $rpd;
-    return view('test_page');
+    $tt = RPDS::find(12);
+
+    $tt->delete();
+    // return view('test_page');
 });
+
+Route::get('/download', function(){
+    $list = RPDS::all();
+    
+    $fp = fopen('csv/file.csv', 'w');
+    fputcsv($fp, [
+        'Название_дисциплины',
+        'Название_департамента',
+        //наименование образовательной программы
+        //очная заочная
+        'курс',
+        'семестр',
+        'лекции',
+        'практические_занятия',
+        'лабораторные_работы',
+        //в том числе с использованием МАО лек. пр. лаб
+        //всего часов аудитовной нагрузки 
+        //в том числе с использованиме мао
+        'самостоятельая_работа',
+        //на подготовку к экзамену
+        'контрольные_работы',
+        'курсовая_работа',
+        'зачет',
+        'экзамен',
+        'цель_дисциплины',
+        'задачи_цисциплины',
+        //здесь жесть с компетенциями
+        //
+        //1часть
+        'лекции',
+    ]);
+    foreach ($list as $one) {
+        fputcsv($fp, [
+            $one->discipline,
+            $one->departaments->title,
+            $one->timeForRPD->course,
+            $one->timeForRPD->semester,
+            $one->timeForRPD->lectures,
+            $one->timeForRPD->practice,
+            $one->timeForRPD->laboratory,
+            $one->timeForRPD->SP,
+            $one->formControl->KR,
+            $one->formControl->KP,
+            $one->formControl->zachet,
+            $one->formControl->examination,
+            $one->BasicInformation->purpose,
+            $one->BasicInformation->task,
+            $one->BasicInformation->theoretical->lectures,
+        ]);
+
+    }
+    return response()->download(public_path('csv/file.csv'));
+});
+
 
 Route::get('/', [AuthController::class, 'redirectMaster'])->name('redirectMaster');
 
