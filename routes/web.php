@@ -28,7 +28,7 @@ use App\Models\Competencies\Competencies;
 //    return redirect(\route('registration'));
 //});
 
-Route::get('/new_profile', [New_ProfileController::class, 'show'])->name('new_profile');
+//Route::get('/new_profile', [New_ProfileController::class, 'show'])->name('new_profile');
 
 
 Route::get('/test', function(){
@@ -106,6 +106,8 @@ Route::get('/download', function(){
 Route::get('/', [AuthController::class, 'redirectMaster'])->name('redirectMaster');
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth');
+Route::get('/admin_page', [ProfileController::class, 'show_Admin_Page'])->name('admin_page');
+
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');

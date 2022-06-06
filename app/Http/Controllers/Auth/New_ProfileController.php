@@ -16,4 +16,12 @@ class New_ProfileController extends Controller
 
         return view('auth.new_profile', ['user' => $user, 'role' => $role]);
     }
+
+//    public function show_Admin_Page(Request $request)
+//    {
+//        $user = Auth::user();
+//        $role = User::with('roles')->find($user['id'])->roles->pluck('name')->first();
+//
+//        return view('web.admin_page', ['user' => $user, 'role' => $role]);
+//    }
 }

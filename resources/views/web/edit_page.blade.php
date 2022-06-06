@@ -16,8 +16,9 @@
     @csrf
     <ul name="UpperHeader">
         <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
-            <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Edit</button></li>
+            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
+            <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Применить редактирование</button></li>
+            <li name="leftPartLi"><button value='download' type="submit" name="EditFooterBTN" >Скачать</button></li>
             <li name="rightPartLi">
                 <div class="select" name="splash">
                     <select name = "chooseRpd">
