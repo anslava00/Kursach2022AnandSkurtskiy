@@ -16,13 +16,14 @@
     <button class="tablinks" onclick="openCity(event, 'Пекин')">Пекин</button>
     <button class="tablinks" onclick="openCity(event, 'Собака')">Собака</button>
 </div>
-
+<input type="file" name="image">
 <div id="Москва" class="tabcontent">
+    
     <h3>Москва</h3>
     <p>Москва это столица России.</p>
     <h1>sub_competencies</h1>
     <button name="AddBTN" onclick="return addField('Moscow')">Добавить поле</button>
-
+    
     <div id="parentId">
         <div class="competencies">
             <div>

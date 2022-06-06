@@ -28,21 +28,18 @@ use App\Models\Competencies\Competencies;
 //});
 
 Route::get('/test', function(){
-//    $rpds = RPDS::all();
-//    foreach($rpds as $rpd){
-//        echo $rpd.'<br>';
-//        echo "all time:<br>";
-//        foreach($rpd->rpdAndCompetencies as $time){
-//            echo $time.'<br>';
-//        }
-//    }
-//    echo $rpds->pluck('abbreviathion', 'id');
-//    $rpd = $rpds->firstWhere('id', '=',2)->abbreviathion;
-//    echo $rpd;
-    $tt = RPDS::find(12);
 
-    $tt->delete();
-    // return view('test_page');
+    return view('test_page');
+});
+Route::post('/test', function(Request $request){
+    if($request->isMethod('post')){
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $file->move(public_path() . '/path','filename.img');
+        }
+     }
+    return view('test_page');
 });
 
 Route::get('/download', function(){
