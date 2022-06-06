@@ -42,12 +42,12 @@
 .input3 {
     display: block;
     margin-top: -35px;
-    margin-left: 300px;
+    margin-left: 500px;
     padding: 8px 10px;
     /*margin-bottom: 10px;*/
     border-radius: 10px;
     border: 1px solid #ccc;
-
+    width: 400px;
     font-family: inherit;
     font-size: 16px;
 }

@@ -1,0 +1,73 @@
+body {
+    background: #9BDDFF;
+    margin: 0;
+}
+
+ul[name="UpperHeader"]{
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0;
+    padding: 20px 20px;
+    background: #2E728F; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    height: 50px; /*задаем высоту*/
+}
+
+li[name="rightPartLi"] {
+    float:right; /*Размещаем список горизонтально для реализации меню*/
+}
+
+li[name="leftPartLi"] {
+    float:left; /*Размещаем список горизонтально для реализации меню*/
+
+}
+
+div[name = "forLi"] {
+    /*padding: 20px 20px;*/
+    margin: 10px 0;
+    font-size: 25px;
+    font-family: arial, serif; /*меняем шрифт*/
+    color: white;
+}
+
+div[name = "forHeader"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial, serif; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    border-right: 1px solid #4f9cee;
+}
+
+a[name="refUpperHeader"] {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    border-right: 1px solid #4f9cee; /*добавляем бордюр справа*/
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+a:hover {
+    background: #247316;/*добавляем эффект при наведении*/
+}
+
+button[name="logoutBTN"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    font-size: 18px;
+    line-height:50px; /*ровняем меню по вертикали*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border: 0;
+}
+
+button[name="logoutBTN"]:hover {
+    background-color: #982323;
+    color: white;
+}

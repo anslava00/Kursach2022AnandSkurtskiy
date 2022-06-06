@@ -11,6 +11,9 @@
         <ul name="UpperHeader">
             <tr>
                 <li name="leftPartLi"><div name = "forLi">РПУД</div></li>
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <li name="leftPartLi"><input type="file" name="image"><button type="submit" >Отправить</button></li>
+                </form>
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
                     <li name="rightPartLi"><button type="submit" name="logoutBTN">logout</button></li>
