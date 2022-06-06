@@ -21,8 +21,10 @@
                 <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Применить редактирование</button></li>
             @endrole
             <li name="leftPartLi"><button value='download' type="submit" name="EditFooterBTN" >Скачать</button></li>
+{{--            <li name="rightPartLi"><div name="forHeader">Дисциплины: </div></li>--}}
             <li name="rightPartLi">
                 <div class="select" name="splash2">
+                    <div name="forHeader">Дисциплины: </div>
                     <select name = "chooseRpd">
                         @foreach($rpds as $rpd)
                             <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>

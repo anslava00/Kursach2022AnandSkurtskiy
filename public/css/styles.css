@@ -1,5 +1,5 @@
 body {
-    background: #9BDDFF ;
+    background: #9BDDFF;
 }
 
 footer {
@@ -23,6 +23,16 @@ ul[name="UpperHeader"]{
      background: #2E728F; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
      height: 50px; /*задаем высоту*/
 }
+
+
+ul[name="UpperHeader2"]{
+    list-style: none; /*убираем маркеры списка*/
+    margin: 0;
+    padding: 10px 10px;
+    background: #2E728F; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    height: 20px; /*задаем высоту*/
+}
+
 ul[name="LowerFooter"]{
     list-style: none; /*убираем маркеры списка*/
     margin: 0; /*убираем отступы*/

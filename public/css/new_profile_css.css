@@ -11,6 +11,7 @@ ul[name="UpperHeader"]{
     height: 50px; /*задаем высоту*/
 }
 
+
 li[name="rightPartLi"] {
     float:right; /*Размещаем список горизонтально для реализации меню*/
 }
