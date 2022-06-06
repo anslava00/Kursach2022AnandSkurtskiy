@@ -1,70 +1,56 @@
-html, body {padding:0; margin:0;}
-ul[name="SecondUpperHeader"]{
+body {
+    background: #9BDDFF;
+    margin: 0;
+}
+
+ul[name="UpperHeader"]{
     list-style: none; /*убираем маркеры списка*/
-    margin: 0; /*убираем отступы*/
-    padding-left: 0; /*убираем отступы*/
-    /*margin-top:25px; !*делаем отступ сверху*!*/
-    background: #2c5485; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    margin: 0;
+    padding: 20px 20px;
+    background: #2E728F; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
     height: 50px; /*задаем высоту*/
 }
 
-.input2 {
-    display: block;
-    margin-top: 10px;
-    margin-left: 20px;
-    padding: 8px 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-
-    font-family: inherit;
-    font-size: 16px;
+li[name="rightPartLi"] {
+    float:right; /*Размещаем список горизонтально для реализации меню*/
 }
 
-li[name="SecondLeftPartLi"] {
+li[name="leftPartLi"] {
     float:left; /*Размещаем список горизонтально для реализации меню*/
+
 }
 
-button[name="createBTN"] {
+div[name = "forLi"] {
+    /*padding: 20px 20px;*/
+    margin: 10px 0;
+    font-size: 25px;
+    font-family: arial, serif; /*меняем шрифт*/
+    color: white;
+}
+
+div[name = "forHeader"] {
+    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial, serif; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    border-right: 1px solid #4f9cee;
+}
+
+a[name="refUpperHeader"] {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
     background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
     color:#fff; /*меняем цвет ссылок*/
     padding:0px 15px; /*добавляем отступ*/
     font-family: arial; /*меняем шрифт*/
-    font-size: 18px;
     line-height:50px; /*ровняем меню по вертикали*/
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 0;
+    display: block;
+    border-right: 1px solid #4f9cee; /*добавляем бордюр справа*/
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
 }
-
-button[name="createBTN"]:hover {
-    background-color: #7ed426;
-    color: white;
-}
-
-button[name="DropDownBTN"] {
-    background: #162c4c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
-    color:#fff; /*меняем цвет ссылок*/
-    padding:0px 15px; /*добавляем отступ*/
-    font-family: arial; /*меняем шрифт*/
-    font-size: 18px;
-    line-height:50px; /*ровняем меню по вертикали*/
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 0;
-    width: 100%;
-    height: 10%;
-}
-
-button[name="DropDownBTN"]:hover {
-    background-color: #7ed426;
-    color: white;
-}
-
-button[name="invisibleBTN"] {
-    visibility: hidden;
-}
-
 a[name="backToProfile"] {
     text-decoration: none; /*убираем подчеркивание текста ссылок*/
     background: #54B5BC; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
@@ -77,13 +63,7 @@ a[name="backToProfile"] {
     -o-transition: all 0.3s 0.01s ease;
     -webkit-transition: all 0.3s 0.01s ease;
 }
-
-a[name="backToProfile"]:hover {
+a:hover {
     background: #247316;/*добавляем эффект при наведении*/
 }
 
-div[name = "splash2"]
-{
-    width: 500px;
-    display: flex;
-}

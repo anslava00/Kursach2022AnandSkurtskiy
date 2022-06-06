@@ -16,10 +16,11 @@
     @csrf
     <ul name="UpperHeader">
         <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
-            <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Edit</button></li>
+            <li name="leftPartLi"><a name="backToProfile" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
+            <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Применить редактирование</button></li>
+            <li name="leftPartLi"><button value='download' type="submit" name="EditFooterBTN" >Скачать</button></li>
             <li name="rightPartLi">
-                <div class="select" name="splash">
+                <div class="select" name="splash2">
                     <select name = "chooseRpd">
                         @foreach($rpds as $rpd)
                             <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>
@@ -30,11 +31,11 @@
             </li>
         </tr>
     </ul>
-    <ul name="SecondUpperHeader">
-               <tr>
-                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина"></li>
-                </tr>
-    </ul>
+{{--    <ul name="SecondUpperHeader">--}}
+{{--               <tr>--}}
+{{--                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина"></li>--}}
+{{--                </tr>--}}
+{{--    </ul>--}}
 
 
         <body>

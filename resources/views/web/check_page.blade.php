@@ -16,12 +16,15 @@
     @csrf
     <ul name="UpperHeader">
         <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
+            <li name="leftPartLi"><a name="backToProfile" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
             @role('admin')
-                <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Edit</button></li>
+                <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Применить редактирование</button></li>
             @endrole
+            <li name="leftPartLi"><button value='download' type="submit" name="EditFooterBTN" >Скачать</button></li>
+{{--            <li name="rightPartLi"><div name="forHeader">Дисциплины: </div></li>--}}
             <li name="rightPartLi">
-                <div class="select" name="splash">
+                <div class="select" name="splash2">
+                    <div name="forHeader">Дисциплины: </div>
                     <select name = "chooseRpd">
                         @foreach($rpds as $rpd)
                             <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>
@@ -32,16 +35,17 @@
             </li>
         </tr>
     </ul>
-    <ul name="SecondUpperHeader">
+{{--    <ul name="SecondUpperHeader">--}}
 {{--       <tr>--}}
 {{--            <li name="SecondLeftPartLi"><input @unlessrole('admin') readonly @endunlessrole value="" class="input2" type="text" placeholder="{{$rpds->firstWhere('id', '=', $i)->id}}"></li>--}}
 {{--        </tr>--}}
-    </ul>
+{{--    </ul>--}}
 
 
 <body>
         <div class="tab">
-            <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">Время для РПД</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'title_page')">Титульник</button>
+            <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">time_for_RPD</button>
             <button type="button" class="tablinks" onclick="openCity(event, 'total_akadem_hours')">Общее время академических часов</button>
             <button type="button" class="tablinks" onclick="openCity(event, 'form_control')">Форма контроля</button>
             <button type="button" class="tablinks" onclick="openCity(event, 'credit_units')">Зачётные единицы</button>
@@ -52,8 +56,74 @@
             <button type="button" class="tablinks" onclick="openCity(event, 'valuation_funds')">Фонды оценочных средств</button>
         </div>
 
+        <div id="title_page" class="tabcontent">
+            <h1>Титульник</h1>
+            <div >
+                <div >
+                    <h2>
+                        Семестр: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_semester" @isset($time_for_RPD) value="{{$time_for_RPD->semester}}" @endisset class="input3" type="text" placeholder="Семестр">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Курс: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_course" @isset($time_for_RPD) value="{{$time_for_RPD->course}}" @endisset class="input3" type="text" placeholder="Курс (автоматически/ или указать)">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Практические занятия: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_practice" @isset($time_for_RPD) value="{{$time_for_RPD->practice}}" @endisset class="input3" type="text"  placeholder="Не предусмотрены/ указать время (часы)">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Лабораторные работы: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_laboratory" @isset($time_for_RPD) value="{{$time_for_RPD->laboratory}}" @endisset class="input3" type="text" placeholder="Лабораторные работы (часы)">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Часы аудиторной нагрузки: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($total_akadem_hours) value="{{$total_akadem_hours->experts}}" @endisset class="input3" type="text" placeholder="(часы)">
+                    </h2>
+                </div>
+                <div >
+                    <h2>
+                        Самостоятельная работа: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($time_for_RPD) value="{{$time_for_RPD->SP}}" @endisset class="input3" type="text" placeholder="Часы выделенные на самостоятельную работу">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Время на подготовку к экзамену: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($total_akadem_hours) value="{{$total_akadem_hours->kontrol}}" @endisset class="input3" type="text" placeholder="(часы)">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Контрольные работы (количество): <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($total_akadem_hours) value="{{$total_akadem_hours->control_work}}" @endisset class="input3" type="text" placeholder="(часы)">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Курсовая работа <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($form_control) value="{{$form_control->KR}}" @endisset class="input3" type="text" placeholder="(не предусмотрен/ указать семестр)">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Курсовой проект: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($form_control) value="{{$form_control->KP}}" @endisset class="input3" type="text" placeholder="(не предусмотрен/ указать семестр)">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Зачёт: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($form_control) value="{{$form_control->zachet}}" @endisset class="input3" type="text" placeholder=" (не предусмотрен/ указать семестр)">
+                    </h2>
+                </div>
+                <div>
+                    <h2>
+                        Экзамен: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($form_control) value="{{$form_control->examination}}" @endisset class="input3" type="text" placeholder=" (не предусмотрен/ указать семестр)">
+                    </h2>
+                </div>
+            </div>
+        </div>
+
         <div id="time_for_RPD" class="tabcontent">
-            <h1>Время для РПД</h1>
+            <h1>time_for_RPD</h1>
             <div >
                 <div>
                     <h2>

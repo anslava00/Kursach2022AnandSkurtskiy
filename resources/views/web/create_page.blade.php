@@ -16,21 +16,37 @@
     @csrf
     <ul name="UpperHeader">
         <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/">User: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
-            <li name="leftPartLi"><button value='create' type="submit" name="EditFooterBTN" >Create</button></li>
+            <li name="leftPartLi"><a name="backToProfile" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
+            <li name="leftPartLi"><button value='create' type="submit" name="EditFooterBTN" >Создать новый РПУД</button></li>
+            <li name="leftPartLi"><button value='download' type="submit" name="EditFooterBTN" >Скачать</button></li>
             <li name="rightPartLi">
+                <div class="select" name="splash2">
+                    <div name="forHeader">Дисциплины: </div>
+                    <select name = "chooseRpd">
+                        <input type="submit" name="EditFooterBTN" value="get">
+                    </select>
+                </div>
             </li>
         </tr>
     </ul>
-    <ul name="SecondUpperHeader">
-               <tr>
-                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина">
-                </li>                
-            </tr>
-    </ul>
-
-
+{{--    <ul name="SecondUpperHeader">--}}
+{{--               <tr>--}}
+{{--                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина">--}}
+{{--                </li>--}}
+{{--            </tr>--}}
+{{--    </ul>--}}
     <body>
+    <ul name="UpperHeader2">
+        <tr>
+            <li name="leftPartLi">
+                <form method="POST" action="" enctype="multipart/form-data">\
+                    @csrf
+                    <input type="file" name="image">
+                    <button type="submit" >Отправить</button>
+                </form>
+            </li>
+        </tr>
+    </ul>
     <div class="tab">
         <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">Время для РПД</button>
         <button type="button" class="tablinks" onclick="openCity(event, 'total_akadem_hours')">Общее время академических часов</button>

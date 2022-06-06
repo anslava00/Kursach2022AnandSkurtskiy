@@ -1,6 +1,6 @@
 .tab {
     overflow: hidden;
-    margin-top: 15px;
+    margin-top: 5px;
     border: 1px solid #1a1440;
     background-color: #3157c8;
 }
@@ -35,19 +35,19 @@
     display: none;
     padding: 6px 12px;
     border: 1px solid #4CAF50;
-    background: #3395c8;
+    background: #77b9f3;
     border-top: none;
 }
 
 .input3 {
     display: block;
     margin-top: -35px;
-    margin-left: 300px;
+    margin-left: 500px;
     padding: 8px 10px;
     /*margin-bottom: 10px;*/
     border-radius: 10px;
     border: 1px solid #ccc;
-
+    width: 400px;
     font-family: inherit;
     font-size: 16px;
 }

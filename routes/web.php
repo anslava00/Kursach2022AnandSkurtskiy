@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Auth\New_ProfileController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\WebPages\CheckPageController;
@@ -27,6 +28,9 @@ use App\Models\Competencies\Competencies;
 //    return redirect(\route('registration'));
 //});
 
+//Route::get('/new_profile', [New_ProfileController::class, 'show'])->name('new_profile');
+
+
 Route::get('/test', function(){
 //    $rpds = RPDS::all();
 //    foreach($rpds as $rpd){
@@ -47,7 +51,7 @@ Route::get('/test', function(){
 
 Route::get('/download', function(){
     $list = RPDS::all();
-    
+
     $fp = fopen('csv/file.csv', 'w');
     fputcsv($fp, [
         'Название_дисциплины',
@@ -60,7 +64,7 @@ Route::get('/download', function(){
         'практические_занятия',
         'лабораторные_работы',
         //в том числе с использованием МАО лек. пр. лаб
-        //всего часов аудитовной нагрузки 
+        //всего часов аудитовной нагрузки
         //в том числе с использованиме мао
         'самостоятельая_работа',
         //на подготовку к экзамену
@@ -102,6 +106,8 @@ Route::get('/download', function(){
 Route::get('/', [AuthController::class, 'redirectMaster'])->name('redirectMaster');
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth');
+Route::get('/admin_page', [ProfileController::class, 'show_Admin_Page'])->name('admin_page');
+
 
 Route::get('/login', [AuthController::class, 'loginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
