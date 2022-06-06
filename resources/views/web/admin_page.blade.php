@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Профиль</title>
-    <link rel="stylesheet" href="/css/new_profile_css.css">
+    <link rel="stylesheet" href="/css/admin_css.css">
 
 </head>
 <header>
     <ul name="UpperHeader">
         <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/"> <<< Назад в профиль: {{$user->name}}</a></li>
+            <li name="leftPartLi"><a name="backToProfile" href="/profile/"> <<< Назад в профиль: {{$user->name}}</a></li>
             <li name="rightPartLi"><a name="refUpperHeader" href="#">Пользователь: {{$user->name}}</a></li>
             <li name="rightPartLi"><div name="forHeader">Роль: {{$role}}</div></li>
         </tr>

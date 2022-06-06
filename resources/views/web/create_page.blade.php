@@ -16,18 +16,18 @@
     @csrf
     <ul name="UpperHeader">
         <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
+            <li name="leftPartLi"><a name="backToProfile" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
             <li name="leftPartLi"><button value='create' type="submit" name="EditFooterBTN" >Создать новый РПУД</button></li>
             <li name="rightPartLi">
             </li>
         </tr>
     </ul>
-    <ul name="SecondUpperHeader">
-               <tr>
-                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина">
-                </li>
-            </tr>
-    </ul>
+{{--    <ul name="SecondUpperHeader">--}}
+{{--               <tr>--}}
+{{--                    <li name="SecondLeftPartLi"><input value="" class="input2" type="text" placeholder="Дисциплина">--}}
+{{--                </li>--}}
+{{--            </tr>--}}
+{{--    </ul>--}}
 
 
     <body>

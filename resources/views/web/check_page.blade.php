@@ -16,13 +16,13 @@
     @csrf
     <ul name="UpperHeader">
         <tr>
-            <li name="leftPartLi"><a name="refUpperHeader" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
+            <li name="leftPartLi"><a name="backToProfile" href="/profile/"><<< Назад в профиль: {{$user->name}}</a></li> {{--Хз стоит ли сюда вставлять кнопку--}}
             @role('admin')
                 <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Применить редактирование</button></li>
             @endrole
             <li name="leftPartLi"><button value='download' type="submit" name="EditFooterBTN" >Скачать</button></li>
             <li name="rightPartLi">
-                <div class="select" name="splash">
+                <div class="select" name="splash2">
                     <select name = "chooseRpd">
                         @foreach($rpds as $rpd)
                             <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>
@@ -33,11 +33,11 @@
             </li>
         </tr>
     </ul>
-    <ul name="SecondUpperHeader">
+{{--    <ul name="SecondUpperHeader">--}}
 {{--       <tr>--}}
 {{--            <li name="SecondLeftPartLi"><input @unlessrole('admin') readonly @endunlessrole value="" class="input2" type="text" placeholder="{{$rpds->firstWhere('id', '=', $i)->id}}"></li>--}}
 {{--        </tr>--}}
-    </ul>
+{{--    </ul>--}}
 
 
 <body>

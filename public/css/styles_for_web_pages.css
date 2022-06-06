@@ -64,3 +64,26 @@ button[name="DropDownBTN"]:hover {
 button[name="invisibleBTN"] {
     visibility: hidden;
 }
+
+a[name="backToProfile"] {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background: #54B5BC; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+
+a[name="backToProfile"]:hover {
+    background: #247316;/*добавляем эффект при наведении*/
+}
+
+div[name = "splash2"]
+{
+    width: 400px;
+    display: flex;
+}
