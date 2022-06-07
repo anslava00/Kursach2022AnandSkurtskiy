@@ -12,7 +12,7 @@
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
-<form name="gg" method="POST" action="{{route('create_page.post')}}">
+<form name="gg" method="POST" action="{{route('create_page.post')}}" enctype="multipart/form-data">
     @csrf
     <ul name="UpperHeader">
         <tr>
@@ -39,7 +39,7 @@
     <ul name="UpperHeader2">
         <tr>
             <li name="leftPartLi">
-                <form method="POST" action="" enctype="multipart/form-data">\
+                <form method="post" action="" enctype="multipart/form-data">
                     @csrf
                     <input type="file" name="image">
                     <button type="submit" >Отправить</button>

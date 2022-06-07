@@ -16,18 +16,18 @@ return new class extends Migration
         Schema::create('time_for_r_p_d_s', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('course')->unsigned();
-            $table->integer('semester')->unsigned();
-            $table->integer('c_u')->unsigned();
-            $table->integer('lectures')->unsigned();
-            $table->integer('laboratory')->unsigned();
-            $table->integer('laboratory_inter')->unsigned();
-            $table->integer('practice')->unsigned();
-            $table->integer('practice_inter')->unsigned();
-            $table->integer('KSP')->unsigned();
-            $table->integer('OK')->unsigned();
-            $table->integer('SP')->unsigned();
-            $table->integer('control')->unsigned();
+            $table->string('course')->unsigned();
+            $table->string('semester')->unsigned();
+            $table->string('c_u')->unsigned();
+            $table->string('lectures')->unsigned();
+            $table->string('laboratory')->unsigned();
+            $table->string('laboratory_inter')->unsigned();
+            $table->string('practice')->unsigned();
+            $table->string('practice_inter')->unsigned();
+            $table->string('KSP')->unsigned();
+            $table->string('OK')->unsigned();
+            $table->string('SP')->unsigned();
+            $table->string('control')->unsigned();
             
             $table->foreignId('r_p_d_s_id')->constrained('r_p_d_s');
             $table->timestamps();

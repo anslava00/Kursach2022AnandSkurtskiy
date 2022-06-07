@@ -50,7 +50,7 @@ class DatabaseSeeder extends Seeder
             // FormControlsSeeder::class,
             // TimeForRPDSSeeder::class,
             // TotalAkademHourSeeder::class,
-            departamentsSeeder::class,
+            // departamentsSeeder::class,
         ]);
     }
 }

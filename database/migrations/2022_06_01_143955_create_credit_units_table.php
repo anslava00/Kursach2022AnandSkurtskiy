@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('credit_units', function (Blueprint $table) {
             $table->id();
-            $table->integer('experts')->unsigned();
-            $table->integer('fackts')->unsigned();
-            $table->integer('hour_in_c_u')->unsigned();
+            $table->string('experts')->unsigned();
+            $table->string('fackts')->unsigned();
+            $table->string('hour_in_c_u')->unsigned();
 
             $table->foreignId('r_p_d_s_id')->constrained('r_p_d_s')->cascadeOnDelete();
             $table->timestamps();
