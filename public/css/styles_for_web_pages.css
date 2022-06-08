@@ -4,7 +4,7 @@ ul[name="SecondUpperHeader"]{
     margin: 0; /*убираем отступы*/
     padding-left: 0; /*убираем отступы*/
     /*margin-top:25px; !*делаем отступ сверху*!*/
-    background: #2c5485; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
+    background: #082747; /*добавляем фон всему меню (заменив этот параметр, вы поменяете цвет всего меню)*/
     height: 50px; /*задаем высоту*/
 }
 
@@ -84,6 +84,6 @@ a[name="backToProfile"]:hover {
 
 div[name = "splash2"]
 {
-    width: 500px;
+    width: 700px;
     display: flex;
 }

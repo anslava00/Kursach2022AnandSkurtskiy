@@ -43,10 +43,10 @@ Route::get('/test', function(){
 //    echo $rpds->pluck('abbreviathion', 'id');
 //    $rpd = $rpds->firstWhere('id', '=',2)->abbreviathion;
 //    echo $rpd;
-    $tt = RPDS::find(12);
-
-    $tt->delete();
-    // return view('test_page');
+//    $tt = RPDS::find(12);
+//
+//    $tt->delete();
+     return view('test_page');
 });
 
 Route::get('/download', function(){

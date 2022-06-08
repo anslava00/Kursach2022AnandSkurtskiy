@@ -15,13 +15,13 @@ return new class extends Migration
     {
         Schema::create('total_akadem_hours', function (Blueprint $table) {
             $table->id();
-            $table->integer('experts')->unsigned();
-            $table->integer('to_plan')->unsigned();
-            $table->integer('control_work')->unsigned();
-            $table->integer('SR')->unsigned();
-            $table->integer('kontrol')->unsigned();
-            $table->integer('inter_hour')->unsigned();
-            $table->integer('pr_podgot')->unsigned();
+            $table->string('experts')->unsigned();
+            $table->string('to_plan')->unsigned();
+            $table->string('control_work')->unsigned();
+            $table->string('SR')->unsigned();
+            $table->string('kontrol')->unsigned();
+            $table->string('inter_hour')->unsigned();
+            $table->string('pr_podgot')->unsigned();
 
             $table->foreignId('r_p_d_s_id')->constrained('r_p_d_s')->cascadeOnDelete();
             $table->timestamps();

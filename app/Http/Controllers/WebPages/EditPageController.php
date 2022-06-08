@@ -30,44 +30,44 @@ class EditPageController extends Controller
         switch($request->EditFooterBTN){
             case 'edit':
                 $time_for_RPD = $userRpd->timeForRPD;
-                $time_for_RPD->course = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_course);
-                $time_for_RPD->semester = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_semester);
-                $time_for_RPD->c_u = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_c_u);
-                $time_for_RPD->lectures = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_lectures);
-                $time_for_RPD->laboratory = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_laboratory);
-                $time_for_RPD->laboratory_inter = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_laboratory_inter);
-                $time_for_RPD->practice = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_practice);
-                $time_for_RPD->practice_inter = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_practice_inter);
-                $time_for_RPD->KSP = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_KSP);
-                $time_for_RPD->OK = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_OK);
-                $time_for_RPD->SP = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_SP);
-                $time_for_RPD->control = IntegerSanitizer::sanitizeInt( $request->time_for_RPD_control);
+                $time_for_RPD->course = IntegerSanitizer::sanitizeString( $request->time_for_RPD_course);
+                $time_for_RPD->semester = IntegerSanitizer::sanitizeString( $request->time_for_RPD_semester);
+                $time_for_RPD->c_u = IntegerSanitizer::sanitizeString( $request->time_for_RPD_c_u);
+                $time_for_RPD->lectures = IntegerSanitizer::sanitizeString( $request->time_for_RPD_lectures);
+                $time_for_RPD->laboratory = IntegerSanitizer::sanitizeString( $request->time_for_RPD_laboratory);
+                $time_for_RPD->laboratory_inter = IntegerSanitizer::sanitizeString( $request->time_for_RPD_laboratory_inter);
+                $time_for_RPD->practice = IntegerSanitizer::sanitizeString( $request->time_for_RPD_practice);
+                $time_for_RPD->practice_inter = IntegerSanitizer::sanitizeString( $request->time_for_RPD_practice_inter);
+                $time_for_RPD->KSP = IntegerSanitizer::sanitizeString( $request->time_for_RPD_KSP);
+                $time_for_RPD->OK = IntegerSanitizer::sanitizeString( $request->time_for_RPD_OK);
+                $time_for_RPD->SP = IntegerSanitizer::sanitizeString( $request->time_for_RPD_SP);
+                $time_for_RPD->control = IntegerSanitizer::sanitizeString( $request->time_for_RPD_control);
                 $time_for_RPD->save();
 
                 $total_akadem_hours = $userRpd->totalAkademHours;
-                $total_akadem_hours->experts = IntegerSanitizer::sanitizeInt( $request->total_akadem_hours_experts);
-                $total_akadem_hours->to_plan = IntegerSanitizer::sanitizeInt( $request->total_akadem_hours_to_plan);
-                $total_akadem_hours->control_work = IntegerSanitizer::sanitizeInt( $request->total_akadem_hours_control_work);
-                $total_akadem_hours->SR = IntegerSanitizer::sanitizeInt( $request->total_akadem_hours_SR);
-                $total_akadem_hours->kontrol = IntegerSanitizer::sanitizeInt( $request->total_akadem_hours_kontrol);
-                $total_akadem_hours->inter_hour = IntegerSanitizer::sanitizeInt( $request->total_akadem_hours_inter_hour);
-                $total_akadem_hours->pr_podgot = IntegerSanitizer::sanitizeInt( $request->total_akadem_hours_pr_podgot);
+                $total_akadem_hours->experts = IntegerSanitizer::sanitizeString( $request->total_akadem_hours_experts);
+                $total_akadem_hours->to_plan = IntegerSanitizer::sanitizeString( $request->total_akadem_hours_to_plan);
+                $total_akadem_hours->control_work = IntegerSanitizer::sanitizeString( $request->total_akadem_hours_control_work);
+                $total_akadem_hours->SR = IntegerSanitizer::sanitizeString( $request->total_akadem_hours_SR);
+                $total_akadem_hours->kontrol = IntegerSanitizer::sanitizeString( $request->total_akadem_hours_kontrol);
+                $total_akadem_hours->inter_hour = IntegerSanitizer::sanitizeString( $request->total_akadem_hours_inter_hour);
+                $total_akadem_hours->pr_podgot = IntegerSanitizer::sanitizeString( $request->total_akadem_hours_pr_podgot);
                 $total_akadem_hours->save();
 
                 $form_control = $userRpd->formControl;
-                $form_control->examination = IntegerSanitizer::sanitizeInt( $request->form_control_examination);
-                $form_control->zachet = IntegerSanitizer::sanitizeInt( $request->form_control_zachet);
-                $form_control->zachet_with_grade = IntegerSanitizer::sanitizeInt( $request->form_control_zachet_with_grade);
-                $form_control->KP = IntegerSanitizer::sanitizeInt( $request->form_control_KP);
-                $form_control->KR = IntegerSanitizer::sanitizeInt( $request->form_control_KR);
-                $form_control->control = IntegerSanitizer::sanitizeInt( $request->form_control_control);
-                $form_control->RGR = IntegerSanitizer::sanitizeInt( $request->form_control_RGR);
+                $form_control->examination = IntegerSanitizer::sanitizeString( $request->form_control_examination);
+                $form_control->zachet = IntegerSanitizer::sanitizeString( $request->form_control_zachet);
+                $form_control->zachet_with_grade = IntegerSanitizer::sanitizeString( $request->form_control_zachet_with_grade);
+                $form_control->KP = IntegerSanitizer::sanitizeString( $request->form_control_KP);
+                $form_control->KR = IntegerSanitizer::sanitizeString( $request->form_control_KR);
+                $form_control->control = IntegerSanitizer::sanitizeString( $request->form_control_control);
+                $form_control->RGR = IntegerSanitizer::sanitizeString( $request->form_control_RGR);
                 $form_control->save();
 
                 $credit_units = $userRpd->creditUnits;
-                $credit_units->experts = IntegerSanitizer::sanitizeInt( $request->credit_units_experts);
-                $credit_units->fackts = IntegerSanitizer::sanitizeInt( $request->credit_units_fackts);
-                $credit_units->hour_in_c_u = IntegerSanitizer::sanitizeInt( $request->credit_units_hour_in_c_u);
+                $credit_units->experts = IntegerSanitizer::sanitizeString( $request->credit_units_experts);
+                $credit_units->fackts = IntegerSanitizer::sanitizeString( $request->credit_units_fackts);
+                $credit_units->hour_in_c_u = IntegerSanitizer::sanitizeString( $request->credit_units_hour_in_c_u);
                 $credit_units->save();
 
                 $departament = $userRpd->departaments;
@@ -201,6 +201,80 @@ class EditPageController extends Controller
                         $sub_competencies->push($SubCompetencie);
                     }
                 }
+            break;
+            case 'download':
+                $time_for_RPD = $userRpd->timeForRPD;
+                $total_akadem_hours = $userRpd->totalAkademHours;
+                $form_control = $userRpd->formControl;
+                $credit_units = $userRpd->creditUnits;
+                $departament = $userRpd->departaments;
+
+                $basic_information = $userRpd->BasicInformation;
+
+                $theoretical_parts = $basic_information->theoretical;
+                $practical_and_independent_parts = $basic_information->practical;
+                $educational_and_methodological_supports = $basic_information->educAndMethodSupport;
+                $list_of_literatures = $basic_information->listOfLiterature;
+                $methodological_instructions = $basic_information->methodInstructions;
+                $material_tex_productions = $basic_information->materialProduction;
+                $valuation_funds = $basic_information->valuationFunds;
+                $competencies = collect();
+                $sub_competencies = collect();
+                foreach($userRpd->rpdAndCompetencies as $relation){
+                    $foundCompetencies = Competencies::find($relation->competencies_id);
+                    $competencies->push($foundCompetencies);
+                    foreach($foundCompetencies->subCompetencies as $SubCompetencie){
+                        $sub_competencies->push($SubCompetencie);
+                    }
+                }
+                $fp = fopen('csv/rpd.csv', 'w');
+                fputcsv($fp, [
+                    'Название_дисциплины',
+                    'Название_департамента',
+                    'курс',
+                    'семестр',
+                    'лекции',
+                    'практические_занятия',
+                    'лабораторные_работы',
+                    'всего_часов_аудиторной',
+                    'МАО',
+                    'самостоятельая_работа',
+                    'на_подготовку_к_экзамену',
+                    'контрольные_работы',
+                    'курсовая_работа',
+                    'зачет',
+                    'экзамен',
+                    'цель_дисциплины',
+                    'задачи_цисциплины',
+                    //здесь жесть с компетенциями
+                    //
+                    //1часть
+                    'лекции',
+                ]);
+                foreach ($rpds as $one) {
+                    fputcsv($fp, [
+                        $one->discipline,
+                        $one->departaments->title,
+                        $one->timeForRPD->course,
+                        $one->timeForRPD->semester,
+                        $one->timeForRPD->lectures,
+                        $one->timeForRPD->practice,
+                        $one->timeForRPD->laboratory,
+                        $one->totalAkademHours->to_plan,
+                        $one->totalAkademHours->inter_hour,
+                        $one->totalAkademHours->SR,
+                        $one->totalAkademHours->pr_podgot,
+                        $one->formControl->KR,
+                        $one->formControl->KP,
+                        $one->formControl->zachet,
+                        $one->formControl->examination,
+                        $one->BasicInformation->purpose,
+                        $one->BasicInformation->task,
+                        $one->BasicInformation->theoretical->lectures,
+                    ]);
+
+                }
+                return response()->download(public_path('csv/file.csv'));
             break;
         }
         return view('web.edit_page', [
