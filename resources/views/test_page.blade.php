@@ -6,7 +6,9 @@
     <title>Вход</title>
     <link rel="stylesheet" href="/css/test_ui.css">
     <link rel="stylesheet" href="/css/flex_competencies.css">
+    <link rel="stylesheet" href="/css/search_css.css">
     <script src="/js/jutsu.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -134,9 +136,105 @@
 <div id="Пекин" class="tabcontent">
     <h3>Пекин</h3>
     <p>Пекин это столица Китая.</p>
+
+{{--    <select>--}}
+{{--        <input list="uu">--}}
+{{--        <option value="asd"></option>--}}
+{{--        <option value="ghj"></option>--}}
+{{--        <option value="ooo"></option>--}}
+{{--    </select>--}}
+
+{{--    <select class="js-example-basic-single">--}}
+{{--        <option>Иван</option>--}}
+{{--        <option>Андрей</option>--}}
+{{--    </select>--}}
+{{--    <input list="my-list">--}}
+{{--    <datalist id="my-list">--}}
+{{--        <option value="Абакан">--}}
+{{--        <option value="Азов">--}}
+{{--        <option value="Александров">--}}
+{{--        <option value="Алексин">--}}
+{{--        <option value="Альметьевск">--}}
+{{--        <option value="Братск">--}}
+{{--        <option value="Брянск">--}}
+{{--        <option value="Бугульма">--}}
+{{--        <option value="Буденновск">--}}
+{{--        <option value="Бузулук">--}}
+{{--        <option value="Магадан">--}}
+{{--        <option value="Магнитогорск">--}}
+{{--        <option value="Майкоп">--}}
+{{--        <option value="Махачкала">--}}
+{{--        <option value="Междуреченск">--}}
+{{--        <option value="Абакан">--}}
+{{--        <option value="Азов">--}}
+{{--        <option value="Александров">--}}
+{{--        <option value="Алексин">--}}
+{{--        <option value="Альметьевск">--}}
+{{--        <option value="Братск">--}}
+{{--        <option value="Брянск">--}}
+{{--        <option value="Бугульма">--}}
+{{--        <option value="Буденновск">--}}
+{{--        <option value="Бузулук">--}}
+{{--        <option value="Магадан">--}}
+{{--        <option value="Магнитогорск">--}}
+{{--        <option value="Майкоп">--}}
+{{--        <option value="Махачкала">--}}
+{{--        <option value="Междуреченск">--}}
+{{--        <option value="Абакан">--}}
+{{--        <option value="Азов">--}}
+{{--        <option value="Александров">--}}
+{{--        <option value="Алексин">--}}
+{{--        <option value="Альметьевск">--}}
+{{--        <option value="Братск">--}}
+{{--        <option value="Брянск">--}}
+{{--        <option value="Бугульма">--}}
+{{--        <option value="Буденновск">--}}
+{{--        <option value="Бузулук">--}}
+{{--        <option value="Магадан">--}}
+{{--        <option value="Магнитогорск">--}}
+{{--        <option value="Майкоп">--}}
+{{--        <option value="Махачкала">--}}
+{{--        <option value="Междуреченск">--}}
+{{--    </datalist>--}}
+
+
+{{--    <form action="http://" name="f">--}}
+{{--        <select name="name_ob">--}}
+{{--            <option value="214">Nissan</option>--}}
+{{--            <option value="215">Toyota</option>--}}
+{{--            <option value="40">Новооскольский филиал</option>--}}
+{{--            <option value="42">НоваяФирма</option>--}}
+{{--            <option value="92">Агрохолдинг какой-то</option>--}}
+{{--                    <option value="asd">Hello</option>--}}
+{{--                    <option value="ghj">My</option>--}}
+{{--                    <option value="ooo">Name</option>--}}
+{{--            <option value="93">Агрохолдинг другой</option>--}}
+{{--            <option><input type="text" name="opt"></option>--}}
+{{--        </select>--}}
+{{--    </form>--}}
+        <select id="mySelect">
+            <option value="JS" selected="selected">JavaScript</option>
+            <option value="Java">Java</option>
+            <option value="C#">C#</option>
+            <option value="C++">C++</option>
+        </select>
+        <input type="text" id="search" name="search_field" placeholder="поиск" onclick="select_Finder()">
+    <button type="button" id="gg" onclick="select_Finder()">push</button>
 </div>
-
-
+{{--<script>--}}
+{{--    var f = document.forms["f"],--}}
+{{--    s = f["name_ob"], o = s.querySelectorAll("option"),--}}
+{{--    inp = f["opt"],--}}
+{{--    reg;--}}
+{{--    inp.oninput = function() {--}}
+{{--        reg = new RegExp(this.value, "ig");  //если искать только в начале  "^" + this.value, "ig"--}}
+{{--        s.options.length = 0;--}}
+{{--        for (var i=0; i<o.length; i++)  {--}}
+{{--            reg.test(o[i].text) && s.options.add(o[i]);--}}
+{{--            reg.lastIndex = 0;--}}
+{{--        }--}}
+{{--    };--}}
+{{--</script>--}}
 </body>
 </html>
 

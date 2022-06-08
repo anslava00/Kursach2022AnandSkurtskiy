@@ -76,3 +76,37 @@ function addField(menuName, FieldID = null) {
     // Возвращаем false, чтобы не было перехода по сслыке
     return false;
 }
+
+function change_input_width(inp)
+{
+    inp.onclick = function ()
+    {
+        // compStyle.width = 200 + 'px';
+        inp.style.width = 200 + 'px';
+    }
+    inp.onblur = function ()
+    {
+        // compStyle.width = 70 + 'px';
+        inp.style.width = 70 + 'px';
+    }
+
+
+}
+
+function select_Finder() {
+
+    var sel = document.getElementById('discipline_selector'),
+        opt = sel.querySelectorAll("option"),
+        inp = document.getElementById('search'),
+        reg;
+    inp.style.width = 200 + 'px';
+    change_input_width(inp);
+    inp.oninput = function() {
+        reg = new RegExp(this.value, "ig");
+        sel.options.length = 0;
+        for (var i = 0; i < opt.length; i++) {
+            reg.test(opt[i].text) && sel.options.add(opt[i]);
+            reg.lastIndex = 0;
+        }
+    }
+}

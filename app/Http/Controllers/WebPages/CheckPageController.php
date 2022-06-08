@@ -19,7 +19,7 @@ class CheckPageController extends Controller
     {
         $user = Auth::user();
         $rpds = RPDS::all();
-        
+
         return view('web.check_page', ['user' => $user,
                                         'chooseSelect' => 1,
                                         'rpds' => $rpds,]);
@@ -105,7 +105,7 @@ class CheckPageController extends Controller
                 $list_of_literatures->more_literature = IntegerSanitizer::sanitizeString($request->list_of_literatures_more_literature);
                 $list_of_literatures->list_internet = IntegerSanitizer::sanitizeString($request->list_of_literatures_list_internet);
                 $list_of_literatures->save();
-                
+
                 $methodological_instructions = $basic_information->methodInstructions;
                 $methodological_instructions->metodic_instruction = IntegerSanitizer::sanitizeString($request->methodological_instructions_metodic_instruction);
                 $methodological_instructions->save();
@@ -145,7 +145,7 @@ class CheckPageController extends Controller
                     foreach($foundCompetencies->subCompetencies as $SubCompetencie){
                         $sub_competencies->push($SubCompetencie);
                     }
-                }   
+                }
 
                 // for ($i = $request->countCompetenciese; $i >= 0; $i--) {
                 //     if (!empty($request['competencies_title'.$i])){
@@ -154,7 +154,7 @@ class CheckPageController extends Controller
                 //             $competencie->save();
                 //         }
                 //     }
-                        
+
                 // }
 
                 // competencies_title
@@ -230,7 +230,7 @@ class CheckPageController extends Controller
                         $sub_competencies->push($SubCompetencie);
                     }
                 }
-                $fp = fopen('csv/rpd.csv', 'w');
+                $fp = fopen('csv/file.csv', 'w');
                 fputcsv($fp, [
                     'Название_дисциплины',
                     'Название_департамента',
@@ -257,7 +257,7 @@ class CheckPageController extends Controller
                 foreach ($rpds as $one) {
                     fputcsv($fp, [
                         $one->discipline,
-                        $one->departaments->title,
+//                        $one->departaments->title,
                         $one->timeForRPD->course,
                         $one->timeForRPD->semester,
                         $one->timeForRPD->lectures,
@@ -300,7 +300,7 @@ class CheckPageController extends Controller
             'competencies' => $competencies,
             'sub_competencies' => $sub_competencies,
         ]);
-    
+
     }
 
 

@@ -37,20 +37,20 @@ class DatabaseSeeder extends Seeder
 
             // RpdAndCompetenciesSeeder::class,
 
-            // BasicInformationSeeder::class,
-            // educationalAndMethodologicalSupportsSeeder::class,
-            // ListOfLiteraturesSeeder::class,
-            // MaterialTexProductionSeeder::class,
-            // MethodologicalInstructionsSeeder::class,
-            // PracticalAndIndependentPartSeeder::class,
-            // TheoreticalPartSeeder::class,
-            // ValuationFundsSeeder::class,
+//             BasicInformationSeeder::class,
+//             educationalAndMethodologicalSupportsSeeder::class,
+//             ListOfLiteraturesSeeder::class,
+//             MaterialTexProductionSeeder::class,
+//             MethodologicalInstructionsSeeder::class,
+//             PracticalAndIndependentPartSeeder::class,
+//             TheoreticalPartSeeder::class,
+//             ValuationFundsSeeder::class,
 
-            // CreditUnitsSeeder::class,
-            // FormControlsSeeder::class,
-            // TimeForRPDSSeeder::class,
-            // TotalAkademHourSeeder::class,
-            // departamentsSeeder::class,
+//             CreditUnitsSeeder::class,
+//             FormControlsSeeder::class,
+//             TimeForRPDSSeeder::class,
+//             TotalAkademHourSeeder::class,
+//             departamentsSeeder::class,
         ]);
     }
 }

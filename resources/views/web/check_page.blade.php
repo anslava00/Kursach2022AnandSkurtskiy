@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/select_css.css">
     <link rel="stylesheet" href="/css/test_ui.css">
     <link rel="stylesheet" href="/css/flex_competencies.css">
+    <link rel="stylesheet" href="/css/search_css.css">
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
@@ -21,16 +22,32 @@
                 <li name="leftPartLi"><button value='edit' type="submit" name="EditFooterBTN" >Применить редактирование</button></li>
             @endrole
             <li name="leftPartLi"><button value='download' type="submit" name="EditFooterBTN" >Скачать</button></li>
-{{--            <li name="rightPartLi"><div name="forHeader">Дисциплины: </div></li>--}}
             <li name="rightPartLi">
                 <div class="select" name="splash2">
                     <div name="forHeader">Дисциплины: </div>
-                    <select name = "chooseRpd">
+                    <input id="search" type="text" name="search_field" placeholder="Поиск" onclick="select_Finder()">
+                    <select name = "year_selector">
+{{--                        @foreach($year_options as $year_option)--}}
+{{--                            <option @if ($chooseSelect == $year_option->id) selected @endif  value="{{ $year_option->id }}">{{$year_option->year}}</option>--}}
+{{--                        @endforeach--}}
+                        <option>2022</option>
+                        <option>2021</option>
+                        <option>2020</option>
+                        <option>2019</option>
+                    </select>
+                    <select id="discipline_selector" name = "chooseRpd">
                         @foreach($rpds as $rpd)
                             <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>
                         @endforeach
                         <input type="submit" name="EditFooterBTN" value="get">
                     </select>
+{{--                    <input list="ll" name = "chooseRpd">--}}
+{{--                    <datalist id="ll">--}}
+{{--                        @foreach($rpds as $rpd)--}}
+{{--                            <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>--}}
+{{--                        @endforeach--}}
+{{--                    </datalist>--}}
+{{--                    <input type="submit" name="EditFooterBTN" value="get">--}}
                 </div>
             </li>
         </tr>
