@@ -41,13 +41,6 @@
                         @endforeach
                         <input type="submit" name="EditFooterBTN" value="get">
                     </select>
-{{--                    <input list="ll" name = "chooseRpd">--}}
-{{--                    <datalist id="ll">--}}
-{{--                        @foreach($rpds as $rpd)--}}
-{{--                            <option @if ($chooseSelect == $rpd->id) selected @endif  value="{{ $rpd->id }}">{{$rpd->discipline}}</option>--}}
-{{--                        @endforeach--}}
-{{--                    </datalist>--}}
-{{--                    <input type="submit" name="EditFooterBTN" value="get">--}}
                 </div>
             </li>
         </tr>

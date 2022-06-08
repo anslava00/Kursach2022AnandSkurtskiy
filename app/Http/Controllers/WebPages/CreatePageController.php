@@ -123,7 +123,7 @@ class CreatePageController extends Controller
         // $list_of_literatures->list_internet = IntegerSanitizer::sanitizeString($request->list_of_literatures_list_internet);
         // $list_of_literatures->basic_information_id = $basic_information->id;
         // $list_of_literatures->save();
-        
+
         // $methodological_instructions = new methodologicalInstructions;
         // $methodological_instructions->metodic_instruction = IntegerSanitizer::sanitizeString($request->methodological_instructions_metodic_instruction);
         // $methodological_instructions->basic_information_id = $basic_information->id;
@@ -166,7 +166,7 @@ class CreatePageController extends Controller
         //     foreach($foundCompetencies->subCompetencies as $SubCompetencie){
         //         $sub_competencies->push($SubCompetencie);
         //     }
-        // }   
+        // }
 
         // for ($i = $request->countCompetenciese; $i >= 0; $i--) {
         //     if (!empty($request['competencies_title'.$i])){
@@ -175,7 +175,7 @@ class CreatePageController extends Controller
         //             $competencie->save();
         //         }
         //     }
-                
+
         // }
 
         // competencies_title
