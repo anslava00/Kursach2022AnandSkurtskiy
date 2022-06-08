@@ -1,5 +1,10 @@
 <h1>Титульник</h1>
             <div >
+                <div>
+                    <h2>
+                        Название дисциплины: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_semester" @isset($time_for_RPD) value="{{$time_for_RPD->semester}}" @endisset class="input3" type="text" placeholder="Семестр">
+                    </h2>
+                </div>
                 <div >
                     <h2>
                         Семестр: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_semester" @isset($time_for_RPD) value="{{$time_for_RPD->semester}}" @endisset class="input3" type="text" placeholder="Семестр">
