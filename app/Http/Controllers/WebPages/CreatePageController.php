@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\WebPages;
 
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\basicInformation\BasicInformation;
 use App\Models\basicInformation\educationalAndMethodologicalSupports;
 use App\Models\basicInformation\listOfLiteratures;
@@ -204,6 +205,16 @@ class CreatePageController extends Controller
         //     $file = $request->file('image');
         //     $file->move(public_path().'/exel','ex.xlsx');
         // }
+
+        $excelFile =public_path().'/exel.ex.xlsx';
+        return Excel::load($excelFile, function($doc) {
+    
+            $sheet = $doc->getSheetByName('data'); // sheet with name data, but you can also use sheet indexes.
+    
+            $sheet->getCell('A1');
+            $sheet->getCellByColumnAndRow(0,0);           
+    
+        });
 
         return view('web.create_page', ['user' => $user]);
     }
