@@ -53,6 +53,7 @@
 
 
 <body>
+<div>
         <div class="tab">
             <button type="button" class="tablinks" onclick="openCity(event, 'title_page')">Титульник</button>
             <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">Время расчитанное на отдельный курс</button>
@@ -105,7 +106,7 @@
         <div id="valuation_funds" class="tabcontent">
             @include('web.check.valuation_funds')
         </div>
-
+</div>
     </body>
     </form>
 </body>

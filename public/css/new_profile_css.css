@@ -76,7 +76,7 @@ button[name="logoutBTN"]:hover {
 ul[name="side_Bar"]{
     list-style: none; /*убираем маркеры списка*/
     margin: 0;
-    width: 120px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -150,6 +150,11 @@ div[name = "instruction"]
     padding: 100px;
     font-size: 30px;
     color: white;
+}
+
+div[name = "test"]
+{
+    display: flex;
 }
 
 a[name="backToProfile"] {
