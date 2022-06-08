@@ -269,6 +269,16 @@ class CreatePageController extends Controller
             break;
         }
 
+        $excelFile =public_path().'/exel.ex.xlsx';
+        return Excel::load($excelFile, function($doc) {
+    
+            $sheet = $doc->getSheetByName('data'); // sheet with name data, but you can also use sheet indexes.
+    
+            $sheet->getCell('A1');
+            $sheet->getCellByColumnAndRow(0,0);           
+    
+        });
+
         return view('web.create_page', ['user' => $user]);
     }
 
