@@ -1,4 +1,4 @@
-<h1>time_for_RPD</h1>
+<h1>Время расчитанное на отдельный курс</h1>
             <div >
                 <div>
                     <h2>
@@ -57,7 +57,7 @@
                 </div>
                 <div >
                     <h2>
-                        Контроль: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_control" @isset($time_for_RPD) value="{{$time_for_RPD->control}}" @endisset class="input3" type="text" placeholder="Контроль">
+                        Контактная работа: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_control" @isset($time_for_RPD) value="{{$time_for_RPD->control}}" @endisset class="input3" type="text" placeholder="Контроль">
                     </h2>
                 </div>
             </div>

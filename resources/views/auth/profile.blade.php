@@ -41,6 +41,12 @@
                 <button name="editBTN">Посмотреть все РПУДы</button>
             </li>
         </form>
+        <form method="GET" action="{{route('how_to_use')}}">
+            @csrf
+            <li>
+                <button name="editBTN">Как пользоваться?</button>
+            </li>
+        </form>
         @role('admin')
         <form method="GET" action="{{route('admin_page')}}">
             @csrf

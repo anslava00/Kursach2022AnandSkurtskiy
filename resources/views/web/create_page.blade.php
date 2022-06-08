@@ -48,7 +48,7 @@
         </tr>
     </ul>
     <div class="tab">
-        <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">Время для РПД</button>
+        <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">Время расчитанное на отдельный курс</button>
         <button type="button" class="tablinks" onclick="openCity(event, 'total_akadem_hours')">Общее время академических часов</button>
         <button type="button" class="tablinks" onclick="openCity(event, 'form_control')">Форма контроля</button>
 {{--        <button type="button" class="tablinks" onclick="openCity(event, 'credit_units')">Зачётные единицы</button>--}}

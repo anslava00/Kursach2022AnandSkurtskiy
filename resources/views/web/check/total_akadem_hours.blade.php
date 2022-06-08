@@ -32,7 +32,7 @@
                 </div>
                 <div>
                     <h2>
-                        Пр. подготовки: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_pr_podgot" @isset($total_akadem_hours) value="{{$total_akadem_hours->pr_podgot}}" @endisset class="input3" type="text" placeholder="Пр. подготовки">
+                        Практическая подготовка: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_pr_podgot" @isset($total_akadem_hours) value="{{$total_akadem_hours->pr_podgot}}" @endisset class="input3" type="text" placeholder="Пр. подготовки">
                     </h2>
                 </div>
             </div>

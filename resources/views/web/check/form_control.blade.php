@@ -2,7 +2,7 @@
             <div>
                 <div >
                     <h2>
-                        Экзаминация: <input @unlessrole('admin') readonly @endunlessrole name="form_control_examination" @isset($form_control) value="{{$form_control->examination}}" @endisset class="input3" type="text" placeholder="Экзаминация">
+                        Экзамен: <input @unlessrole('admin') readonly @endunlessrole name="form_control_examination" @isset($form_control) value="{{$form_control->examination}}" @endisset class="input3" type="text" placeholder="Экзаминация">
                     </h2>
                 </div>
                 <div >
