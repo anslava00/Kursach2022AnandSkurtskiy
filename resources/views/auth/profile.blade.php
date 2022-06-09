@@ -49,6 +49,12 @@
                         <button name="editBTN">Как пользоваться?</button>
                     </li>
                 </form>
+                <form method="GET" action="">
+                    @csrf
+                    <li>
+                        <button value='download_template' type="submit" name="editBTN" >Скачать шаблон РПД</button>
+                    </li>
+                </form>
                 @role('admin')
                 <form method="GET" action="{{route('admin_page')}}">
                     @csrf
@@ -61,7 +67,6 @@
         </ul>
     </div>
 </div>
-
 </body>
 </html>
 

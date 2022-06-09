@@ -3,12 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CreatingRPD</title>
+    <title>Создание РПД</title>
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/styles_for_web_pages.css">
     <link rel="stylesheet" href="/css/select_css.css">
     <link rel="stylesheet" href="/css/test_ui.css">
     <link rel="stylesheet" href="/css/flex_competencies.css">
+    <link rel="stylesheet" href="/css/search_css.css">
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
@@ -22,7 +23,8 @@
             <li name="rightPartLi">
                 <div class="select" name="splash2">
                     <div name="forHeader">Дисциплины: </div>
-                    <select name = "chooseRpd">
+                    <input id="search" type="text" name="search_field" placeholder="Поиск" onclick="select_Finder()">
+                    <select id="discipline_selector" name = "chooseRpd">
                         <input type="submit" name="EditFooterBTN" value="get">
                     </select>
                 </div>
@@ -48,6 +50,7 @@
         </tr>
     </ul>
     <div class="tab">
+        <button type="button" class="tablinks" onclick="openCity(event, 'title_page')">Титульник</button>
         <button type="button" class="tablinks" onclick="openCity(event, 'time_for_RPD')">Время расчитанное на отдельный курс</button>
         <button type="button" class="tablinks" onclick="openCity(event, 'total_akadem_hours')">Общее время академических часов</button>
         <button type="button" class="tablinks" onclick="openCity(event, 'form_control')">Форма контроля</button>
