@@ -25,6 +25,8 @@
                     <div name="forHeader">Дисциплины: </div>
                     <input id="search" type="text" name="search_field" placeholder="Поиск" onclick="select_Finder()">
                     <select id="discipline_selector" name = "chooseRpd">
+                    <select name = "chooseRpd">
+                        <option value = 1>@isset($rpd) {{$rpd->discipline}}@endisset</option>
                         <input type="submit" name="EditFooterBTN" value="get">
                     </select>
                 </div>
@@ -44,7 +46,9 @@
                 <form method="post" action="" enctype="multipart/form-data">
                     @csrf
                     <input type="file" name="image">
-                    <button type="submit" >Отправить</button>
+                    <button type="submit" class="button11" name = 'EditFooterBTN' value = 'send'>Отправить</button>
+                    <input class="input4" name="sheet" @isset($sheet) value="{{$sheet}}" @endisset  type="text" placeholder="название листа">
+                    <input class="input5" name="rows" @isset($row) value="{{$row}}"@endisset  type="text" placeholder="номер строки">
                 </form>
             </li>
         </tr>

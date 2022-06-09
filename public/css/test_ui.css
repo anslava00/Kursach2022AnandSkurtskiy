@@ -38,7 +38,35 @@
     background: #3976b3;
     border-top: none;
 }
-
+.input4 {
+    display: block;
+    margin-top: -39px;
+    margin-left: 300px;
+    padding: 5px 10px;
+    /*margin-bottom: 10px;*/
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width:  200px;
+    font-family: inherit;
+    font-size: 16px;
+}
+.input5 {
+    display: block;
+    margin-top: -29.5px;
+    margin-left: 550px;
+    padding: 5px 10px;
+    /*margin-bottom: 10px;*/
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    width:  200px;
+    font-family: inherit;
+    font-size: 16px;
+}
+.button11 {
+    margin-top: -29.5px;
+    margin-left: 550px;
+    font-size: 15px;
+}
 .input3 {
     display: block;
     margin-top: -35px;
