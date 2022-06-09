@@ -7,7 +7,7 @@
 
             <div class="competencies_titles">
                 <div class="comp_item">
-                    <h3>Титул</h3>
+                    <h3>Название</h3>
                 </div>
                 <div class="comp_item">
                     <h3>Описание</h3>

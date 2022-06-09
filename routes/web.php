@@ -126,4 +126,6 @@ Route::post('/check_page', [CheckPageController::class, 'check_page'])->name('ch
 Route::get('/edit_page', [EditPageController::class, 'edit_page_Form'])->name('edit_page');
 Route::post('/edit_page', [EditPageController::class, 'edit_page'])->name('edit_page.post');
 
+Route::get('how_to_use', [ProfileController::class, 'show_How_to_Use'])->name('how_to_use');
+
 

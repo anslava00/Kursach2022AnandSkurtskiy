@@ -76,8 +76,7 @@ button[name="logoutBTN"]:hover {
 ul[name="side_Bar"]{
     list-style: none; /*убираем маркеры списка*/
     margin: 0;
-    width: 120px;
-    height: 300px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -88,7 +87,7 @@ ul[name="side_Bar"]{
 button[name="createBTN"] {
     background: #09693c; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
     color:#fff; /*меняем цвет ссылок*/
-    font-family: arial; /*меняем шрифт*/
+    font-family: arial, serif; /*меняем шрифт*/
     font-size: 18px;
     width: 200px;
     height: 75px;
@@ -108,7 +107,7 @@ button[name="createBTN"]:hover {
 button[name="editBTN"] {
     background: #1B649B; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
     color:#fff; /*меняем цвет ссылок*/
-    font-family: arial; /*меняем шрифт*/
+    font-family: arial, serif; /*меняем шрифт*/
     font-size: 18px;
     width: 200px;
     height: 75px;
@@ -128,7 +127,7 @@ button[name="editBTN"]:hover {
 button[name="toAdminBTN"] {
     background: #008144; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
     color:#fff; /*меняем цвет ссылок*/
-    font-family: arial; /*меняем шрифт*/
+    font-family: arial, serif; /*меняем шрифт*/
     font-size: 18px;
     width: 200px;
     height: 75px;
@@ -145,4 +144,33 @@ button[name="toAdminBTN"]:hover {
     color: white;
 }
 
+div[name = "instruction"]
+{
+    font-family: arial, serif;
+    padding: 100px;
+    font-size: 30px;
+    color: white;
+}
+
+div[name = "test"]
+{
+    display: flex;
+}
+
+a[name="backToProfile"] {
+    text-decoration: none; /*убираем подчеркивание текста ссылок*/
+    background: #54B5BC; /*добавляем фон к пункту меню (заменив этот параметр, вы поменяете цвет всех пунктов меню)*/
+    color:#fff; /*меняем цвет ссылок*/
+    padding:0px 15px; /*добавляем отступ*/
+    font-family: arial; /*меняем шрифт*/
+    line-height:50px; /*ровняем меню по вертикали*/
+    display: block;
+    -moz-transition: all 0.3s 0.01s ease; /*делаем плавный переход*/
+    -o-transition: all 0.3s 0.01s ease;
+    -webkit-transition: all 0.3s 0.01s ease;
+}
+
+a[name="backToProfile"]:hover {
+    background: #247316;/*добавляем эффект при наведении*/
+}
 /*_______________________*!*/

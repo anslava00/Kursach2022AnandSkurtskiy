@@ -21,36 +21,46 @@
     </ul>
 </header>
 <body>
-<ul name="side_Bar">
-    <tr>
-        <form method="GET" action="{{route('create_page')}}">
-            @csrf
-            <li>
-                <button name="createBTN">Создать новый РПУД</button>
-            </li>
-        </form>
-        <form method="GET" action="{{route('edit_page')}}">
-            @csrf
-            <li>
-                <button name="editBTN">Редактировать мои РПУДы</button>
-            </li>
-        </form>
-        <form method="GET" action="{{route('check_page')}}">
-            @csrf
-            <li>
-                <button name="editBTN">Посмотреть все РПУДы</button>
-            </li>
-        </form>
-        @role('admin')
-        <form method="GET" action="{{route('admin_page')}}">
-            @csrf
-            <li>
-                <button name="toAdminBTN">Перейти в панель администратора</button>
-            </li>
-        </form>
-        @endrole
-    </tr>
-</ul>
+<div name="test">
+    <div>
+        <ul name="side_Bar">
+            <tr>
+                <form method="GET" action="{{route('create_page')}}">
+                    @csrf
+                    <li>
+                        <button name="createBTN">Создать новый РПУД</button>
+                    </li>
+                </form>
+                <form method="GET" action="{{route('edit_page')}}">
+                    @csrf
+                    <li>
+                        <button name="editBTN">Редактировать мои РПУДы</button>
+                    </li>
+                </form>
+                <form method="GET" action="{{route('check_page')}}">
+                    @csrf
+                    <li>
+                        <button name="editBTN">Посмотреть все РПУДы</button>
+                    </li>
+                </form>
+                <form method="GET" action="{{route('how_to_use')}}">
+                    @csrf
+                    <li>
+                        <button name="editBTN">Как пользоваться?</button>
+                    </li>
+                </form>
+                @role('admin')
+                <form method="GET" action="{{route('admin_page')}}">
+                    @csrf
+                    <li>
+                        <button name="toAdminBTN">Перейти в панель администратора</button>
+                    </li>
+                </form>
+                @endrole
+            </tr>
+        </ul>
+    </div>
+</div>
 
 </body>
 </html>

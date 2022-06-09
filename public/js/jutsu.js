@@ -1,4 +1,5 @@
-function openCity(evt, cityName) {
+function openCity(evt, cityName)
+{
     var i, tabcontent, tablinks;
 
     tabcontent = document.getElementsByClassName("tabcontent");
@@ -21,7 +22,8 @@ var countOfSubFields = 1; // Текущее число полей
 var curFieldNameId = 1; // Уникальное значение для атрибута name
 var curFieldSubNameId = 1; // Уникальное значение для атрибута name
 var maxFieldLimit = 100; // Максимальное число возможных полей
-function deleteField(a, menuNamme) {
+function deleteField(a, menuNamme)
+{
     // Получаем доступ к ДИВу, содержащему поле
     var contDiv = a.parentNode;
     // Удаляем этот ДИВ из DOM-дерева
@@ -38,7 +40,8 @@ function deleteField(a, menuNamme) {
     // Возвращаем false, чтобы не было перехода по сслыке
     return false;
 }
-function addField(menuName, FieldID = null) {
+function addField(menuName, FieldID = null)
+{
     // Проверяем, не достигло ли число полей максимума
     if (countOfFields >= maxFieldLimit) {
         alert("Число полей достигло своего максимума = " + maxFieldLimit);
@@ -50,7 +53,8 @@ function addField(menuName, FieldID = null) {
         countOfSubFields++;
         curFieldSubNameId++;
         // document.getElementById("countSubC").value = FieldID + countOfSubFields - 1;
-        if (FieldID != null) {
+        if (FieldID != null)
+        {
             div.innerHTML = '<div class="competencies"><div><textarea class="text_area_noresize" name="sub_competencies_title' + (FieldID + curFieldSubNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
                 '<div><textarea class="text_area_noresize" name="sub_competencies_description' + (FieldID + curFieldSubNameId - 1) + '" cols="100" rows="10" id="bigWind" placeholder="Титул"></textarea></div>' +
                 '<button name="DeleteBTN" onclick="return deleteField(this)">X</button></div>';
@@ -62,7 +66,8 @@ function addField(menuName, FieldID = null) {
         curFieldNameId++;
         countOfFields++;
         // document.getElementById("countC").value = FieldID + countOfFields - 1;
-        if (FieldID != null) {
+        if (FieldID != null)
+        {
         div.innerHTML = '<div class="competencies"><textarea class="text_area_noresize" name="competencies_title' + (FieldID + curFieldNameId - 1)+ '"  cols="30" rows="10" id="bigWind" placeholder="Титул"></textarea>' +
             '<textarea class="text_area_noresize" name="competencies_type_competencies' + (FieldID + curFieldNameId - 1)+ '"  cols="30" rows="10" id="bigWind" placeholder="Тип компетенции"></textarea>' +
             '<textarea class="text_area_noresize" name="competencies_task' + (FieldID + curFieldNameId - 1) + '"  cols="30" rows="10" id="bigWind" placeholder="Задача"></textarea>' +
@@ -93,18 +98,20 @@ function change_input_width(inp)
 
 }
 
-function select_Finder() {
-
+function select_Finder()
+{
     var sel = document.getElementById('discipline_selector'),
         opt = sel.querySelectorAll("option"),
         inp = document.getElementById('search'),
         reg;
     inp.style.width = 200 + 'px';
     change_input_width(inp);
-    inp.oninput = function() {
+    inp.oninput = function()
+    {
         reg = new RegExp(this.value, "ig");
         sel.options.length = 0;
-        for (var i = 0; i < opt.length; i++) {
+        for (var i = 0; i < opt.length; i++)
+        {
             reg.test(opt[i].text) && sel.options.add(opt[i]);
             reg.lastIndex = 0;
         }

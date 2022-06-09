@@ -28,4 +28,10 @@ class ProfileController extends Controller
 
         return view('web.admin_page', ['user' => $user, 'role' => $role]);
     }
+
+    public function show_How_to_Use()
+    {
+        $user = Auth::user();
+        return view('how_to_use', ['user' => $user]);
+    }
 }

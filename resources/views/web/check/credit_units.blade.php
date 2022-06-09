@@ -1,12 +1,12 @@
 <h1>Зачётные единицы</h1>
             <div>
                 <div >
-                    <h3>Эксперты</h3>
+                    <h3>Экспертное</h3>
 
                     <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_experts"  cols="80" rows="2" id="bigWind" placeholder="Эксперты">@isset($credit_units) {{$credit_units->experts}} @endisset </textarea>
                 </div>
                 <div >
-                    <h3>Факты</h3>
+                    <h3>По факту</h3>
 
                     <textarea @unlessrole('admin') readonly @endunlessrole name="credit_units_fackts"  cols="80" rows="2" id="bigWind" placeholder="Факты">@isset($credit_units) {{$credit_units->fackts}} @endisset</textarea>
                 </div>

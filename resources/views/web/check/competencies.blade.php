@@ -8,13 +8,13 @@
             @endisset
             <div class="competencies_titles">
                 <div class="comp_item">
-                    <h3>Титул</h3>
+                    <h3>Название</h3>
                 </div>
                 <div class="comp_item">
                     <h3>Тип компетенции</h3>
                 </div>
                 <div class="comp_item">
-                    <h3>Задача</h3>
+                    <h3>Тип задач</h3>
                 </div>
                 <div class="comp_item">
                     <h3>Источник</h3>
