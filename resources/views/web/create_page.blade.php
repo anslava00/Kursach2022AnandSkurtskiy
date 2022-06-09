@@ -13,6 +13,16 @@
     <script src="/js/jutsu.js"></script>
 </head>
 <body>
+<form method="POST" action="{{route('create_page.post')}}"  {{--enctype="multipart/form-data" --}}>
+<ul name="UpperHeader2">
+    <tr>
+    <li name="leftPartLi">
+                    @csrf
+                    <input type="file" name="test">
+                    <button type="submit" class="button11" name = 'EditFooterBTN' value = 'send'>Отправить</button></li>
+</tr>
+</ul>
+</form>
 <form name="gg" method="POST" action="{{route('create_page.post')}}" enctype="multipart/form-data">
     @csrf
     <ul name="UpperHeader">
@@ -23,12 +33,25 @@
             <li name="rightPartLi">
                 <div class="select" name="splash2">
                     <div name="forHeader">Дисциплины: </div>
-                    <input id="search" type="text" name="search_field" placeholder="Поиск" onclick="select_Finder()">
-                    <select id="discipline_selector" name = "chooseRpd">
-                    <select name = "chooseRpd">
-                        <option value = 1>@isset($rpd) {{$rpd->discipline}}@endisset</option>
-                        <input type="submit" name="EditFooterBTN" value="get">
-                    </select>
+                    @isset($rpds)
+                        <input id="search" type="text" name="search_field" placeholder="Поиск" onclick="select_Finder()">
+                        <select id="discipline_selector" name = "chooseRpd">
+                                @foreach($rpds as $rpd)
+                                <option 
+                                @isset($chooseSelect)
+                                    @if ($chooseSelect == $rpd->discipline) selected @endif 
+                                @endisset 
+                                value="{{ $rpd->discipline }}"
+                                >
+                                    {{$rpd->discipline}}
+                                </option>
+                                @endforeach
+                            <input type="submit" name="EditFooterBTN" value="get">
+                        </select>
+                    @endisset
+                    @empty($rpds)
+                        <input name = "chooseRpd">
+                    @endempty
                 </div>
             </li>
         </tr>
@@ -43,13 +66,7 @@
     <ul name="UpperHeader2">
         <tr>
             <li name="leftPartLi">
-                <form method="post" action="" enctype="multipart/form-data">
-                    @csrf
-                    <input type="file" name="image">
-                    <button type="submit" class="button11" name = 'EditFooterBTN' value = 'send'>Отправить</button>
-                    <input class="input4" name="sheet" @isset($sheet) value="{{$sheet}}" @endisset  type="text" placeholder="название листа">
-                    <input class="input5" name="rows" @isset($row) value="{{$row}}"@endisset  type="text" placeholder="номер строки">
-                </form>
+                
             </li>
         </tr>
     </ul>

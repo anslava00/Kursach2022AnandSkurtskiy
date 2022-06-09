@@ -2,17 +2,17 @@
             <div>
                 <div >
                     <h2>
-                        Лабораторные интер.: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_experts" @isset($total_akadem_hours) value="{{$total_akadem_hours->experts}}" @endisset class="input3" type="text" placeholder="Эксперты">
+                        Экспертное: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_experts" @isset($total_akadem_hours) value="{{$total_akadem_hours->experts}}" @endisset class="input3" type="text" placeholder="Эксперты">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        Практика: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_to_plan" @isset($total_akadem_hours) value="{{$total_akadem_hours->to_plan}}" @endisset class="input3" type="text" placeholder="В плане">
+                        По плану: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_to_plan" @isset($total_akadem_hours) value="{{$total_akadem_hours->to_plan}}" @endisset class="input3" type="text" placeholder="В плане">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        Практика интер.: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_control_work" @isset($total_akadem_hours) value="{{$total_akadem_hours->control_work}}" @endisset class="input3" type="text" placeholder="Контрольные работы">
+                     Контактные работы: <input @unlessrole('admin') readonly @endunlessrole name="total_akadem_hours_control_work" @isset($total_akadem_hours) value="{{$total_akadem_hours->control_work}}" @endisset class="input3" type="text" placeholder="Контактные работы">
                     </h2>
                 </div>
                 <div >

@@ -24,6 +24,7 @@ use App\Models\time\CreditUnits;
 use App\Models\time\FormControl;
 use App\Models\time\TimeForRPD;
 use App\Models\time\TotalAkademHours;
+use PhpParser\Node\Expr\FuncCall;
 use SimpleXMLElement;
 use Shuchkin\SimpleXLSX;
 class CreatePageController extends Controller
@@ -40,8 +41,8 @@ class CreatePageController extends Controller
         switch($request->EditFooterBTN){
             case 'create':
             $rpds = new RPDS;
-            $rpds->discipline = $request->discipline;
-            $rpds->abbreviathion = $request->discipline;//debug
+            $rpds->discipline = $request->chooseRpd;
+            $rpds->abbreviathion = IntegerSanitizer::sanitizeString($request->departament_abbreviathion);//debug
             $rpds->user_id = $user->id;
             $rpds->save();
 
@@ -163,68 +164,114 @@ class CreatePageController extends Controller
             $valuation_funds->basic_information_id = $basic_information->id;
             $valuation_funds->save();
 
-            $competencies = collect();
-            $sub_competencies = collect();
-            foreach($userRpd->rpdAndCompetencies as $relation){
-                $foundCompetencies = Competencies::find($relation->competencies_id);
-                $competencies->push($foundCompetencies);
-                foreach($foundCompetencies->subCompetencies as $SubCompetencie){
-                    $sub_competencies->push($SubCompetencie);
-                }
-            }
-
-            for ($i = $request->countCompetenciese; $i >= 0; $i--) {
-                if (!empty($request['competencies_title'.$i])){
-                    foreach($competencies as $competencie){
-                        if ($competencie->title == $request['competencies_title'.$i]);
-                        $competencie->save();
-                    }
-                }
-
-            }
-
-            // competencies_title
-            // competencies_type_competencies
-            // competencies_task
-            // competencies_source
-            // competencies_object
-            // competencies_type_group
-
-            // sub_competencies_title
-            // sub_competencies_description
-
-            // countSubCompetenciese
-            // countCompetenciese
-
-            // echo $request->competencies_title."<br>";
-            // echo $request->competencies_type_competencies."<br>";
-            // echo $request->competencies_task."<br>";
-            // echo $request->competencies_source."<br>";
-            // echo $request->competencies_object."<br>";
-            // echo $request->competencies_type_group."<br>";
-            // echo $request->sub_competencies_title."<br>";
-            // echo $request->sub_competencies_description."<br>";
-            break;
-            case 'send':
-            // if($request->hasFile('image')) {
-            //     $file = $request->file('image');
-            //     $file->move(public_path().'/exel','ex.xlsx');
+            // $competencies = collect();
+            // $sub_competencies = collect();
+            // foreach($userRpd->rpdAndCompetencies as $relation){
+            //     $foundCompetencies = Competencies::find($relation->competencies_id);
+            //     $competencies->push($foundCompetencies);
+            //     foreach($foundCompetencies->subCompetencies as $SubCompetencie){
+            //         $sub_competencies->push($SubCompetencie);
+            //     }
             // }
 
+            // for ($i = $request->countCompetenciese; $i >= 0; $i--) {
+            //     if (!empty($request['competencies_title'.$i])){
+            //         foreach($competencies as $competencie){
+            //             if ($competencie->title == $request['competencies_title'.$i]);
+            //             $competencie->save();
+            //         }
+            //     }
+
+            // }
+            break;
+            case 'get':
             $excelFile =public_path().'/exel/ex.xlsx';
             $xlsx = SimpleXLSX::parse($excelFile);	
             $indexList = 0;
+            $findList = 'План';
+            $time_for_RPD = new TimeForRPD;
             $form_control = new FormControl;
             $total_akadem_hours = new TotalAkademHours;
             $credit_units = new CreditUnits;
             $departament = new departaments;
-            $rpd = new RPDS;
+            $rpds = collect();
             foreach ($xlsx->sheetNames() as $list){
-                if ($list == $request->sheet){
+                if ($list == $findList){
                     $sheet = $xlsx->rows($indexList);
-                    $indexRow = 1;
                     foreach($sheet as $row){
-                        if ($indexRow == (int)$request->rows){
+                        $rpd = new RPDS;
+                        $rpd->discipline = $row[2];
+                        $rpds->push($rpd);
+                        if ($row[2] == $request->chooseRpd){
+                            $course = "";
+                            for($i = 3; $i < 6; $i++){
+                                foreach(str_split($row[$i]) as $r){
+                                    if (strpos($course, $r) === false){
+                                        $course = $course.$r.',';
+                                    }
+                                }
+                            }
+                            $semester = "";
+                            for($i = 3; $i < 6; $i++){
+                                foreach(str_split($row[$i]) as $r){
+                                    $tmpCour = $this->checkVal($r);
+                                    if (strpos($semester, $tmpCour) === false){
+                                        $semester = $semester.$tmpCour.',';
+                                    }
+                                }
+                            }
+                            $lecture = 0;
+                            $Cols = [21, 31, 42, 52, 62, 72, 83, 92];
+                            foreach($Cols as $col){
+                                $lecture = $lecture + (int)$row[$col];
+                            }
+                            $lab = 0;
+                            $Cols = [22, 33, 43, 53, 63, 74, 84, 93];
+                            foreach($Cols as $col){
+                                $lab = $lab + (int)$row[$col];
+                            }
+                            $labInter = 0;
+                            $Cols = [23, 34, 44, 54, 64, 75, 85, 94];
+                            foreach($Cols as $col){
+                                $labInter = $labInter + (int)$row[$col];
+                            }
+                            $practic = 0;
+                            $Cols = [24, 35, 45, 55, 65, 76, 86, 95];
+                            foreach($Cols as $col){
+                                $practic = $practic + (int)$row[$col];
+                            }
+                            $KSP = 0;
+                            $Cols = [26, 37, 47, 57, 67, 78, 87, 97];
+                            foreach($Cols as $col){
+                                $KSP = $KSP + (int)$row[$col];
+                            }
+                            $OK = 0;
+                            $Cols = [27, 38, 48, 58, 68, 98];
+                            foreach($Cols as $col){
+                                $OK = $OK + (int)$row[$col];
+                            }
+                            $SP = 0;
+                            $Cols = [28, 39, 49, 59, 69, 80, 89, 99];
+                            foreach($Cols as $col){
+                                $SP = $SP + (int)$row[$col];
+                            }
+                            $contact = 0;
+                            $Cols = [29, 40, 50, 60, 70, 81, 90, 100];
+                            foreach($Cols as $col){
+                                $contact = $contact + (int)$row[$col];
+                            }
+                            
+                            $time_for_RPD->course = $course;
+                            $time_for_RPD->semester = $semester;
+                            $time_for_RPD->lectures = (string)$lecture;
+                            $time_for_RPD->laboratory = (string)$lab;
+                            $time_for_RPD->laboratory_inter = (string)$labInter;
+                            $time_for_RPD->practice = (string)$practic;
+                            $time_for_RPD->KSP = (string)$KSP;
+                            $time_for_RPD->OK = (string)$OK;
+                            $time_for_RPD->SP = (string)$SP;
+                            $time_for_RPD->control = (string)$contact;
+
                             $form_control->examination = $row[3];
                             $form_control->zachet = $row[4];
                             $form_control->zachet_with_grade = $row[5];
@@ -247,16 +294,13 @@ class CreatePageController extends Controller
                             $credit_units->hour_in_c_u = $row[12];
                     
                             $departament->title = $row[102];
-
-                            $rpd->discipline = $row[2];
-                            break;
                         }
-                        $indexRow++;
                     };
                 }
                 $indexList++;
             };
             return view('web.create_page', [
+                        'chooseSelect' => $request->chooseRpd,
                         'user' => $user,
                         'row' => $request->rows,
                         'sheet' => $request->sheet,
@@ -264,22 +308,70 @@ class CreatePageController extends Controller
                         'form_control' => $form_control,
                         'credit_units' => $credit_units,
                         'departament' => $departament,
-                        'rpd' => $rpd,
+                        'rpds' => $rpds,
+                        'time_for_RPD' => $time_for_RPD,
+            ]);
+            break;
+            case 'send':
+            if($request->hasFile('test')) {
+                $file = $request->file('test');
+                $file->move(public_path().'/exel','ex.xlsx');
+            }
+            $excelFile =public_path().'/exel/ex.xlsx';
+            $findList = 'План';
+            $xlsx = SimpleXLSX::parse($excelFile);	
+            $indexList = 0;
+
+            $rpds = collect();
+            foreach ($xlsx->sheetNames() as $list){
+                if ($list == $findList){
+                    $sheet = $xlsx->rows($indexList);
+                    foreach($sheet as $row){
+                        $rpd = new RPDS;
+                        $rpd->discipline = $row[2];
+                        $rpds->push($rpd);
+                    };
+                }
+                $indexList++;
+            };
+            return view('web.create_page', [
+                        'user' => $user,
+                        'rpds' => $rpds,
                     ]);
             break;
         }
 
-        $excelFile =public_path().'/exel.ex.xlsx';
-        return Excel::load($excelFile, function($doc) {
-    
-            $sheet = $doc->getSheetByName('data'); // sheet with name data, but you can also use sheet indexes.
-    
-            $sheet->getCell('A1');
-            $sheet->getCellByColumnAndRow(0,0);           
-    
-        });
-
         return view('web.create_page', ['user' => $user]);
+    }
+
+    private function checkVal($val){
+        switch ($val){
+            case '1':
+                $val = "1";
+            break;
+            case '2':
+                $val = "1";
+            break;
+            case '3':
+                $val = "2";
+            break;
+            case '4':
+                $val = "2";
+            break;
+            case '5':
+                $val = "3";
+            break;
+            case '6':
+                $val = "3";
+            break;
+            case '7':
+                $val = "4";
+            break;
+            case '8':
+                $val = "4";
+            break;
+        }
+        return $val;
     }
 
 }

@@ -146,38 +146,6 @@ class CheckPageController extends Controller
                         $sub_competencies->push($SubCompetencie);
                     }
                 }
-
-                // for ($i = $request->countCompetenciese; $i >= 0; $i--) {
-                //     if (!empty($request['competencies_title'.$i])){
-                //         foreach($competencies as $competencie){
-                //             if ($competencie->title == $request['competencies_title'.$i]);
-                //             $competencie->save();
-                //         }
-                //     }
-
-                // }
-
-                // competencies_title
-                // competencies_type_competencies
-                // competencies_task
-                // competencies_source
-                // competencies_object
-                // competencies_type_group
-
-                // sub_competencies_title
-                // sub_competencies_description
-
-                // countSubCompetenciese
-                // countCompetenciese
-
-                // echo $request->competencies_title."<br>";
-                // echo $request->competencies_type_competencies."<br>";
-                // echo $request->competencies_task."<br>";
-                // echo $request->competencies_source."<br>";
-                // echo $request->competencies_object."<br>";
-                // echo $request->competencies_type_group."<br>";
-                // echo $request->sub_competencies_title."<br>";
-                // echo $request->sub_competencies_description."<br>";
             break;
             case  'get':
                 $time_for_RPD = $userRpd->timeForRPD;
@@ -257,7 +225,7 @@ class CheckPageController extends Controller
                 foreach ($rpds as $one) {
                     fputcsv($fp, [
                         $one->discipline,
-//                        $one->departaments->title,
+                        $one->departaments->title,
                         $one->timeForRPD->course,
                         $one->timeForRPD->semester,
                         $one->timeForRPD->lectures,
