@@ -2,7 +2,7 @@
             <div >
                 <div>
                     <h2>
-                        Название дисциплины: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_semester" @isset($time_for_RPD) value="{{$time_for_RPD->semester}}" @endisset class="input3" type="text" placeholder="Семестр">
+                        Название дисциплины: <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_semester" @isset($time_for_RPD) value="{{$time_for_RPD->semester}}" @endisset class="input3" type="text" placeholder="Название дисциплины">
                     </h2>
                 </div>
                 <div >
@@ -42,7 +42,7 @@
                 </div>
                 <div>
                     <h2>
-                        Контрольные работы (количество): <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($total_akadem_hours) value="{{$total_akadem_hours->control_work}}" @endisset class="input3" type="text" placeholder="(часы)">
+                        Контрольные работы (количество): <input @unlessrole('admin') readonly @endunlessrole name="time_for_RPD_SP" @isset($total_akadem_hours) value="" @endisset class="input3" type="text" placeholder="(количество)">
                     </h2>
                 </div>
                 <div>
