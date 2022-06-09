@@ -2,37 +2,37 @@
             <div>
                 <div >
                     <h2>
-                        Экзамен: <input @unlessrole('admin') readonly @endunlessrole name="form_control_examination" @isset($form_control) value="{{$form_control->examination}}" @endisset class="input3" type="text" placeholder="Экзаминация">
+                        Экзамен(семестр): <input @unlessrole('admin') readonly @endunlessrole name="form_control_examination" @isset($form_control) value="{{$form_control->examination}}" @endisset class="input3" type="text" placeholder="Экзаминация">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        Зачёт: <input @unlessrole('admin') readonly @endunlessrole name="form_control_zachet" @isset($form_control) value="{{$form_control->zachet}}" @endisset class="input3"  type="text" placeholder="Зачёт">
+                        Зачёт(семестр): <input @unlessrole('admin') readonly @endunlessrole name="form_control_zachet" @isset($form_control) value="{{$form_control->zachet}}" @endisset class="input3"  type="text" placeholder="Зачёт">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        Зачёт с оценкой: <input @unlessrole('admin') readonly @endunlessrole name="form_control_zachet_with_grade" @isset($form_control) value="{{$form_control->zachet_with_grade}}" @endisset class="input3" type="text" placeholder="Зачёт с оценкой">
+                        Зачёт с оценкой(семестр): <input @unlessrole('admin') readonly @endunlessrole name="form_control_zachet_with_grade" @isset($form_control) value="{{$form_control->zachet_with_grade}}" @endisset class="input3" type="text" placeholder="Зачёт с оценкой">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        КП: <input @unlessrole('admin') readonly @endunlessrole name="form_control_KP" @isset($form_control) value="{{$form_control->KP}}" @endisset class="input3" type="text" placeholder="КП">
+                        КП(семестр): <input @unlessrole('admin') readonly @endunlessrole name="form_control_KP" @isset($form_control) value="{{$form_control->KP}}" @endisset class="input3" type="text" placeholder="КП">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        КР: <input @unlessrole('admin') readonly @endunlessrole name="form_control_KR" @isset($form_control) value="{{$form_control->KR}}" @endisset class="input3" type="text" placeholder="КР">
+                        КР(семестр): <input @unlessrole('admin') readonly @endunlessrole name="form_control_KR" @isset($form_control) value="{{$form_control->KR}}" @endisset class="input3" type="text" placeholder="КР">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        Контроль: <input @unlessrole('admin') readonly @endunlessrole name="form_control_control" @isset($form_control) value="{{$form_control->control}}" @endisset class="input3" type="text" placeholder="Контроль">
+                        Контроль(семестр): <input @unlessrole('admin') readonly @endunlessrole name="form_control_control" @isset($form_control) value="{{$form_control->control}}" @endisset class="input3" type="text" placeholder="Контроль">
                     </h2>
                 </div>
                 <div >
                     <h2>
-                        РГР: <input @unlessrole('admin') readonly @endunlessrole name="form_control_RGR" @isset($form_control) value="{{$form_control->RGR}}" @endisset class="input3" type="text" placeholder="РГР">
+                        РГР(семестр): <input @unlessrole('admin') readonly @endunlessrole name="form_control_RGR" @isset($form_control) value="{{$form_control->RGR}}" @endisset class="input3" type="text" placeholder="РГР">
                     </h2>
                 </div>
             </div>
